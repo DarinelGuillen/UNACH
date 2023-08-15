@@ -13,5 +13,9 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    border-color: #ddd;
+    &:focus {
+      border-color: #bbb;
+      outline: none;
+    }
   }
-  
