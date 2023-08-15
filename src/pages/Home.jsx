@@ -1,45 +1,15 @@
-import { useState } from 'react';
-import '../assets/css/MyInput.css';
-import '../assets/css/index.css';
-import MyInput from '../webComponets/MyInput.jsx';
+import React from 'react';
+import { Link } from 'react-router-dom';  
+
 function Home() {
-  const [inputValues, setInputValues] = useState({
-    password: '',
-    email: '',
-  });
-
-  const handleInputChange = (id, value) => {
-    setInputValues((prevValues) => ({
-      ...prevValues,
-      [id]: value,
-    }));
-    console.log("🚀 ~ file: Home.jsx:20 ~ handleInputChange ~ inputValues:", inputValues);
-  };
-
   return (
     <>
-      <h1>This is an Example input</h1>
-      <my-test></my-test>
-      <my-input label="Password:" placeholder="Your password here" width="100%" value="" id="password"></my-input>
-      <my-input label="Mail:" placeholder="Your Mail here" width="190%" value=""></my-input>
-
-      <MyInput
-        label="Password:"
-        placeholder="Your password here"
-        width="100%"
-        value={inputValues.password}
-        onChange={(value) => handleInputChange('password', value)}
-        id="password"
-      />
-      <MyInput
-        label="Mail:"
-        placeholder="Mail"
-        width="50%"
-        value={inputValues.email}
-        onChange={(value) => handleInputChange('email', value)}
-        id="email"
-      />
-      
+      <h1>Welcome to the Home Page</h1>
+      <Link to="/play">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Go to PlayGround Page
+        </button>
+      </Link>
     </>
   );
 }
