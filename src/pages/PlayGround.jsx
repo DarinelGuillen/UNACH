@@ -19,6 +19,7 @@ function Home() {
   return (
     <>
     <div className="container">
+      {/* Input */}
     <div className="box">
       <h1>First Componets</h1>
       <h1>Input simple look in console</h1>
@@ -27,6 +28,14 @@ function Home() {
       <simple-input type="number" placeholder="Enter Phone" id="PhoneInput" width="90%"></simple-input>
 
     </div>
+    {/* Title cabezera */}
+    <div className='box'>
+    <title-header content="Hello, Web Component! Im a TITLEs" width="100%" height="50%"></title-header>
+    <title-header content="Hello, Im even smaller" width="30%" height="80%"></title-header>
+
+    </div>
+    {/* Pie de pagina */}
+    <div className='box'></div>
     <div className="box">
     <h1>This is an Example input</h1>
       <my-test></my-test>
@@ -174,8 +183,7 @@ function Home() {
             </div> 
 
     </div>
-    <div className='box'></div>
-    <div className='box'></div>
+    
     <div className='box'></div>
     <div className='box'></div>
     <div className='box'></div>
