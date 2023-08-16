@@ -27,6 +27,10 @@ function PlayGround() {
       <simple-input type="email" placeholder="Enter email" id="emailInput"  width="20%"></simple-input>
       <simple-input type="password" placeholder="Enter password" id="passwordInput" width="50%"></simple-input>
       <simple-input type="number" placeholder="Enter Phone" id="PhoneInput" width="90%"></simple-input>
+      <simple-input type="text" placeholder="Enter text" id="textareaInput" width="50%" height="auto"></simple-input>
+      <simple-textarea type="text" placeholder="Web componet Input-mediano TextArea" id="textareaInput1" width="60%" height="90px"></simple-textarea>
+      <simple-textarea type="text" placeholder="Web componet Input-Grande TextArea" id="textareaInput2" width="100%" height="90px"></simple-textarea>
+
 
     </div>
     {/* Title cabezera */}

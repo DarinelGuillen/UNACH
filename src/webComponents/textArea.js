@@ -5,7 +5,7 @@ class SimpleInput extends HTMLElement {
   
       this.shadowRoot.innerHTML = `
         <style>
-          input {
+          textarea {
             width: 100%;
             height: 100%;
             padding: 8px;
@@ -13,42 +13,40 @@ class SimpleInput extends HTMLElement {
             border-radius: 5px;
             font-family: 'Open Sans', sans-serif;
             color: linear-gradient(40deg, black 40%, transparent 40%);
+            resize: vertical; /* Allow vertical resizing */
+            overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
           }
   
-          input::placeholder {
+          textarea::placeholder {
             text-align: center;
             font-family: 'Open Sans', sans-serif;
-            color: rgba(0, 0, 0, 0.4);  
+            color: rgba(0, 0, 0, 0.4);
           }
         </style>
-        <input type="text" placeholder="" />
-        
+        <textarea placeholder=""></textarea>
       `;
   
-      this.inputElement = this.shadowRoot.querySelector('input');
-      this.inputElement.addEventListener('input', this.handleInputChange);
+      this.textAreaElement = this.shadowRoot.querySelector('textarea');
+      this.textAreaElement.addEventListener('input', this.handleInputChange);
     }
   
     connectedCallback() {
       const placeholder = this.getAttribute('placeholder') || '';
       const id = this.getAttribute('id') || '';
       const width = this.getAttribute('width') || '100%';
-      const height = this.getAttribute('height') || 'auto';  
-      const type = this.getAttribute('type') || 'text';
-    
-      this.inputElement.setAttribute('type', type);
-      this.inputElement.setAttribute('placeholder', placeholder);
-      this.inputElement.setAttribute('id', id);
-      this.inputElement.style.setProperty('width', width);
-      this.inputElement.style.setProperty('height', height);
+      const height = this.getAttribute('height') || '100%';
+  
+      this.textAreaElement.setAttribute('placeholder', placeholder);
+      this.textAreaElement.setAttribute('id', id);
+      this.textAreaElement.style.setProperty('width', width);
+      this.textAreaElement.style.setProperty('height', height);
     }
   
     handleInputChange = (e) => {
       const newValue = e.target.value;
-      console.log("🚀 ~ file: input.js:44 ~ SimpleInput ~ e.target.value:", e.target.value)
       this.dispatchEvent(new CustomEvent('inputChange', { detail: newValue }));
     };
   }
   
-  customElements.define('simple-input', SimpleInput);
+  customElements.define('simple-textarea', SimpleInput);
   
