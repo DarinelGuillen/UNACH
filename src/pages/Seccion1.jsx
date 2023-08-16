@@ -3,6 +3,7 @@ import '../assets/css/MyInput.css';
 import '../assets/css/PlayGround.css';
 import MyInput from '../webComponents/MyInput.jsx';
 import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
+import codiguitoQRcito from "../assets/img/Icon/qr-Unach.svg";
 
 function Seccion1() {
     return ( 
@@ -17,12 +18,12 @@ function Seccion1() {
                 </div>
             </div>
             <div className="grid grid-cols-2 gap-2 place-items-center">
-                <div className='text-center'>
+                <div className='text-center text-white '>
                     {/* Aquí ira el número de Registro de Proyecto de Investigación*/}
                     <p>Registro de Proyecto de Investigación</p>
                 </div>
-                <div className=''>
-                    Código QR
+                <div className='sm:p-6 md:p-8 lg:p-8 xl:p-10'>
+                    <img src={codiguitoQRcito}></img>
                 </div>
             </div>
         </div>    
