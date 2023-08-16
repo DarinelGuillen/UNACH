@@ -3,7 +3,7 @@ import '../assets/css/MyInput.css';
 import '../assets/css/PlayGround.css';
 import MyInput from '../webComponents/MyInput.jsx';
 import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
-function Home() {
+function PlayGround() {
   const [inputValues, setInputValues] = useState({
     password: '',
     email: '',
@@ -235,4 +235,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default PlayGround;
