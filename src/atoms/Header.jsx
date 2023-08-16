@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import '../assets/css/MyInput.css';
 import '../assets/css/PlayGround.css';
-import MyInput from '../webComponents/MyInput.jsx';
 import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
 import codiguitoQRcito from "../assets/img/Icon/qr-Unach.svg";
 
@@ -13,12 +11,12 @@ function Header() {
                 <img src={componentitoUnachLogo} alt="Componentito UNACH Logo" />
             </div>
             <div className="grid place-items-center">
-                <div className='bg-gray-200 text-center rounded sm:h-15 lg:h-16 xl:h-16 p-3'>
+                <div className='bg-gray-200 text-xs md:text-base lg:text-lg text-center rounded sm:h-15 lg:h-16 xl:h-16 p-3'>
                     Sello de Recibido. Coordinación de Investigación y Posgrado de la UA
                 </div>
             </div>
             <div className="grid grid-cols-2 gap-2 place-items-center">
-                <div className='text-center text-white '>
+                <div className='text-center text-xs md:text-base lg:text-lg text-white '>
                     {/* Aquí ira el número de Registro de Proyecto de Investigación*/}
                     <p>Registro de Proyecto de Investigación</p>
                 </div>

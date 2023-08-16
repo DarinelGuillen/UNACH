@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+      font-family:'Open Sans';
+    }
+  }
+
 * {
     margin: 0;
     box-sizing: border-box;
