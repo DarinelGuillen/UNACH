@@ -6,12 +6,12 @@ import codiguitoQRcito from "../assets/img/Icon/qr-Unach.svg";
 function Header() {
     return ( 
         <>
-        <div className="grid grid-cols-3 gap-4 my-2">
+        <div className="grid grid-cols-3 gap-4 my-2 font-sans">
             <div className="m-1 grid place-items-center">
                 <img src={componentitoUnachLogo} alt="Componentito UNACH Logo" />
             </div>
             <div className="grid place-items-center">
-                <div className='bg-gray-200 text-xs md:text-base lg:text-lg text-center rounded sm:h-15 lg:h-16 xl:h-16 p-3'>
+                <div className='bg-gray-200 text-xs md:text-base lg:text-lg text-center rounded sm:h-15 lg:h-16 xl:h-16 p-3 pb-20'>
                     Sello de Recibido. Coordinación de Investigación y Posgrado de la UA
                 </div>
             </div>
