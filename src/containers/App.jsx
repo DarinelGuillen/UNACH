@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 // import Home from '../pages/Home'
 import Home from '../pages/Home.jsx';
-import PlayGround from '../pages/playground.jsx';
+import PlayGround from '../pages/PlayGround.jsx';
 import Seccion1 from '../pages/Seccion1.jsx';
 function App() {
 

@@ -7,6 +7,25 @@ import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
 function Seccion1() {
     return ( 
         <>
+        <div className="grid grid-cols-3 gap-4 my-2">
+            <div className="m-1 grid place-items-center">
+                <img src={componentitoUnachLogo}></img>
+            </div>
+            <div className="grid place-items-center">
+                <div className='bg-gray-200 text-center rounded sm:h-15 lg:h-16 xl:h-16 p-3'>
+                    Sello de Recibido. Coordinación de Investigación y Posgrado de la UA
+                </div>
+            </div>
+            <div className="grid grid-cols-2 gap-2 place-items-center">
+                <div className='text-center'>
+                    {/* Aquí ira el número de Registro de Proyecto de Investigación*/}
+                    <p>Registro de Proyecto de Investigación</p>
+                </div>
+                <div className=''>
+                    Código QR
+                </div>
+            </div>
+        </div>    
         <div className='grid'>
             <div className='bg-white rounded-tl-lg grid'>
                 <div class="flex w-full justify-center items-center space-y-8">
