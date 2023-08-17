@@ -2,6 +2,7 @@ import '../assets/css/MyInput.css';
 import '../assets/css/PlayGround.css';
 import Header from '../atoms/Header';
 import VerticalText from '../atoms/VerticalText';
+import Footer from '../atoms/footer';
 
 function Seccion1() {
     return (
@@ -13,11 +14,11 @@ function Seccion1() {
                 </div>
 
                 <div className='flex w-5/6 bg-white rounded-l-3xl'>
-                    
-                    
-                </div>
-            </div>
 
+                </div>
+
+            </div>
+            <Footer />
         </>
     );
 }
