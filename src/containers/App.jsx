@@ -10,13 +10,13 @@ function App() {
 
   return (
     <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/play" element={<PlayGround/>} />
-            <Route path='/seccion1' element={<Seccion1/>}/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/play" element={<PlayGround />} />
+        <Route path='/seccion1' element={<Seccion1 />} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/registro' element={<Registro/>}/>
-          </Routes>
+      </Routes>
     </BrowserRouter>
   );
 }
