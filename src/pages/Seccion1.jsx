@@ -7,14 +7,20 @@ function Seccion1() {
     return ( 
         <>
         <Header/>
-        <ClaveDeAcceso/>
         <div className="flex">
                 <div className="flex w-1/6 justify-center mt-20 mb-20">
                     <VerticalText />
                 </div>
-
-                <div className='flex w-5/6 bg-white rounded-l-3xl'>
-
+                <div className='flex flex-col w-5/6 bg-white rounded-tl-lg'>
+                    <div>
+                        <ClaveDeAcceso/>
+                    </div>
+                    <div>
+Titulo 
+                    </div>
+                    <div>
+Titulito pero con componente
+                    </div>
                 </div>
             </div>
         <Footer/>
