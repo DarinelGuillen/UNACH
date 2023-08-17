@@ -1,4 +1,19 @@
 import { useState } from 'react';
+
+function navigateToPage() {
+  // Navigation logic
+  console.log('Navigating to another page');
+}
+
+function showAlert() {
+  // Alert logic
+  alert('This is an alert');
+}
+
+function performCustomAction() {
+  // Custom action logic
+  console.log('Custom action performed');
+}
 function PlayGround() {
   const [inputValues, setInputValues] = useState({
     password: '',
@@ -12,6 +27,9 @@ function PlayGround() {
     }));
     console.log("🚀 ~ file: Home.jsx:20 ~ handleInputChange ~ inputValues:", inputValues);
   };
+
+
+  
 
   return (
     <>
@@ -37,10 +55,28 @@ function PlayGround() {
     </div>
     {/* Pie de pagina */}
     <div className='box'></div>
-    
-    
-    
-    <div className='box'></div>
+    {/* Button section  */}
+    <div className='box'>
+    <h1>Custom Button Examples</h1>
+      <custom-button
+        width="150px"
+        height="50px"
+        text="Navigate"
+        functionName="navigateToPage"
+      ></custom-button>
+      <custom-button
+        width="120px"
+        height="40px"
+        text="Show Alert"
+        functionName="showAlert"
+      ></custom-button>
+      <custom-button
+        width="200px"
+        height="60px"
+        text="Custom Action"
+        functionName="performCustomAction"
+      ></custom-button>
+    </div>
     <div className='box'></div>
     <div className='box'></div>
     <div className='box'></div>
