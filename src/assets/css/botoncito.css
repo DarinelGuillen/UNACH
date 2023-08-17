@@ -1,0 +1,17 @@
+.estiloBoton{
+    background-color: #BCB785;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3px;
+}
+.estiloBotonSiguiente{
+    background-color: #BCB785;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.estiloTextoRegistro{
+    color: #BCB785;
+    font-family:'Open Sans', sans-serif;
+}
