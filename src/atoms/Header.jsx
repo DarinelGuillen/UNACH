@@ -1,5 +1,3 @@
-import '../assets/css/MyInput.css';
-import '../assets/css/PlayGround.css';
 import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
 import codiguitoQRcito from "../assets/img/Icon/qr-Unach.svg";
 
