@@ -15,6 +15,9 @@ class SimpleInput extends HTMLElement {
             color: linear-gradient(40deg, black 40%, transparent 40%);
             resize: vertical; /* Allow vertical resizing */
             overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
+            background-color:#D9D9D9;
+            margin-left:20px;
+            margin-top: 0.8rem;
           }
   
           textarea::placeholder {

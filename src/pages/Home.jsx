@@ -10,7 +10,7 @@ function Home() {
           Go to PlayGround Page
         </button>
       </Link>
-      <Link to="/seccion1">
+      <Link to="/seccion1Pag1">
         <button className="bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
           Ir a seccioncita 1
         </button>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
@@ -9,20 +8,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
-function Seccion1() {
-    const [inputValues, setInputValues] = useState({
-        password: '',
-        email: '',
-    });
-
-    const handleInputChange = (id, value) => {
-        setInputValues((prevValues) => ({
-            ...prevValues,
-            [id]: value,
-        }));
-        console.log("🚀 ~ file: Home.jsx:20 ~ handleInputChange ~ inputValues:", inputValues);
-    };
-
+function Seccion1Pag1() {
     return (
         <>
             <Header />
@@ -37,36 +23,35 @@ function Seccion1() {
                     <div class="flex items-center place-content-around text-center w-full mt-20">
                         <img src={logoSinNadita}></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-5 rounded-md">
-                            <p className='text-3xl'>1.1 Titulo del proyecto</p>
+                            <p className='text-3xl'>1.3 Persona responsable técnica</p>
                         </div>
                         <button><img src={logoSave}></img></button>
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
-                    </div>
                     <div className='flex flex-col w-full'>
-                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Título" id=""></simple-input>
-                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Fecha de elaboración de propuesta" id=""></simple-input>
-                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Lugar de realización" id=""></simple-input>
+                        <simple-input class="ml-20 mt-5" width="87.5%" height="30px" placeholder="Nombre completo" id=""></simple-input>
+                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Correo electrónico" id=""></simple-input>
+                        <simple-input class="ml-20" width="40%" height="30px" placeholder="Grado" id=""></simple-input>
+                        <simple-input class="ml-20" width="40%" height="30px" placeholder="Centro de adscripción" id=""></simple-input>
+                        <simple-input class="ml-20" width="40%" height="30px" placeholder="Teléfono célular" id=""></simple-input>
+                        <simple-input class="ml-20" width="40%" height="30px" placeholder="Teléfono oficina" id=""></simple-input>
+                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Situación laboral" id=""></simple-input>
                     </div>
-
                     <div class="flex items-center place-content-around text-center w-full mt-20">
                         <img src={logoSinNadita}></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-5 rounded-md">
-                            <p className='text-3xl'>1.2 Periodo de ejecición del proyecto </p>
+                            <p className='text-3xl'>1.4 Área de conocimiento</p>
                         </div>
                         <button><img src={logoSave}></img></button>
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-xl text-gray-500'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
-                    </div>
+
                     <div className='flex flex-col w-full'>
-                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Vigencia:Inicio" id=""></simple-input>
+                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Elija un elemento" id="" ></simple-input>
                         <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Vigencia:Conclusión" id=""></simple-input>
-                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id=""></simple-input>
+                        <simple-input class="ml-20" width="87.5%" height="30px" placeholder="Tema específico" id=""></simple-input>
+                        <simple-textarea class="ml-20" width="87.5%" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
-                    <div className='flex place-content-around mt-24'>
-                        <Link to="/">
+                    <div className='flex place-content-around mt-24 mb-24'>
+                        <Link to="/seccion1Pag1">
                             <button>
                                 <div className='estiloBotonSecciones grid'>
                                     <div className='grid place-content-center'>
@@ -75,15 +60,17 @@ function Seccion1() {
                                 </div>
                             </button>
                         </Link>
-                        <button>
-                            <div className='estiloBotonSiguienteSecciones grid'>
-                                <div className='grid place-content-center'>
-                                    <Link to="/seccion1Pag2"><p className='text-3xl'>Siguiente</p></Link>
+                        <Link to="/seccion1Pag3">
+                            <button>
+                                <div className='estiloBotonSiguienteSecciones grid'>
+                                    <div className='grid place-content-center'>
+                                        <p className='text-3xl'>Siguiente</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </button>
+                            </button>
+                        </Link>
                         <div className='flex'>
-                            <p className='pieDePagina grid place-content-center text-white text-3xl'>1 de 5</p>
+                            <p className='pieDePagina grid place-content-center text-white text-3xl'>2 de 5</p>
                         </div>
                     </div>
                 </div>
@@ -93,4 +80,4 @@ function Seccion1() {
     );
 }
 
-export default Seccion1;
+export default Seccion1Pag1;
