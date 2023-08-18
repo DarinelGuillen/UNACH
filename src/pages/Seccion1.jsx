@@ -60,13 +60,8 @@ function Seccion1() {
                     <p className='font-bold text-xl text-gray-500'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                 </div>
                 <div>
-                    <div className='flex'>
-
-                    <simple-input width="100%" placeholder="Vigencia:Inicio" id="" height="auto"></simple-input>
-                   
-
-                    <simple-input width="100%" placeholder="Vigencia:Conclusión" id="" height="auto"></simple-input>
-                    </div>
+                    <simple-input width="90%" placeholder="Vigencia:Inicio" id="" height="auto"></simple-input>
+                    <simple-input width="90%" placeholder="Vigencia:Conclusión" id="" height="auto"></simple-input>
                     <simple-input width="90%" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id="" height="auto"></simple-input>
                 </div>
                 <div className='flex place-content-around mt-24'>
