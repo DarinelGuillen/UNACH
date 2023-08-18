@@ -15,7 +15,6 @@ class SimpleInput extends HTMLElement {
             font-family: 'Open Sans', sans-serif;
             color: linear-gradient(40deg, black 40%, transparent 40%);
             background-color:#D9D9D9;
-            margin-left:20px;
           }
   
           input::placeholder {

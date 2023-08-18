@@ -16,7 +16,6 @@ class SimpleInput extends HTMLElement {
             resize: vertical; /* Allow vertical resizing */
             overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
             background-color:#D9D9D9;
-            margin-left:20px;
             margin-top: 0.8rem;
           }
   
