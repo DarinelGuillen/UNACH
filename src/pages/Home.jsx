@@ -15,6 +15,13 @@ function Home() {
           Ir a seccioncita 1
         </button>
       </Link>
+
+
+      <Link to="/test">
+        <button className="bg-green-900 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
+          <h1>TESTSSSSSSSSSSSSS</h1>
+        </button>
+      </Link>
     </>
   );
 }
