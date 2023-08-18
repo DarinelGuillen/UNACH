@@ -6,6 +6,8 @@ import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
+import masIcono from "../assets/img/Icon/mas.svg";
+import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion1Pag4() {
@@ -48,6 +50,56 @@ function Seccion1Pag4() {
                 <div>
                     
                 </div>
+                <button>
+                <img src={masIcono}></img>
+               </button>
+               <button>
+                <img src={menosIcono}></img>
+               </button>
+               
+                <table class="table-auto text-center w-10/12">
+                    <thead className='bg-[#25313A] h-12 rounded text-white'>
+                        <tr>
+                            <th>No°</th>
+                            <th>Grado</th>
+                            <th>Nombre completo</th>
+                            <th>Adscripción</th>
+                            <th>Área de especialización</th>
+                            <th>Tareas específicas</th>
+                            <th>Nivel de participación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div className='flex place-content-around mt-24 mb-24'>
                     <Link to="/seccion1Pag3">
                         <button>
