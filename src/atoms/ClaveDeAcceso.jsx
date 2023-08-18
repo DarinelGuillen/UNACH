@@ -2,15 +2,14 @@ function ClaveDeAcceso() {
     return (
         <>
             <div className="lg:grid lg:grid-cols-2 lg:mt-12">
-                
-                <div className="flex justify-center lg:flex ">
-                    <div className="rounded-full bg-gray-500 w-20 h-20 mt-8 lg:h-36 lg:w-56 lg:ml-[80px]">
 
-                    </div>
+                <div className="flex lg:justify-center">
 
-                    <div className="flex flex-col mt-7 ml-5 lg:w-full lg:mt-[45px]">
-                        <p className="lg:text-center"> <b>Clave de Registro </b> <br />(Uso exclusivo DI)</p>
-                        <simple-input class="w-40 lg:ml-20 lg:w-[200px]" height="10%" type="text" placeholder="DI" id="text"></simple-input>
+                    <div className="rounded-full ml-10 bg-gray-500 w-20 h-20 mt-8 lg:h-36 lg:w-56 lg:ml-[80px]"></div>
+
+                    <div className="flex flex-col mt-8 lg:mt-[55px] lg:w-full lg:mt-[45px]">
+                        <p className="text-center lg:text-start ml-[20px]"> <b>Clave de Registro </b>(Uso exclusivo DI)</p>
+                        <simple-input class="w-[250px] ml-[20px] lg:w-[300px]" height="20%" type="text" placeholder="DI" id="text"></simple-input>
                     </div>
                 </div>
 

@@ -37,15 +37,15 @@ function Seccion1() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-                        <img src={logoSinNadita}></img>
+                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
                         </div>
-                        <button><img src={logoSave}></img></button>
+                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
 
                     <div className='text-center'>
-                        <p className='font-bold text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
+                        <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>
 
                     <div className='flex flex-col w-full'>
@@ -55,14 +55,14 @@ function Seccion1() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita}></img>
+                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>1.2 Periodo de ejecición del proyecto </p>
                         </div>
-                        <button><img src={logoSave}></img></button>
+                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-xl text-gray-500'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                     </div>
                     <div className='flex flex-col w-full'>
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Vigencia:Inicio" id=""></simple-input>
@@ -72,22 +72,22 @@ function Seccion1() {
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/">
                             <button>
-                                <div className='estiloBotonSecciones grid'>
-                                    <div className='grid place-content-center'>
+                                <div className='grid'>
+                                    <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
                                         <img src={arrowselector}></img>
                                     </div>
                                 </div>
                             </button>
                         </Link>
                         <button>
-                            <div className='estiloBotonSiguienteSecciones grid'>
-                                <div className='grid place-content-center'>
-                                    <Link to="/seccion1Pag2"><p className='text-3xl'>Siguiente</p></Link>
+                            <div className='grid'>
+                                <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
+                                    <Link to="/seccion1Pag2"><p className='text-2xl lg:text-3xl'>Siguiente</p></Link>
                                 </div>
                             </div>
                         </button>
                         <div className='flex'>
-                            <p className='pieDePagina grid place-content-center text-white text-3xl'>1 de 5</p>
+                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>1 - 5</p>
                         </div>
                     </div>
                 </div>
