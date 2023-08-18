@@ -6,7 +6,7 @@ import "../assets/css/botoncito.css";
 function Registro() {
     return ( 
         <>
-        <div className='flex-col'>
+        <div className='flex-col font-sans'>
             <div class="flex items-center justify-center min-h-screen">
                 <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg rounded-lg">
                     <div className="m-1 flex justify-center mt-10 ">

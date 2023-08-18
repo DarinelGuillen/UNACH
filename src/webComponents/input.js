@@ -8,6 +8,7 @@ class SimpleInput extends HTMLElement {
           input {
             width: 100%;
             height: 100%;
+            margin-top: 0.8rem;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
