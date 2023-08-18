@@ -15,3 +15,22 @@
     color: #BCB785;
     font-family:'Open Sans', sans-serif;
 }
+.estiloBotonSecciones{
+    background-color: #BCB785;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 3px;
+}
+.estiloBotonSiguienteSecciones{
+    background-color: #BCB785;
+    width: 16rem;
+    height: 4rem;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.pieDePagina{
+    background-color: #BCB785;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 3px;
+}

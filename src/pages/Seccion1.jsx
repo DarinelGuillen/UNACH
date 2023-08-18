@@ -1,9 +1,12 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
 import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
-import { useState } from 'react';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
+import "../assets/css/botoncito.css";
 
 function Seccion1() {
     const [inputValues, setInputValues] = useState({
@@ -63,6 +66,27 @@ function Seccion1() {
                     </div>
                     <simple-input width="90%" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id="" height="auto"></simple-input>
                 </div>
+                <div className='flex place-content-around mt-24'>
+                        <Link to="/">
+                            <button>
+                                <div className='estiloBotonSecciones grid'>
+                                    <div className='grid place-content-center'>
+                                        <img src={arrowselector}></img>
+                                    </div>
+                                </div>
+                            </button>
+                        </Link>
+                        <button>
+                            <div className='estiloBotonSiguienteSecciones grid'>
+                                <div className='grid place-content-center'>
+                                    <Link to="/seccion1Pag1"><p className='text-3xl'>Siguiente</p></Link>
+                                </div>
+                            </div>
+                        </button>
+                        <div className='flex'>
+                            <p className='pieDePagina grid place-content-center text-white text-3xl'>1 de 5</p>
+                        </div>
+                    </div>
             </div>
         </div>
         <Footer />

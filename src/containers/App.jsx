@@ -12,9 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/play" element={<PlayGround />} />
-        <Route path='/seccion1' element={<Seccion1 />} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/play" element={<PlayGround/>}/>
+        <Route path='/seccion1' element={<Seccion1/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/registro' element={<Registro/>}/>
         <Route path='/seccion1Pag1' element={<Seccion1Pag1/>}/>

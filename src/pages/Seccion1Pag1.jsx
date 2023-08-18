@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
+import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
 import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
+import "../assets/css/botoncito.css";
 
 function Seccion1Pag1() {
     return ( 
@@ -26,8 +29,8 @@ function Seccion1Pag1() {
                     <p className='font-bold text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                 </div>
                 <div>
-                    <simple-input width="90%" placeholder="Título" id="" height="auto"></simple-input>
-                    <simple-input width="90%" placeholder="Fecha de elaboración de propuesta" id="" height="auto"></simple-input>
+                    <simple-input width="90%" placeholder="Nombre completo" id="" height="auto"></simple-input>
+                    <simple-input width="90%" placeholder="Correo electrónico" id="" height="auto"></simple-input>
                     <simple-input width="90%" placeholder="Lugar de realización" id="" height="auto"></simple-input>
                 </div>
                 <div class="flex items-center text-center w-full mt-20">
@@ -35,12 +38,34 @@ function Seccion1Pag1() {
                     <div className="bg-[#BCB785] w-5/6 text-white p-5 rounded-md">
                         <p className='text-3xl'>1.4 Área de conocimiento</p>
                     </div>
-                    <div>
-                        <simple-input width="90%" placeholder="Título" id="" height="auto"></simple-input>
-                        <simple-input width="90%" placeholder="Fecha de elaboración de propuesta" id="" height="auto"></simple-input>
-                        <simple-input width="90%" placeholder="Lugar de realización" id="" height="auto"></simple-input>
-                    </div>
                 </div>
+                <div>
+                    <simple-input width="90%" placeholder="Elija un elemento" id="" height="auto"></simple-input>
+                    <simple-input width="90%" placeholder="Vigencia:Conclusión" id="" height="auto"></simple-input>
+                    <simple-input width="90%" placeholder="Tema específico" id="" height="auto"></simple-input>
+                    <simple-textarea type="text" placeholder="Especifique" id="textareaInput1" width="90%" height="20%"></simple-textarea>
+                </div>
+                    <div className='flex place-content-around mt-24'>
+                        <Link to="/seccion1">
+                            <button>
+                                <div className='estiloBotonSecciones grid'>
+                                    <div className='grid place-content-center'>
+                                        <img src={arrowselector}></img>
+                                    </div>
+                                </div>
+                            </button>
+                        </Link>
+                        <button>
+                            <div className='estiloBotonSiguienteSecciones grid'>
+                                <div className='grid place-content-center'>
+                                    <p className='text-3xl'>Siguiente</p>
+                                </div>
+                            </div>
+                        </button>
+                        <div className='flex'>
+                            <p className='pieDePagina grid place-content-center text-white text-3xl'>2 de 5</p>
+                        </div>
+                    </div>
             </div>
         </div>
         <Footer />
