@@ -6,9 +6,13 @@ import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
+import masIcono from "../assets/img/Icon/mas.svg";
+import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion1Pag5() {
+
+   
     return ( 
         <>
         <Header/>
@@ -33,8 +37,44 @@ function Seccion1Pag5() {
                 <div className='text-center'>
                     <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                 </div>
+                <button>
+                <img src={masIcono}></img>
+               </button>
+               <button>
+                <img src={menosIcono}></img>
+               </button>
                 <div>
-                   ffffff
+               
+                <table class="table-auto text-center w-10/12">
+                    <thead className='bg-[#25313A] h-12 rounded text-white'>
+                        <tr>
+                            <th>Nombre del participante</th>
+                            <th>Tipo de participante</th>
+                            <th>Producto esperado</th>
+                            <th>Especifique</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
                 <div class="flex items-center place-content-around text-center w-full mt-20">
                     <img src={logoSinNadita}></img> 
@@ -52,6 +92,42 @@ function Seccion1Pag5() {
                 <div className='text-center'>
                     <p className='font-bold text-xl text-gray-400'> Grado, nombre y firma <b className='font-bold text-xl text-gray-600'>Persona responsable técnica</b> Adscripción</p>
                 </div>
+                
+               <button>
+                <img src={masIcono}></img>
+               </button>
+               <button>
+                <img src={menosIcono}></img>
+               </button>
+               
+                <table class="table-auto text-center w-10/12">
+                    <thead className='bg-[#25313A] h-12 rounded text-white'>
+                        <tr>
+                            <th>Nombre del participante</th>
+                            <th>Tipo de participante</th>
+                            <th>Producto esperado</th>
+                            <th>Especifique</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                        <tr>
+                           <td>...</td>
+                           <td>...</td>
+                           <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div className='flex place-content-around mt-24 mb-24'>
                     <Link to="/seccion1Pag4">
                         <button>
@@ -75,9 +151,11 @@ function Seccion1Pag5() {
                         <p className='pieDePagina grid place-content-center text-white text-3xl'>5 de 5</p>
                     </div>
                 </div>
+
             </div>
         </div>
         <Footer />
+
         </>
      );
 }
