@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
-import "../assets/css/botoncito.css";
 import componentitoUnachLogo from '../assets/img/Icon/Logo-Unach-negro.svg';
+import "../assets/css/botoncito.css";
 
 function Login() {
     return ( 
