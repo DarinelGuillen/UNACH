@@ -6,6 +6,7 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
+import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion1() {
@@ -33,11 +34,12 @@ function Seccion1() {
                 <div>
                     <ClaveDeAcceso/>
                 </div>
-                <div class="flex items-center text-center w-full mt-20">
+                <div class="flex items-center place-content-around text-center w-full mt-20">
                     <img src={logoSinNadita}></img> 
                     <div className="bg-[#BCB785] w-5/6 text-white p-5 rounded-md">
                         <p className='text-3xl'>1.1 Titulo del proyecto</p>
                     </div>
+                    <button><img src={logoSave}></img></button>
                 </div>
                 <div className='text-center'>
                     <p className='font-bold text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
@@ -47,11 +49,12 @@ function Seccion1() {
                     <simple-input width="90%" placeholder="Fecha de elaboración de propuesta" id="" height="auto"></simple-input>
                     <simple-input width="90%" placeholder="Lugar de realización" id="" height="auto"></simple-input>
                 </div>
-                <div class="flex items-center text-center w-full mt-20">
+                <div class="flex items-center place-content-around text-center w-full mt-20">
                     <img src={logoSinNadita}></img> 
                     <div className="bg-[#BCB785] w-5/6 text-white p-5 rounded-md">
                         <p className='text-3xl'>1.2 Periodo de ejecición del proyecto </p>
                     </div>
+                    <button><img src={logoSave}></img></button>
                 </div>
                 <div className='text-center'>
                     <p className='font-bold text-xl text-gray-500'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
