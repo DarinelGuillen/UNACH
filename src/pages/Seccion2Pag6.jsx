@@ -9,9 +9,9 @@ import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag6() {
-    return ( 
+    return (
         <>
-        <Header />
+            <Header />
             <div className="flex font-sans">
                 <div className="flex hidden lg:block lg:w-1/6 lg:justify-center lg:mt-20 lg:mb-20">
                     <VerticalText />
@@ -28,24 +28,29 @@ function Seccion2Pag6() {
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
-                   
+
                     <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Diseño metodológico" id="" ></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Técnicas e instrumentos" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Materiales" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Procedimiento para el análisis" id="" ></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Riesgos o amenazas posibles" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Formas de afrontar los riesgos y amenazas" id=""></simple-input>
-                        <div className='text-center'>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Tipo de financiamiento" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Institución/fuente" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Convocatoria/programa" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Enlace de la convocatoria" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Año de la convocatoria" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Instancia dictaminadora" id=""></simple-input>
+
+                        <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                             <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Consentimiento informado -Describir la forma en la que los participantes aceptan participar libremente en el desarrollo de la propuesta</p>
                         </div>
+                        
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Escribir aquí" id="" ></simple-input>
-                        <div className='text-center'>
+
+                        <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                             <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Comités éticos, bioéticas y/o debioseguridad Indicar si algún Comité ha avalado la propuesta *indispensable para investigaciones en ciencias de la salud</p>
                         </div>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Escribir aquí" id=""></simple-input>                    
+
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Escribir aquí" id=""></simple-input>
+
                     </div>
-                    
+
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag5">
                             <button>
@@ -69,9 +74,9 @@ function Seccion2Pag6() {
                     </div>
                 </div>
             </div>
-        <Footer />
+            <Footer />
         </>
-     );
+    );
 }
 
 export default Seccion2Pag6;

@@ -121,7 +121,7 @@ function Seccion2Pag9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
                     </div>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[60px] lg:mb-20'>
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[60px] lg:mt-[81px]'>
                         <Link to="/seccion2Pag8">
                             <button>
                                 <div className='grid'>

@@ -58,7 +58,7 @@ function Seccion2Pag8() {
                         <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-40'>
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[161px]'>
                         <Link to="/seccion2Pag7">
                             <button>
                                 <div className='grid'>

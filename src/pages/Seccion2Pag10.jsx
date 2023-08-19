@@ -46,7 +46,7 @@ function Seccion2Pag10() {
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Manifiesto bajo protesta de decir verdad que esta propuesta es original y soy el autor intelectual y la inclusión de material de terceros en esta propuesta está debidamente referenciada y cuento con la autorización respecto de los derechos de Claro que la propuesta no presenta plagios parciales o totales ni controversiales legales a la vez que el desarrollo de la investigación adoptaré las medidas éticas y consideraciones legales pertinentes a sí mismo se darán los créditos a la Universidad Autónoma de Chiapas de los productos académicos que de esta propuesta emanen al participar en este proceso de registro acato los procedimientos lineamientos y políticas que la Universidad Autónoma de Chiapas establezca para tales efectos.</p>
                     </div>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[170px]'>
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[201px]'>
                         <Link to="/seccion2Pag9">
                             <button>
                                 <div className='grid'>
