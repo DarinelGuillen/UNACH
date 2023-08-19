@@ -9,7 +9,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
-import { stringify } from 'postcss';
+
 
 function Seccion1Pag4() {
   const [rowCount, setRowCount] = useState(1);
