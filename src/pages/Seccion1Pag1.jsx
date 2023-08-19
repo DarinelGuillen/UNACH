@@ -61,6 +61,7 @@ function Seccion1() {
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                     </div>
@@ -69,6 +70,7 @@ function Seccion1() {
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Vigencia:Conclusión" id=""></simple-input>
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id=""></simple-input>
                     </div>
+
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/">
                             <button>
