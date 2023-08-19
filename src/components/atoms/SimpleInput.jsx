@@ -21,7 +21,7 @@ const SimpleInputWrapper = styled.div`
   }
 `;
 
-const SimpleInput = ({ placeholder = '', id = '', width = '100%', height = 'auto', type = 'text' }) => {
+const SimpleInput = ({ placeholder, id, width, height, type }) => {
   const handleInputChange = (e) => {
     const newValue = e.target.value;
     console.log("🚀 ~ SimpleInput ~ e.target.value:", e.target.value);
@@ -33,8 +33,8 @@ const SimpleInput = ({ placeholder = '', id = '', width = '100%', height = 'auto
     inputElement.setAttribute('type', type);
     inputElement.setAttribute('placeholder', placeholder);
     inputElement.setAttribute('id', id);
-    inputElement.style.width = width;
-    inputElement.style.height = height;
+    inputElement.style.width = width || "100%";
+    inputElement.style.height = height || "40px";
     inputElement.addEventListener('input', handleInputChange);
     return () => {
       inputElement.removeEventListener('input', handleInputChange);
