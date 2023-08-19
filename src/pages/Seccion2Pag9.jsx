@@ -6,6 +6,8 @@ import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
+import masIcono from "../assets/img/Icon/mas.svg";
+import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag9() {
@@ -24,35 +26,95 @@ function Seccion2Pag9() {
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.7  Pregunta de investigación</p>
+                            <p className='text-xl lg:text-3xl'>2.15 Desglose Financiero (Opcional)</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
                     </div>
                         <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Indique la pregunta o preguntas que guian su investigación.</p>
+                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                         </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="60px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
-                    </div>
+                        <button>
+                        <img src={masIcono}></img>
+                    </button>
+                    <button>
+                        <img src={menosIcono}></img>
+                    </button>
+
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Rubros</th>
+                                <th>Tipo de gasto</th>
+                                <th>Monto</th>
+                                <th>Etapa</th>
+                                <th>Justificación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>$</td>
+                            </tr>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>$</td>
+                            </tr>
+                            <tr className='bg-[#25313A] h-12 rounded text-white'>
+                                <td>Monto total en pesos </td>
+                                <td>...</td>
+                                <td>$</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                   
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.8 Objetivo general</p>
+                            <p className='text-xl lg:text-3xl'>2.16 Productos de la investigación comprometidos </p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
+                    <button>
+                        <img src={masIcono}></img>
+                    </button>
+                    <button>
+                        <img src={menosIcono}></img>
+                    </button>
+
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Tipo del producto</th>
+                             
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Elije un elemento</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>Elije un elemento</td>
+                                <td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                         <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Redactando en infinitivo y debe tener claridad suficiente para ser evaluable.</p>
+                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
                         </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="50px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
-                    </div>
+                   
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag8">
                             <button>

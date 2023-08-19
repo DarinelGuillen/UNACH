@@ -91,10 +91,6 @@ function Seccion1Pag5() {
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
 
-                    {/* <div> ??????????
-                        ffffffff
-                    </div> */}
-
                     <div className='text-center'>
                         <p className='font-bold text-xl text-gray-400'> Grado, nombre y firma <b className='font-bold text-xl text-gray-600'>Persona responsable técnica</b> Adscripción</p>
                     </div>
