@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
@@ -11,6 +12,22 @@ import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion1Pag4() {
+    const [rowCount, setRowCount] = useState(1);
+
+  const handleAddRow = () => {
+    
+      console.log("🚀 ~ file: Seccion1Pag4.jsx:23 ~ handleAddRow ~ handleAddRow:")
+    if (rowCount < 6) {
+      setRowCount(rowCount + 1);
+    }
+  };
+
+  const handleRemoveRow = () => {
+      console.log("🚀 ~ file: Seccion1Pag4.jsx:30 ~ handleRemoveRow ~ handleRemoveRow:")
+    if (rowCount > 1) {
+      setRowCount(rowCount - 1);
+    }
+  };
     return (
         <>
             <Header />
@@ -24,7 +41,7 @@ function Seccion1Pag4() {
                         <ClaveDeAcceso />
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
+                    <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
@@ -33,12 +50,12 @@ function Seccion1Pag4() {
                     </div>
 
                     <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+                        <simple-input className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
+                        <simple-input className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
+                        <simple-textarea className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
+                    <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
@@ -55,14 +72,14 @@ function Seccion1Pag4() {
                     <div>
 
                     </div>
-                    <button>
-                        <img src={masIcono}></img>
-                    </button>
-                    <button>
-                        <img src={menosIcono}></img>
-                    </button>
+                    <button onClick={handleAddRow}>
+              <img src={masIcono} alt="Agregar fila"></img>
+            </button>
+            <button onClick={handleRemoveRow}>
+              <img src={menosIcono} alt="Eliminar última fila"></img>
+            </button>
 
-                    <table class="table-auto text-center w-full lg:w-10/12">
+                    <table className="table-auto text-center w-full lg:w-10/12">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th className='text-sm lg:text-base'>No°</th>
@@ -74,35 +91,33 @@ function Seccion1Pag4() {
                                 <th className='text-sm lg:text-base'>Nivel de participación</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
+                    <tbody>
+                        {Array.from({ length: rowCount }).map((_, rowIndex) => (
+                            <tr key={rowIndex}>
+                            <td>
+                                <simple-input type="text" placeholder={`No° ${rowIndex + 1}`} />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Grado" />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Nombre completo" />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Adscripción" />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Área de especialización" />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Tareas específicas" />
+                            </td>
+                            <td>
+                                <simple-input type="text" placeholder="Nivel de participación" />
+                            </td>
                             </tr>
-                            <tr>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                            </tr>
-                            <tr>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                                <td>...</td>
-                            </tr>
-                        </tbody>
+                        ))}
+                    </tbody>
                     </table>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
