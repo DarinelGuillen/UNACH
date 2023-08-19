@@ -47,7 +47,7 @@ function Seccion1() {
                             <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
                         </div>
                         
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
