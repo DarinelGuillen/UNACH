@@ -10,24 +10,39 @@ import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
+import { stringify } from 'postcss';
 
 function Seccion1Pag4() {
-    const [rowCount, setRowCount] = useState(1);
-
-  const handleAddRow = () => {
     
-      console.log("🚀 ~ file: Seccion1Pag4.jsx:23 ~ handleAddRow ~ handleAddRow:")
-    if (rowCount < 6) {
-      setRowCount(rowCount + 1);
+    const [rowCount, setRowCount] = useState(1);
+    const [rowData, setRowData] = useState([])  
+    const handleAddRow = () => {
+      if (rowCount < 6) {
+        setRowCount(rowCount);
+        setRowData([...rowData, {}]);
+      }
+    };
+  
+    const handleRemoveRow = () => {
+      if (rowCount > 1) {
+        setRowCount(rowCount - 1);
+        setRowData(rowData.slice(0, -1));
+      }
+    };
+  
+    const handleInputC = (index, key, other) => {
+        const inputElement = document.getElementById(key).value;
+        console.log("🚀 ~ file: Seccion1Pag4.jsx:36 ~ handleInputC ~ inputElement:", inputElement)
+        const updatedRowData = [...rowData];
+        updatedRowData[index][key] = inputElement;
+        setRowData(updatedRowData);
+        console.log("🚀 ~ file: Seccion1Pag4.jsx:37 ~ handleInputC ~ rowData:", rowData)
+    };
+    const HandlerClickFetch=()=>{
+        alert("Data fetch success",rowData)
+        console.log("🚀 ~ file: Seccion1Pag4.jsx:43 ~ HandlerClickFetch ~ JSON.stringify(rowData):", JSON.stringify(rowData))
     }
-  };
-
-  const handleRemoveRow = () => {
-      console.log("🚀 ~ file: Seccion1Pag4.jsx:30 ~ handleRemoveRow ~ handleRemoveRow:")
-    if (rowCount > 1) {
-      setRowCount(rowCount - 1);
-    }
-  };
+  
     return (
         <>
             <Header />
@@ -79,46 +94,49 @@ function Seccion1Pag4() {
               <img src={menosIcono} alt="Eliminar última fila"></img>
             </button>
 
-                    <table className="table-auto text-center w-full lg:w-10/12">
-                        <thead className='bg-[#25313A] h-12 rounded text-white'>
-                            <tr>
-                                <th className='text-sm lg:text-base'>No°</th>
-                                <th className='text-sm lg:text-base'>Grado</th>
-                                <th className='text-sm lg:text-base'>Nombre completo</th>
-                                <th className='text-sm lg:text-base'>Adscripción</th>
-                                <th className='text-sm lg:text-base'>Área de especialización</th>
-                                <th className='text-sm lg:text-base'>Tareas específicas</th>
-                                <th className='text-sm lg:text-base'>Nivel de participación</th>
-                            </tr>
-                        </thead>
-                    <tbody>
-                        {Array.from({ length: rowCount }).map((_, rowIndex) => (
-                            <tr key={rowIndex}>
-                            <td>
-                                <simple-input type="text" placeholder={`No° ${rowIndex + 1}`} />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Grado" />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Nombre completo" />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Adscripción" />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Área de especialización" />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Tareas específicas" />
-                            </td>
-                            <td>
-                                <simple-input type="text" placeholder="Nivel de participación" />
-                            </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    </table>
+            <table className="table-auto text-center w-full lg:w-10/12">
+          <thead className='bg-[#25313A] h-12 rounded text-white'>
+            <tr>
+              <th className='text-sm lg:text-base'>No°</th>
+              <th className='text-sm lg:text-base'>Grado</th>
+              <th className='text-sm lg:text-base'>Nombre completo</th>
+              <th className='text-sm lg:text-base'>Adscripción</th>
+              <th className='text-sm lg:text-base'>Área de especialización</th>
+              <th className='text-sm lg:text-base'>Tareas específicas</th>
+              <th className='text-sm lg:text-base'>Nivel de participación</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rowData.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                <td>
+                <input type="text" placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Grado"  id={`grade${rowIndex}`}  onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Nombre completo"  id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Adscripción"  id={`adscription${rowIndex}`}  onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Área de especialización"  id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Tareas específicas"    id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
+                </td>
+                <td>
+                <input   type="text" placeholder="Nivel de participación"   id={`participationLevel${rowIndex}`}   onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
+                </td>
+
+                 
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <button onClick={(e) =>HandlerClickFetch(e)}>HandlerClickFetch</button>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion1Pag3">
