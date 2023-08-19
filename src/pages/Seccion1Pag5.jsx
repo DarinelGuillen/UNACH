@@ -92,7 +92,7 @@ function Seccion1Pag5() {
                     </div>
 
                     <div className='text-center'>
-                        <p className='font-bold text-xl text-gray-400'> Grado, nombre y firma <b className='font-bold text-xl text-gray-600'>Persona responsable técnica</b> Adscripción</p>
+                        <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
                     <button>

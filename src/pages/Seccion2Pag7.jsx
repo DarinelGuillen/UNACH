@@ -6,6 +6,8 @@ import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
+import masIcono from "../assets/img/Icon/mas.svg";
+import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag7() {
@@ -24,35 +26,98 @@ function Seccion2Pag7() {
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.7  Pregunta de investigación</p>
+                            <p className='text-xl lg:text-3xl'>2.12 Etapa y actividades</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
-                    </div>
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Indique la pregunta o preguntas que guian su investigación.</p>
-                        </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="60px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
-                    </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.8 Objetivo general</p>
-                        </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl'>(El proyecto deberá ajustarse a un año de vigencia)</p>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte cuantas filas necesite*</p>
                     </div>
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Redactando en infinitivo y debe tener claridad suficiente para ser evaluable.</p>
-                        </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="50px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='text-center'>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 1</p>
                     </div>
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Primer semestre de ejecución</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <div className='flex flex-col w-full'>
+                                <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Inicio(Fecha)" id=""></simple-input>
+                                <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Fin(Fecha)" id=""></simple-input>
+                            </div>
+                        </tr>
+                    </table>
+                     <button>
+                        <img src={masIcono}></img>
+                    </button>
+                    <button>
+                        <img src={menosIcono}></img>
+                    </button>
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Actividades a desarrollar</th>
+                                <th>Producto esperado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div className='text-center'>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 2</p>
+                    </div>
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Segundo semestre de ejecución</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <div className='flex flex-col w-full'>
+                                <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Inicio(Fecha)" id=""></simple-input>
+                                <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Fin(Fecha)" id=""></simple-input>
+                            </div>
+                        </tr>
+                    </table>
+                     <button>
+                        <img src={masIcono}></img>
+                    </button>
+                    <button>
+                        <img src={menosIcono}></img>
+                    </button>
+                    <table class="table-auto text-center w-full lg:w-10/12">
+                        <thead className='bg-[#25313A] h-12 rounded text-white'>
+                            <tr>
+                                <th>Actividades a desarrollar</th>
+                                <th>Producto esperado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag6">
                             <button>
