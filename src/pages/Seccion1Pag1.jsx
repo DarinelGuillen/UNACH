@@ -31,48 +31,53 @@ function Seccion1() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
 
                     <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
-                        <p className='text-[#BCB785] text-4xl '>Sección 2: <br />Protocolo del proyecto</p>
+                        <p className='text-[#BCB785] text-4xl '>Sección 1: <br />Protocolo del proyecto</p>
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+                    <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-20">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Título" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Fecha de elaboración de propuesta" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Lugar de realización" id=""></simple-input>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título" id=""></simple-input>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fecha de elaboración de propuesta" id=""></simple-input>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Lugar de realización" id=""></simple-input>
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>1.2 Periodo de ejecición del proyecto </p>
+                    <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-20">
+                    <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
+                            <p className='text-xl lg:text-3xl'>1.2 Periodo de ejerción del proyecto</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                     </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Vigencia:Inicio" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Vigencia:Conclusión" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id=""></simple-input>
+
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Inicio" id=""></simple-input>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Conclusión" id=""></simple-input>
+                        <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id=""></simple-input>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
