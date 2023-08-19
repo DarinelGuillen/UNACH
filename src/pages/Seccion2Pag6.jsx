@@ -24,35 +24,28 @@ function Seccion2Pag6() {
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.7  Pregunta de investigación</p>
+                            <p className='text-xl lg:text-3xl'>2.11 Metodología</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
-                    </div>
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Indique la pregunta o preguntas que guian su investigación.</p>
-                        </div>
+                   
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="60px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
-                    </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.8 Objetivo general</p>
-                        </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
-                    </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
-                    </div>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Diseño metodológico" id="" ></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Técnicas e instrumentos" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Materiales" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Procedimiento para el análisis" id="" ></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Riesgos o amenazas posibles" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Formas de afrontar los riesgos y amenazas" id=""></simple-input>
                         <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Redactando en infinitivo y debe tener claridad suficiente para ser evaluable.</p>
+                            <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Consentimiento informado -Describir la forma en la que los participantes aceptan participar libremente en el desarrollo de la propuesta</p>
                         </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="50px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Escribir aquí" id="" ></simple-input>
+                        <div className='text-center'>
+                            <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Comités éticos, bioéticas y/o debioseguridad Indicar si algún Comité ha avalado la propuesta *indispensable para investigaciones en ciencias de la salud</p>
+                        </div>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Escribir aquí" id=""></simple-input>                    
                     </div>
+                    
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag5">
                             <button>
