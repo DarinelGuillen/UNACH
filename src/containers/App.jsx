@@ -13,6 +13,12 @@ import Seccion2Pag1 from '../pages/Seccion2Pag1.jsx';
 import Seccion2Pag2 from '../pages/Seccion2Pag2.jsx';
 import Seccion2Pag3 from '../pages/Seccion2Pag3.jsx';
 import Seccion2Pag4 from '../pages/Seccion2Pag4.jsx';
+import Seccion2Pag5 from '../pages/Seccion2Pag5.jsx';
+import Seccion2Pag6 from '../pages/Seccion2Pag6.jsx';
+import Seccion2Pag7 from '../pages/Seccion2Pag7.jsx';
+import Seccion2Pag8 from '../pages/Seccion2Pag8.jsx';
+import Seccion2Pag9 from '../pages/Seccion2Pag9.jsx';
+import Seccion2Pag10 from '../pages/Seccion2Pag10.jsx';
 
 function App() {
 
@@ -32,6 +38,12 @@ function App() {
         <Route path='/seccion2Pag2' element={<Seccion2Pag2/>}/>
         <Route path='/seccion2Pag3' element={<Seccion2Pag3/>}/>
         <Route path='/seccion2Pag4' element={<Seccion2Pag4/>}/>
+        <Route path='/seccion2Pag5' element={<Seccion2Pag5/>}/>
+        <Route path='/seccion2Pag6' element={<Seccion2Pag6/>}/>
+        <Route path='/seccion2Pag7' element={<Seccion2Pag7/>}/>
+        <Route path='/seccion2Pag8' element={<Seccion2Pag8/>}/>
+        <Route path='/seccion2Pag9' element={<Seccion2Pag9/>}/>
+        <Route path='/seccion2Pag10' element={<Seccion2Pag10/>}/>
       </Routes>
     </BrowserRouter>
   );

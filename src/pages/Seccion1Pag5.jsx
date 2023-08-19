@@ -154,7 +154,7 @@ function Seccion1Pag5() {
                             </button>
                         </Link>
                         <div className='flex'>
-                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>5 de 5</p>
+                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>5 - 5</p>
                         </div>
                     </div>
 
