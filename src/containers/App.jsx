@@ -10,6 +10,9 @@ import Seccion1Pag3 from '../pages/Seccion1Pag3.jsx';
 import Seccion1Pag4 from '../pages/Seccion1Pag4.jsx';
 import Seccion1Pag5 from '../pages/Seccion1Pag5.jsx';
 import Seccion2Pag1 from '../pages/Seccion2Pag1.jsx';
+import Seccion2Pag2 from '../pages/Seccion2Pag2.jsx';
+import Seccion2Pag3 from '../pages/Seccion2Pag3.jsx';
+import Seccion2Pag4 from '../pages/Seccion2Pag4.jsx';
 
 function App() {
 
@@ -26,6 +29,9 @@ function App() {
         <Route path='/seccion1Pag4' element={<Seccion1Pag4/>}/>
         <Route path='/seccion1Pag5' element={<Seccion1Pag5/>}/>
         <Route path='/seccion2Pag1' element={<Seccion2Pag1/>}/>
+        <Route path='/seccion2Pag2' element={<Seccion2Pag2/>}/>
+        <Route path='/seccion2Pag3' element={<Seccion2Pag3/>}/>
+        <Route path='/seccion2Pag4' element={<Seccion2Pag4/>}/>
       </Routes>
     </BrowserRouter>
   );

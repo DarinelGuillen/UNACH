@@ -8,7 +8,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
-function Seccion2Pag1() {
+function Seccion2Pag4() {
     return ( 
         <>
         <Header />
@@ -21,47 +21,40 @@ function Seccion2Pag1() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-base lg:text-xl mt-9 text-gray-500'>PROTOCOLO DEL PROYECTO. Si el proyecto tiene financiamiento externo, para realizar su trámite de registro NO es necesario llenar esta sección 2, solo adjunte copia del protocolo aprobado por la instancia financiadora, la notificación de aprobación y copia del convenio o carta de asignación de curso que indique el monto de financiamiento y la vigencia. </p>
-                    </div>
-                    <div className='text-center font-bold mt-9 mb-9'>
-                        <p className='text-[#BCB785] text-4xl '>Sección 2 Protocolo del proyecto</p>
-                    </div>
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className='flex flex-col w-full'>
-                            <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Título del proyecto" id=""></simple-input>
+                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                            <p className='text-xl lg:text-3xl'>2.7  Pregunta de investigación</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                    </div>
+                    <div className='text-center'>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
+                    </div>
+                        <div className='text-center'>
+                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Indique la pregunta o preguntas que guian su investigación.</p>
+                        </div>
+                    <div className='flex flex-col w-full'>
+                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="60px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.1 Resumen ejecutivo</p>
+                            <p className='text-xl lg:text-3xl'>2.8 Objetivo general</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 250 palabras</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
                     </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
-                    </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
-                            <p className='text-xl lg:text-3xl'>2.2 Introducción</p>
+                        <div className='text-center'>
+                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Redactando en infinitivo y debe tener claridad suficiente para ser evaluable.</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
-                    </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 300 palabras</p>
-                    </div>
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="50px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
-                        <Link to="/seccion1Pag5">
+                        <Link to="/seccion2Pag3">
                             <button>
                                 <div className='grid'>
                                     <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
@@ -73,12 +66,12 @@ function Seccion2Pag1() {
                         <button>
                             <div className='grid'>
                                 <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                                    <Link to="/seccion2Pag2"><p className='text-2xl lg:text-3xl'>Siguiente</p></Link>
+                                    <Link to="/seccion2Pag5"><p className='text-2xl lg:text-3xl'>Siguiente</p></Link>
                                 </div>
                             </div>
                         </button>
                         <div className='flex'>
-                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>1 - 10</p>
+                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>4 - 10</p>
                         </div>
                     </div>
                 </div>
@@ -88,4 +81,4 @@ function Seccion2Pag1() {
      );
 }
 
-export default Seccion2Pag1;
+export default Seccion2Pag4;
