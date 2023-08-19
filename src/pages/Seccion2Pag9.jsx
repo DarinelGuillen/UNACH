@@ -11,9 +11,9 @@ import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag9() {
-    return ( 
+    return (
         <>
-        <Header />
+            <Header />
             <div className="flex font-sans">
                 <div className="flex hidden lg:block lg:w-1/6 lg:justify-center lg:mt-20 lg:mb-20">
                     <VerticalText />
@@ -23,6 +23,7 @@ function Seccion2Pag9() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
+
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
@@ -30,13 +31,16 @@ function Seccion2Pag9() {
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
+
+                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
+                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
                     </div>
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
-                        </div>
-                        <button>
+
+                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
+                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
+                    </div>
+
+                    <button>
                         <img src={masIcono}></img>
                     </button>
                     <button>
@@ -73,7 +77,7 @@ function Seccion2Pag9() {
                             </tr>
                         </tbody>
                     </table>
-                   
+
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
@@ -81,9 +85,11 @@ function Seccion2Pag9() {
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
+
                     <button>
                         <img src={masIcono}></img>
                     </button>
@@ -95,7 +101,7 @@ function Seccion2Pag9() {
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th>Tipo del producto</th>
-                             
+
                                 <th>Descripción</th>
                             </tr>
                         </thead>
@@ -111,11 +117,11 @@ function Seccion2Pag9() {
                         </tbody>
                     </table>
 
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
-                        </div>
-                   
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
+                    <div className='text-center'>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
+                    </div>
+
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[60px] lg:mb-20'>
                         <Link to="/seccion2Pag8">
                             <button>
                                 <div className='grid'>
@@ -138,9 +144,9 @@ function Seccion2Pag9() {
                     </div>
                 </div>
             </div>
-        <Footer />
+            <Footer />
         </>
-     );
+    );
 }
 
 export default Seccion2Pag9;

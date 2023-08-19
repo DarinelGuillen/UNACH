@@ -9,9 +9,9 @@ import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag1() {
-    return ( 
+    return (
         <>
-        <Header />
+            <Header />
             <div className="flex font-sans">
                 <div className="flex hidden lg:block lg:w-1/6 lg:justify-center lg:mt-20 lg:mb-20">
                     <VerticalText />
@@ -21,45 +21,56 @@ function Seccion2Pag1() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
+
                     <div className='text-center'>
-                        <p className='font-bold text-base lg:text-xl mt-9 text-gray-500'>PROTOCOLO DEL PROYECTO. Si el proyecto tiene financiamiento externo, para realizar su trámite de registro NO es necesario llenar esta sección 2, solo adjunte copia del protocolo aprobado por la instancia financiadora, la notificación de aprobación y copia del convenio o carta de asignación de curso que indique el monto de financiamiento y la vigencia. </p>
+                        <p className='font-bold text-gray-700 text-base mt-9 lg:text-xl'>PROTOCOLO DEL PROYECTO <br /> </p>
+                        <p className='text-base text-gray-700'>Si el proyecto tiene financiamiento externo, para realizar su trámite de registro NO es necesario llenar esta sección 2, solo adjunte copia del protocolo aprobado por la instancia financiadora, la notificación de aprobación y copia del convenio o carta de asignación de curso que indique el monto de financiamiento y la vigencia. </p>
                     </div>
-                    <div className='text-center font-bold mt-9 mb-9'>
-                        <p className='text-[#BCB785] text-4xl '>Sección 2 Protocolo del proyecto</p>
+
+                    <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
+                        <p className='text-[#BCB785] text-4xl '>Sección 2: <br />Protocolo del proyecto</p>
                     </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
+
+                    <div class="flex items-center place-content-around text-center w-full lg:mt-5">
+                        <img src={logoSinNadita} className='h-10 lg:h-20 lg:ml-3'></img>
                         <div className='flex flex-col w-full'>
-                            <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Título del proyecto" id=""></simple-input>
+                            <simple-input class="w-[330px] lg:ml-5 lg:w-[880px]" height="30px" placeholder="Título del proyecto" id=""></simple-input>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        <button><img src={logoSave} className='h-10 mr-2 lg:h-20 lg:mr-6'></img></button>
                     </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
+
+                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.1 Resumen ejecutivo</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 250 palabras</p>
                     </div>
+
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
+
+                    <div class="flex items-center place-content-around text-center w-full mt-7 lg:mt-[35px]">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.2 Introducción</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 300 palabras</p>
                     </div>
+
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
+
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion1Pag5">
                             <button>
@@ -83,9 +94,9 @@ function Seccion2Pag1() {
                     </div>
                 </div>
             </div>
-        <Footer />
+            <Footer />
         </>
-     );
+    );
 }
 
 export default Seccion2Pag1;

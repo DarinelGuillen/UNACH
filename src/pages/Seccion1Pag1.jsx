@@ -35,9 +35,11 @@ function Seccion1() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
-                    <div className='text-center font-bold mt-12 mb-2'>
-                        <p className='text-[#BCB785] text-4xl '>Sección 1 Datos del proyecto</p>
+
+                    <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
+                        <p className='text-[#BCB785] text-4xl '>Sección 2: <br />Protocolo del proyecto</p>
                     </div>
+
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">

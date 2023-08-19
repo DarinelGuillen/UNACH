@@ -9,9 +9,9 @@ import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 
 function Seccion2Pag8() {
-    return ( 
+    return (
         <>
-        <Header />
+            <Header />
             <div className="flex font-sans">
                 <div className="flex hidden lg:block lg:w-1/6 lg:justify-center lg:mt-20 lg:mb-20">
                     <VerticalText />
@@ -28,30 +28,37 @@ function Seccion2Pag8() {
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
-                    <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl'>Describa la infraestructura y los recursos institucionales que se considera utilizar para el desarrollo de la investigación</p>
+
+                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
+                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa la infraestructura y los recursos institucionales que se considera utilizar para el desarrollo de la investigación</p>
                     </div>
+
                     <div className='flex flex-col w-full'>
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Infraestructura" id=""></simple-input>
                         <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Recursos" id=""></simple-input>
                     </div>
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
+                    
+                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.14 Consideraciones éticas</p>
                         </div>
                         <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
                     </div>
-                        <div className='text-center'>
-                            <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Describir los criterios éticos a tomar en cuenta para desarrollar la investigación</p>
-                        </div>
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="50px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+
+                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
+                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describir los criterios éticos a tomar en cuenta para desarrollar la investigación</p>
                     </div>
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
+
+                    <div className='flex flex-col w-full'>
+                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    </div>
+
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-40'>
                         <Link to="/seccion2Pag7">
                             <button>
                                 <div className='grid'>
@@ -74,9 +81,9 @@ function Seccion2Pag8() {
                     </div>
                 </div>
             </div>
-        <Footer />
+            <Footer />
         </>
-     );
+    );
 }
 
 export default Seccion2Pag8;
