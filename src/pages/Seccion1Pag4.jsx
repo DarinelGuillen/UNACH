@@ -13,7 +13,7 @@ import menosIcono from "../assets/img/Icon/menos.svg";
 
 function Seccion1Pag4() {
   const [rowCount, setRowCount] = useState(1);
-  const [rowData, setRowData] = useState([])  
+  const [rowData, setRowData] = useState([])
 
   const handleAddRow = () => {
     if (rowCount < 6) {
@@ -55,25 +55,30 @@ function Seccion1Pag4() {
           </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-            <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-            <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+
+            <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+
+            <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
               <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
             </div>
-            <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
           </div>
 
-          <div className='flex flex-col w-full'>
-            <simple-input className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
-            <simple-input className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Elija un elemento" id=""></simple-input>
-            <simple-textarea className="ml-[30px] lg:ml-[90px]" width="89%" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+          <div className='flex flex-col w-full items-center'>
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id=""></simple-input>
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id=""></simple-input>
+            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
           </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-            <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-            <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+            <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+
+            <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
               <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
             </div>
-            <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
           </div>
 
           <div className='text-center'>
@@ -130,7 +135,7 @@ function Seccion1Pag4() {
               ))}
             </tbody>
           </table>
-          <button onClick={(e) =>HandlerClickFetch(e)}>HandlerClickFetch</button>
+          <button onClick={(e) => HandlerClickFetch(e)}>HandlerClickFetch</button>
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">

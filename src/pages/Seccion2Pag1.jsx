@@ -32,43 +32,49 @@ function Seccion2Pag1() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full lg:mt-5">
-                        <img src={logoSinNadita} className='h-10 lg:h-20 lg:ml-3'></img>
-                        <div className='flex flex-col w-full'>
-                            <simple-input class="w-[330px] lg:ml-5 lg:w-[880px]" height="30px" placeholder="Título del proyecto" id=""></simple-input>
+                        <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] lg:ml-[20px] xl:ml-6 lg:ml-4'></img>
+
+                        <div className='flex flex-col w-full items-center'>
+                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título del proyecto" id=""></simple-input>
                         </div>
-                        <button><img src={logoSave} className='h-10 mr-2 lg:h-20 lg:mr-6'></img></button>
+
+                        <button><img src={logoSave} className='h-[30px] mr-2 lg:w-[40px] lg:h-[50px] md:ml-10 md:mr-7 md:h-[30px] md:mr-[10px] sm:h-[30px] lg:mr-[30px] xl:mr-[35px]'></img></button>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                    <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] xl:ml-2 lg:ml-4'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.1 Resumen ejecutivo</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 250 palabras</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-7 lg:mt-[35px]">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                    <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] xl:ml-2 lg:ml-4'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.2 Introducción</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 300 palabras</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

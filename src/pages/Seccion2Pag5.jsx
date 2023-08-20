@@ -23,11 +23,13 @@ function Seccion2Pag5() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
+                    <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+                    
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.9 Objetivos especificos</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
@@ -38,16 +40,18 @@ function Seccion2Pag5() {
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Desglosan y especifican el contenido del objetivo general.</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-[35px]">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.10 Hipótesis  o supuestos</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
@@ -58,8 +62,8 @@ function Seccion2Pag5() {
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Incluir en caso de que el tipo de investigación lo requiera (opcional)</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

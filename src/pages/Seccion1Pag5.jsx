@@ -14,32 +14,32 @@ import "../assets/css/botoncito.css";
 function Seccion1Pag5() {
 
     const [rowCount, setRowCount] = useState(1);
-    const [rowData, setRowData] = useState([])  
-  
+    const [rowData, setRowData] = useState([])
+
     const handleAddRow = () => {
-      if (rowCount < 6) {
-        setRowCount(rowCount);
-        setRowData([...rowData, {}]);
-      }
+        if (rowCount < 6) {
+            setRowCount(rowCount);
+            setRowData([...rowData, {}]);
+        }
     };
-  
+
     const handleRemoveRow = () => {
-      if (rowCount > 1) {
-        setRowCount(rowCount - 1);
-        setRowData(rowData.slice(0, -1));
-      }
+        if (rowCount > 1) {
+            setRowCount(rowCount - 1);
+            setRowData(rowData.slice(0, -1));
+        }
     };
-  
+
     const handleInputC = (index, key, other) => {
-      const inputElement = document.getElementById(key).value;
-      const updatedRowData = [...rowData];
-      updatedRowData[index][key] = inputElement;
-      setRowData(updatedRowData);
+        const inputElement = document.getElementById(key).value;
+        const updatedRowData = [...rowData];
+        updatedRowData[index][key] = inputElement;
+        setRowData(updatedRowData);
     };
-  
+
     const HandlerClickFetch = () => {
-      alert("Data fetch success", rowData);
-      console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+        alert("Data fetch success", rowData);
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
     };
 
     return (
@@ -57,11 +57,13 @@ function Seccion1Pag5() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
@@ -91,21 +93,21 @@ function Seccion1Pag5() {
                                 </tr>
                             </thead>
                             <tbody>
-                            {rowData.map((row, rowIndex) => (
-                                <tr key={rowIndex}>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                    </td>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                    </td>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
-                                    </td>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
-                                    </td>
-                                </tr>
+                                {rowData.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                                        </td>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                                        </td>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                                        </td>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                                        </td>
+                                    </tr>
                                 ))}
                             </tbody>
                         </table>
@@ -113,11 +115,13 @@ function Seccion1Pag5() {
 
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
@@ -137,28 +141,28 @@ function Seccion1Pag5() {
                                 <th>Nombre de la entidad</th>
                                 <th>Describa el tipo de participación de forma breve</th>
                                 <th>Contacto (Número célular y correo eléctronico)</th>
-                               
+
                             </tr>
                         </thead>
                         <tbody>
-                        {rowData.map((row, rowIndex) => (
-                            <tr key={rowIndex}>
-                                <td>
-                                    <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                </td>
-                                <td>
-                                    <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                </td>
-                                <td>
-                                    <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
-                                </td>
-                            
-                            </tr>
+                            {rowData.map((row, rowIndex) => (
+                                <tr key={rowIndex}>
+                                    <td>
+                                        <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                                    </td>
+                                    <td>
+                                        <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                                    </td>
+                                    <td>
+                                        <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                                    </td>
+
+                                </tr>
                             ))}
                         </tbody>
                     </table>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
+                    <div className='flex place-content-around mt-10 mb-10 lg:mt-72'>
                         <Link to="/seccion1Pag4">
                             <button>
                                 <div className='grid'>

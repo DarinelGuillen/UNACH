@@ -5,7 +5,7 @@ function ClaveDeAcceso() {
 
                 <div className="flex justify-center xl:justify-center lg:justify-center md:justify-center"  >
 
-                    <div className="rounded-full ml-10 bg-gray-500 w-24 h-24 mt-8 md:w-[130px] md:h-[130px] lg:w-[180px] lg:h-[120px] lg:ml-[80px] xl:w-56 xl:h-36 xl:ml-[80px]"></div>
+                    <div className="rounded-full ml-8 bg-gray-500 w-24 h-24 mt-8 md:w-24 md:h-24 lg:w-[180px] lg:h-[120px] lg:ml-[80px] xl:w-56 xl:h-36 xl:ml-[80px]"></div>
 
                     <div className="flex flex-col mt-8 md:mt-[55px] lg:mt-[55px] lg:w-full lg:mt-[45px] xl:w-full xl:mt-[45px] ">
                         <p className="text-center ml-[20px] xl:text-start lg:text-start"> <b>Clave de Registro </b>(Uso exclusivo DI)</p>
