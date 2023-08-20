@@ -17,7 +17,7 @@ function Seccion1Pag4() {
 
   const handleAddRow = () => {
     if (rowCount < 6) {
-      setRowCount(rowCount);
+      setRowCount(rowCount+1);
       setRowData([...rowData, {}]);
     }
   };
@@ -106,25 +106,25 @@ function Seccion1Pag4() {
               {rowData.map((row, rowIndex) => (
                 <tr key={rowIndex}>
                   <td>
-                    <input type="text" placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Grado" id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Nombre completo" id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Adscripción" id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Área de especialización" id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="..." id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Tareas específicas" id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="..." id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
                   </td>
                   <td>
-                    <input type="text" placeholder="Nivel de participación" id={`participationLevel${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
+                    <input type="text" className='text-center' placeholder="Nivel de participación" id={`participationLevel${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
                   </td>
                 </tr>
               ))}
