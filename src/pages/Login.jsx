@@ -30,13 +30,13 @@ function Login() {
                                     </div>
                                 </button>
                             </Link>
-                            <button>
+                            <Link to="/seccion1Pag1"><button>
                                 <div className='estiloBotonSiguiente grid'>
                                     <div className='grid place-content-center'>
                                         <p>Siguiente</p>
                                     </div>
                                 </div>
-                            </button>
+                            </button></Link>
                             <div className='flex'>
                                 <button>
                                     <Link to="/registro" className='estiloTextoRegistro items-center'>Registrate</Link>
