@@ -83,16 +83,16 @@ function Seccion1Pag5() {
                                 {rowData.map((row, rowIndex) => (
                                     <tr key={rowIndex}>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
                                         </td>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`type${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `type${rowIndex}`, e.target.value)} />
                                         </td>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`expected_research_product_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `expected_research_product_id${rowIndex}`, e.target.value)} />
                                         </td>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`other${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `other${rowIndex}`, e.target.value)} />
                                         </td>
                                     </tr>
                                 ))}
@@ -140,13 +140,13 @@ function Seccion1Pag5() {
                                 {rowData.map((row, rowIndex) => (
                                     <tr key={rowIndex}>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `name${rowIndex}`, e.target.value)} />
                                         </td>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`description${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `description${rowIndex}`, e.target.value)} />
                                         </td>
                                         <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                                            <input type="text" className='text-center' placeholder="..." id={`contact_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `contact_name${rowIndex}`, e.target.value)} />
                                         </td>
 
                                     </tr>

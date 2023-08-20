@@ -35,13 +35,13 @@ function Seccion1Pag3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del Cuerpo Académico (CA)" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Estatus del (CA)" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del grupo colegiado de investigación" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia donde está formalizado el grupo o CA (Ej. PRODEP, DGIP-UNACH...)" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Redes de colaboración" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Indicar nombre de la red" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Línea de investigación a desarrollar en el proyecto" id=""></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del Cuerpo Académico (CA)" id="name"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Estatus del (CA)" id="status"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del grupo colegiado de investigación" id="research_group_name"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia donde está formalizado el grupo o CA (Ej. PRODEP, DGIP-UNACH...)" id="group_instance"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Redes de colaboración" id="collaboration_networks"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Indicar nombre de la red" id="network_name"></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Línea de investigación a desarrollar en el proyecto" id="research_line"></simple-input>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-10">
@@ -60,12 +60,12 @@ function Seccion1Pag3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id=""></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id=""></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id=""></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id=""></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Año de la convocatoria" id=""></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id=""></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type"></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution"></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program"></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link"></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Año de la convocatoria" id="year"></simple-input>
+                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance"></simple-input>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

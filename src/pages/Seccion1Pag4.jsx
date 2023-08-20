@@ -66,8 +66,8 @@ function Seccion1Pag4() {
           </div>
 
           <div className='flex flex-col w-full items-center'>
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id=""></simple-input>
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id=""></simple-input>
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="scope"></simple-input>  {/*checkboxito*/}
             <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
           </div>
 
@@ -108,22 +108,22 @@ function Seccion1Pag4() {
                       <input type="text" className='text-center' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`academic_degree${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `academic_degree${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`affiliation_center_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `affiliation_center_id${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`specialization_area${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization_area${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`tasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `tasks${rowIndex}`, e.target.value)} />
                     </td>
                     <td>
-                      <input type="text" className='text-center' placeholder="..." id={`participationLevel${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
+                      <input type="text" className='text-center' placeholder="..." id={`participation_level${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participation_level${rowIndex}`, e.target.value)} />
                     </td>
                   </tr>
                 ))}
