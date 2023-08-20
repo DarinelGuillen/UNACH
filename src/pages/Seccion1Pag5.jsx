@@ -17,10 +17,10 @@ function Seccion1Pag5() {
     const [rowData, setRowData] = useState([])
 
     const handleAddRow = () => {
-        if (rowCount < 6) {
-            setRowCount(rowCount);
-            setRowData([...rowData, {}]);
-        }
+      if (rowCount < 6) {
+        setRowCount(rowCount);
+        setRowData([...rowData, {}]);
+      }
     };
 
     const handleRemoveRow = () => {

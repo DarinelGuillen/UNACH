@@ -17,8 +17,8 @@ function Seccion2Pag9() {
     const [rowData, setRowData] = useState([])  
   
     const handleAddRow = () => {
-      if (rowCount < 6) {
-        setRowCount(rowCount);
+      if (rowCount < 7) {
+        setRowCount(rowCount+1);
         setRowData([...rowData, {}]);
       }
     };
