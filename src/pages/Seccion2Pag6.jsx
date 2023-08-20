@@ -30,12 +30,12 @@ function Seccion2Pag6() {
                     </div>
 
                     <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Tipo de financiamiento" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Institución/fuente" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Convocatoria/programa" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Enlace de la convocatoria" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Año de la convocatoria" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px] w-[330px] lg:w-[880px]" height="30px" placeholder="Instancia dictaminadora" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Tipo de financiamiento" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Institución/fuente" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Convocatoria/programa" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Enlace de la convocatoria" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Año de la convocatoria" id=""></simple-input>
+                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" placeholder="Instancia dictaminadora" id=""></simple-input>
 
                         <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                             <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Consentimiento informado -Describir la forma en la que los participantes aceptan participar libremente en el desarrollo de la propuesta</p>

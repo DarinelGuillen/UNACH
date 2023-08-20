@@ -37,7 +37,7 @@ function Seccion1Pag4() {
   };
 
   const HandlerClickFetch = () => {
-    alert("Data fetch success", rowData);
+    alert("Datos guardaditos", rowData);
     console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
   };
 
@@ -88,55 +88,59 @@ function Seccion1Pag4() {
             <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
           </div>
           <div></div>
-          <button onClick={handleAddRow}>
-            <img src={masIcono} alt="Agregar fila"></img>
-          </button>
-          <button onClick={handleRemoveRow}>
-            <img src={menosIcono} alt="Eliminar última fila"></img>
-          </button>
-
-          <table className="table-auto text-center w-full lg:w-10/12">
-            <thead className='bg-[#25313A] h-12 rounded text-white'>
-              <tr>
-                <th className='text-sm lg:text-base'>No°</th>
-                <th className='text-sm lg:text-base'>Grado</th>
-                <th className='text-sm lg:text-base'>Nombre completo</th>
-                <th className='text-sm lg:text-base'>Adscripción</th>
-                <th className='text-sm lg:text-base'>Área de especialización</th>
-                <th className='text-sm lg:text-base'>Tareas específicas</th>
-                <th className='text-sm lg:text-base'>Nivel de participación</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rowData.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  <td>
-                    <input type="text" className='text-center' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
-                  </td>
-                  <td>
-                    <input type="text" className='text-center' placeholder="..." id={`participationLevel${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
-                  </td>
+          <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
+            <table className="table-auto text-center w-full lg:w-10/12">
+              <thead className='bg-[#25313A] h-12 rounded text-white'>
+                <tr>
+                  <th className='text-sm lg:text-base'>No°</th>
+                  <th className='text-sm lg:text-base'>Grado</th>
+                  <th className='text-sm lg:text-base'>Nombre completo</th>
+                  <th className='text-sm lg:text-base'>Adscripción</th>
+                  <th className='text-sm lg:text-base'>Área de especialización</th>
+                  <th className='text-sm lg:text-base'>Tareas específicas</th>
+                  <th className='text-sm lg:text-base'>Nivel de participación</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <button onClick={(e) => HandlerClickFetch(e)}>HandlerClickFetch</button>
-
+              </thead>
+              <tbody>
+                {rowData.map((row, rowIndex) => (
+                  <tr key={rowIndex}>
+                    <td>
+                      <input type="text" className='text-center' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`adscription${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `adscription${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`specialization${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`specificTasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specificTasks${rowIndex}`, e.target.value)} />
+                    </td>
+                    <td>
+                      <input type="text" className='text-center' placeholder="..." id={`participationLevel${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participationLevel${rowIndex}`, e.target.value)} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className='grid place-content-center ml-5 mr-5'>
+                <button onClick={handleAddRow}>
+                    <img src={masIcono} alt="Agregar fila"></img>
+                </button>
+                <button onClick={handleRemoveRow}>
+                    <img src={menosIcono} alt="Eliminar última fila"></img>
+                </button>
+            </div>
+        </div>
+        <div className='flex justify-center mt-9'>
+          <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
+        </div>
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">
               <button>

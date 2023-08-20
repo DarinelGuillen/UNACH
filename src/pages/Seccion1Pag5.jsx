@@ -15,31 +15,26 @@ function Seccion1Pag5() {
 
     const [rowCount, setRowCount] = useState(1);
     const [rowData, setRowData] = useState([])
-
+  
     const handleAddRow = () => {
-      if (rowCount < 6) {
-        setRowCount(rowCount);
+      if (rowCount < 10) {
+        setRowCount(rowCount+1);
         setRowData([...rowData, {}]);
       }
     };
-
+  
     const handleRemoveRow = () => {
-        if (rowCount > 1) {
-            setRowCount(rowCount - 1);
-            setRowData(rowData.slice(0, -1));
-        }
+      if (rowCount > 1) {
+        setRowCount(rowCount - 1);
+        setRowData(rowData.slice(0, -1));
+      }
     };
-
+  
     const handleInputC = (index, key, other) => {
-        const inputElement = document.getElementById(key).value;
-        const updatedRowData = [...rowData];
-        updatedRowData[index][key] = inputElement;
-        setRowData(updatedRowData);
-    };
-
-    const HandlerClickFetch = () => {
-        alert("Data fetch success", rowData);
-        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+      const inputElement = document.getElementById(key).value;
+      const updatedRowData = [...rowData];
+      updatedRowData[index][key] = inputElement;
+      setRowData(updatedRowData);
     };
 
     return (
@@ -73,16 +68,8 @@ function Seccion1Pag5() {
                     <div className='text-center'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
-
-                    <button onClick={handleAddRow}>
-                        <img src={masIcono} alt="Agregar fila"></img>
-                    </button>
-                    <button onClick={handleRemoveRow}>
-                        <img src={menosIcono} alt="Eliminar última fila"></img>
-                    </button>
-
                     <div>
-
+                    <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
                         <table class="table-auto text-center w-ful lg:w-10/12">
                             <thead className='bg-[#25313A] h-12 rounded text-white'>
                                 <tr>
@@ -111,6 +98,18 @@ function Seccion1Pag5() {
                                 ))}
                             </tbody>
                         </table>
+                        <div className='grid place-content-center ml-5 mr-5'>
+                            <button onClick={handleAddRow}>
+                                <img src={masIcono} alt="Agregar fila"></img>
+                            </button>
+                            <button onClick={handleRemoveRow}>
+                                <img src={menosIcono} alt="Eliminar última fila"></img>
+                            </button>
+                        </div>
+                    </div>
+                    <div className='flex justify-center mt-9'>
+                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
+                    </div>
                     </div>
 
 
@@ -127,41 +126,45 @@ function Seccion1Pag5() {
                     <div className='text-center'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
-
-                    <button onClick={handleAddRow}>
-                        <img src={masIcono} alt="Agregar fila"></img>
-                    </button>
-                    <button onClick={handleRemoveRow}>
-                        <img src={menosIcono} alt="Eliminar última fila"></img>
-                    </button>
-
-                    <table class="table-auto text-center w-full lg:w-10/12">
-                        <thead className='bg-[#25313A] h-12 rounded text-white'>
-                            <tr>
-                                <th>Nombre de la entidad</th>
-                                <th>Describa el tipo de participación de forma breve</th>
-                                <th>Contacto (Número célular y correo eléctronico)</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {rowData.map((row, rowIndex) => (
-                                <tr key={rowIndex}>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                    </td>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                    </td>
-                                    <td>
-                                        <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
-                                    </td>
+                    <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
+                        <table class="table-auto text-center w-full lg:w-10/12">
+                            <thead className='bg-[#25313A] h-12 rounded text-white'>
+                                <tr>
+                                    <th>Nombre de la entidad</th>
+                                    <th>Describa el tipo de participación de forma breve</th>
+                                    <th>Contacto (Número célular y correo eléctronico)</th>
 
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {rowData.map((row, rowIndex) => (
+                                    <tr key={rowIndex}>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                                        </td>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
+                                        </td>
+                                        <td>
+                                            <input type="text" className='text-center' placeholder="..." id={`fullName${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `fullName${rowIndex}`, e.target.value)} />
+                                        </td>
 
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                        <div className='grid place-content-center ml-5 mr-5'>
+                            <button onClick={handleAddRow}>
+                                <img src={masIcono} alt="Agregar fila"></img>
+                            </button>
+                            <button onClick={handleRemoveRow}>
+                                <img src={menosIcono} alt="Eliminar última fila"></img>
+                            </button>
+                        </div>
+                    </div>
+                    <div className='flex justify-center mt-9'>
+                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
+                    </div>
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-72'>
                         <Link to="/seccion1Pag4">
                             <button>

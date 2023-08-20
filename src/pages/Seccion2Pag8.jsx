@@ -55,7 +55,7 @@ function Seccion2Pag8() {
                     </div>
 
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="80%" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-[161px]'>

@@ -35,7 +35,7 @@ function Seccion2Pag10() {
                     </div>
 
                     <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] w-[330px] lg:ml-[90px] lg:w-[880px]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='text-center mt-16'>
