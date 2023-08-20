@@ -3,4 +3,7 @@
     text-orientation: upright;
     color: #BCB785;
 }
+.seccionVertical:hover{
+    color: #ffffff;
+}
 
