@@ -40,11 +40,14 @@ function Seccion1() {
                     </div>
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-20">
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+                        
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
                         </div>
+                        
                         <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>

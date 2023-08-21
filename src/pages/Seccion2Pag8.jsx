@@ -21,29 +21,34 @@ function Seccion2Pag8() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
+
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.13 Infraestructura y recursos disponibles</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa la infraestructura y los recursos institucionales que se considera utilizar para el desarrollo de la investigación</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Infraestructura" id=""></simple-input>
-                        <simple-input class="ml-[30px] lg:ml-[90px]" width="89%" height="30px" placeholder="Recursos" id=""></simple-input>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Infraestructura" id=""></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Recursos" id=""></simple-input>
                     </div>
-                    
+
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.14 Consideraciones éticas</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center'>
@@ -54,8 +59,8 @@ function Seccion2Pag8() {
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describir los criterios éticos a tomar en cuenta para desarrollar la investigación</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" height="80%" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-[161px]'>

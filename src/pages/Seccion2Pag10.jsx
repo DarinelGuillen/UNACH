@@ -23,26 +23,28 @@ function Seccion2Pag10() {
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-                        <img src={logoSinNadita} className='h-10 lg:h-20'></img>
-                        <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
+                        <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
+                        <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.17 Referencias </p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+
+                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>Indicar las referencias en estilo de citación de la American Psychological Association, APA 7º edición</p>
                     </div>
 
-                    <div className='flex flex-col w-full'>
-                        <simple-textarea class="ml-[30px] lg:ml-[90px]" width="89%" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <div className='flex flex-col w-full items-center'>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='text-center mt-16'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Declaración de cesión de derechos, de originalidad y autoría</p>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 mt-2 lg:ml-[85px]'>
+                    <div className='text-center w-5/6 mt-2 ml-14 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Manifiesto bajo protesta de decir verdad que esta propuesta es original y soy el autor intelectual y la inclusión de material de terceros en esta propuesta está debidamente referenciada y cuento con la autorización respecto de los derechos de Claro que la propuesta no presenta plagios parciales o totales ni controversiales legales a la vez que el desarrollo de la investigación adoptaré las medidas éticas y consideraciones legales pertinentes a sí mismo se darán los créditos a la Universidad Autónoma de Chiapas de los productos académicos que de esta propuesta emanen al participar en este proceso de registro acato los procedimientos lineamientos y políticas que la Universidad Autónoma de Chiapas establezca para tales efectos.</p>
                     </div>
 

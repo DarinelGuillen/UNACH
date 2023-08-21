@@ -35,10 +35,10 @@ function Seccion2Pag1() {
                         <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] lg:ml-[20px] xl:ml-6 lg:ml-4'></img>
 
                         <div className='flex flex-col w-full items-center'>
-                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título del proyecto" id=""></simple-input>
+                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%]" height="30px" placeholder="Título del proyecto" id=""></simple-input>
                         </div>
 
-                        <button><img src={logoSave} className='h-[30px] mr-2 lg:w-[40px] lg:h-[50px] md:ml-10 md:mr-7 md:h-[30px] md:mr-[10px] sm:h-[30px] lg:mr-[30px] xl:mr-[35px]'></img></button>
+                        <button><img src={logoSave} className='h-[30px] mr-2 ml-2 lg:w-[40px] lg:h-[50px] md:ml-10 md:mr-[20px] md:h-[30px] md:mr-[10px] sm:h-[30px] sm:mr-[10px] sm:ml-[12px] lg:mr-[30px] xl:mr-[35px]'></img></button>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
@@ -56,7 +56,7 @@ function Seccion2Pag1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-7 lg:mt-[35px]">
@@ -74,7 +74,7 @@ function Seccion2Pag1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
