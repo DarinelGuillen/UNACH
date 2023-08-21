@@ -37,6 +37,12 @@ function Seccion1Pag5() {
       setRowData(updatedRowData);
     };
 
+    const HandlerClickFetch = () => {
+        alert("Datos guardaditos", rowData);
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+      };
+    
+
     return (
         <>
             <Header />
