@@ -15,33 +15,33 @@ function Seccion1Pag5() {
 
     const [rowCount, setRowCount] = useState(1);
     const [rowData, setRowData] = useState([])
-  
+
     const handleAddRow = () => {
-      if (rowCount < 10) {
-        setRowCount(rowCount+1);
-        setRowData([...rowData, {}]);
-      }
+        if (rowCount < 10) {
+            setRowCount(rowCount + 1);
+            setRowData([...rowData, {}]);
+        }
     };
-  
+
     const handleRemoveRow = () => {
-      if (rowCount > 1) {
-        setRowCount(rowCount - 1);
-        setRowData(rowData.slice(0, -1));
-      }
+        if (rowCount > 1) {
+            setRowCount(rowCount - 1);
+            setRowData(rowData.slice(0, -1));
+        }
     };
-  
+
     const handleInputC = (index, key, other) => {
-      const inputElement = document.getElementById(key).value;
-      const updatedRowData = [...rowData];
-      updatedRowData[index][key] = inputElement;
-      setRowData(updatedRowData);
+        const inputElement = document.getElementById(key).value;
+        const updatedRowData = [...rowData];
+        updatedRowData[index][key] = inputElement;
+        setRowData(updatedRowData);
     };
 
     const HandlerClickFetch = () => {
         alert("Datos guardaditos", rowData);
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-      };
-    
+    };
+
 
     return (
         <>
@@ -74,37 +74,39 @@ function Seccion1Pag5() {
                     <div className='text-center'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
-                    <div>
-                    <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
-                        <table class="table-auto text-center w-ful lg:w-10/12">
-                            <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                <tr>
-                                    <th className='text-sm lg:text-base'>Nombre del participante</th>
-                                    <th className='text-sm lg:text-base'>Tipo de participante</th>
-                                    <th className='text-sm lg:text-base'>Producto esperado</th>
-                                    <th className='text-sm lg:text-base'>Especifique</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {rowData.map((row, rowIndex) => (
-                                    <tr key={rowIndex}>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
-                                        </td>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`type${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `type${rowIndex}`, e.target.value)} />
-                                        </td>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`expected_research_product_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `expected_research_product_id${rowIndex}`, e.target.value)} />
-                                        </td>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`other${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `other${rowIndex}`, e.target.value)} />
-                                        </td>
+                    <div className='flex'>
+                        <div className='flex flex-col items-center w-full'>
+                            <table class="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
+                                <thead className='bg-[#25313A] h-12 rounded text-white'>
+                                    <tr>
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Nombre del participante</th>
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Tipo de participante</th>
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Producto esperado</th>
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Especifique</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        <div className='grid place-content-center ml-5 mr-5'>
+                                </thead>
+                                <tbody>
+                                    {rowData.map((row, rowIndex) => (
+                                        <tr key={rowIndex}>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
+                                            </td>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`type${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `type${rowIndex}`, e.target.value)} />
+                                            </td>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`expected_research_product_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `expected_research_product_id${rowIndex}`, e.target.value)} />
+                                            </td>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`other${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `other${rowIndex}`, e.target.value)} />
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
                             <button onClick={handleAddRow}>
                                 <img src={masIcono} alt="Agregar fila"></img>
                             </button>
@@ -113,9 +115,9 @@ function Seccion1Pag5() {
                             </button>
                         </div>
                     </div>
+
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
-                    </div>
+                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
                     </div>
 
 
@@ -132,44 +134,48 @@ function Seccion1Pag5() {
                     <div className='text-center'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
-                    <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
-                        <table class="table-auto text-center w-full lg:w-10/12">
-                            <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                <tr>
-                                    <th>Nombre de la entidad</th>
-                                    <th>Describa el tipo de participación de forma breve</th>
-                                    <th>Contacto (Número célular y correo eléctronico)</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {rowData.map((row, rowIndex) => (
-                                    <tr key={rowIndex}>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `name${rowIndex}`, e.target.value)} />
-                                        </td>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`description${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `description${rowIndex}`, e.target.value)} />
-                                        </td>
-                                        <td>
-                                            <input type="text" className='text-center' placeholder="..." id={`contact_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `contact_name${rowIndex}`, e.target.value)} />
-                                        </td>
-
+                    <div className='flex'>
+                        <div className='flex flex-col items-center w-full'>
+                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
+                                <thead className='bg-[#25313A] h-12 rounded text-white'>
+                                    <tr>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre de la entidad</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Describa el tipo de participación de forma breve</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Contacto (Número célular y correo eléctronico)</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                        <div className='grid place-content-center ml-5 mr-5'>
+                                </thead>
+                                <tbody>
+                                    {rowData.map((row, rowIndex) => (
+                                        <tr key={rowIndex}>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `name${rowIndex}`, e.target.value)} />
+                                            </td>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`description${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `description${rowIndex}`, e.target.value)} />
+                                            </td>
+                                            <td>
+                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`contact_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `contact_name${rowIndex}`, e.target.value)} />
+                                            </td>
+
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
                             <button onClick={handleAddRow}>
-                                <img src={masIcono} alt="Agregar fila"></img>
+                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
                             </button>
                             <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} alt="Eliminar última fila"></img>
+                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
                             </button>
                         </div>
                     </div>
+
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
+                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
                     </div>
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-72'>
                         <Link to="/seccion1Pag4">

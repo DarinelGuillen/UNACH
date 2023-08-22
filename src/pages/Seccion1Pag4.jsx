@@ -17,7 +17,7 @@ function Seccion1Pag4() {
 
   const handleAddRow = () => {
     if (rowCount < 7) {
-      setRowCount(rowCount+1);
+      setRowCount(rowCount + 1);
       setRowData([...rowData, {}]);
     }
   };
@@ -87,60 +87,66 @@ function Seccion1Pag4() {
           <div className='text-center p-10'>
             <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
           </div>
-          <div></div>
-          <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
-            <table className="table-auto text-center w-full lg:w-10/12">
-              <thead className='bg-[#25313A] h-12 rounded text-white'>
-                <tr>
-                  <th className='text-sm lg:text-base'>No°</th>
-                  <th className='text-sm lg:text-base'>Grado</th>
-                  <th className='text-sm lg:text-base'>Nombre completo</th>
-                  <th className='text-sm lg:text-base'>Adscripción</th>
-                  <th className='text-sm lg:text-base'>Área de especialización</th>
-                  <th className='text-sm lg:text-base'>Tareas específicas</th>
-                  <th className='text-sm lg:text-base'>Nivel de participación</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rowData.map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    <td>
-                      <input type="text" className='text-center' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`academic_degree${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `academic_degree${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`affiliation_center_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `affiliation_center_id${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`specialization_area${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization_area${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`tasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `tasks${rowIndex}`, e.target.value)} />
-                    </td>
-                    <td>
-                      <input type="text" className='text-center' placeholder="..." id={`participation_level${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participation_level${rowIndex}`, e.target.value)} />
-                    </td>
+
+          <div className='flex'>
+            <div className='flex flex-col items-center w-full'>
+              <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
+                <thead className='bg-[#25313A] h-12 rounded text-white'>
+                  <tr>
+                    <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>No°</th>
+                    <th className='font-normal text-sm w-[70px] sm:text-base sm:font-medium lg:text-base'>Grado</th>
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre completo</th>
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Adscripción</th>
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Área de especialización</th>
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tareas específicas</th>
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nivel de participación</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            <div className='grid place-content-center ml-5 mr-5'>
-                <button onClick={handleAddRow}>
-                    <img src={masIcono} alt="Agregar fila"></img>
-                </button>
-                <button onClick={handleRemoveRow}>
-                    <img src={menosIcono} alt="Eliminar última fila"></img>
-                </button>
+                </thead>
+                <tbody>
+                  {rowData.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`academic_degree${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `academic_degree${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`affiliation_center_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `affiliation_center_id${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`specialization_area${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization_area${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`tasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `tasks${rowIndex}`, e.target.value)} />
+                      </td>
+                      <td>
+                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`participation_level${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participation_level${rowIndex}`, e.target.value)} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-        </div>
-        <div className='flex justify-center mt-9'>
-          <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
-        </div>
+
+            <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
+              <button onClick={handleAddRow}>
+                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
+              </button>
+              <button onClick={handleRemoveRow}>
+                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
+              </button>
+            </div>
+            
+          </div>
+
+          <div className='flex justify-center mt-9'>
+            <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+          </div>
+
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">
               <button>
