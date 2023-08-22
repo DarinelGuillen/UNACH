@@ -35,14 +35,14 @@ class SimpleTextArea extends HTMLElement {
       const newValue = e.target.value;
 
       // Update the value for the id in dataDictionary
-      dataDictionary[newKey] = newValue;
+      dataDictionaryTextArea[newKey] = newValue;
       console.log(
-        "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionary:",
-        dataDictionary
+        "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionaryTextArea:",
+        dataDictionaryTextArea
       );
 
       // Create a custom event to notify the change
-      const event = new CustomEvent('textAreaChange', { detail: dataDictionary });
+      const event = new CustomEvent('textAreaChange', { detail: dataDictionaryTextArea });
       this.dispatchEvent(event);
     });
   }
