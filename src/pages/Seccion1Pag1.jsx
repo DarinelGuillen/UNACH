@@ -11,19 +11,7 @@ import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 
 function Seccion1() {
-    const [inputValues, setInputValues] = useState({
-        password: '',
-        email: '',
-    });
-
-    const handleInputChange = (id, value) => {
-        setInputValues((prevValues) => ({
-            ...prevValues,
-            [id]: value,
-        }));
-        console.log("🚀 ~ file: Home.jsx:20 ~ handleInputChange ~ inputValues:", inputValues);
-    };
-
+    
     return (
         <>
             <Header />
@@ -54,7 +42,7 @@ function Seccion1() {
                         <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título" id=""></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título" id="title"></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fecha de elaboración de propuesta" id=""></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Lugar de realización" id=""></simple-input>
                     </div>
