@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import SharedDataContext from "../contexts/SharedDataContext";
 import { dataDictionary } from "../webComponents/input";
+import { dataDictionaryTextArea } from "../webComponents/textArea";
 import logoSave from "../assets/img/Icon/Save.svg"
 function ButtonSaveInfo() {
   const { isShareData, setIsShareData } = useContext(SharedDataContext);
