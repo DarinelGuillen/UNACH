@@ -14,7 +14,7 @@ function ClaveDeAcceso() {
                         <simple-input class="w-[200px] ml-[20px] sm:w-[250px] md:w-[300px] lg:w-[200px] lg:ml-[10px] xl:w-[300px]" height="20%" type="text" placeholder="DI" id="text"></simple-input>
                     </div>
                 </div>
-        <Iconos/>
+                <Iconos />
             </div>
         </>
     );
