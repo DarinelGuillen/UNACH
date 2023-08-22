@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-// import Home from '../pages/Home'
 import Home from '../pages/Home.jsx';
 import PlayGround from '../pages/PlayGround.jsx';
 import Login from '../pages/Login.jsx';
@@ -19,11 +19,15 @@ import Seccion2Pag7 from '../pages/Seccion2Pag7.jsx';
 import Seccion2Pag8 from '../pages/Seccion2Pag8.jsx';
 import Seccion2Pag9 from '../pages/Seccion2Pag9.jsx';
 import Seccion2Pag10 from '../pages/Seccion2Pag10.jsx';
-
+//Contexts 
+import SharedDataContext from '../contexts/SharedDataContext.js';
 function App() {
+  const [isShareData, setIsShareData] = useState("");
+
 
   return (
     <BrowserRouter>
+    <SharedDataContext.Provider value={{ isShareData, setIsShareData }}>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/play" element={<PlayGround/>}/>
@@ -45,6 +49,7 @@ function App() {
         <Route path='/seccion2Pag9' element={<Seccion2Pag9/>}/>
         <Route path='/seccion2Pag10' element={<Seccion2Pag10/>}/>
       </Routes>
+    </SharedDataContext.Provider>
     </BrowserRouter>
   );
 }

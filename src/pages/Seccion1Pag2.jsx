@@ -1,3 +1,4 @@
+import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
@@ -7,8 +8,17 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 function Seccion1Pag1() {
+    const { isShareData } = useContext(SharedDataContext);
+
+    useEffect(() => {
+        console.log("🚀 ~ useEffect ~ isShareData:", isShareData);
+    }, [isShareData]); 
+
+    
+    
     return (
         <>
             <Header />
@@ -25,7 +35,8 @@ function Seccion1Pag1() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.3 Persona responsable técnica</p>
                         </div>
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+                        <ButtonSaveInfo/>
+                        {/* <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button> */}
                     </div>
                     <div className='flex flex-col w-full items-center'>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre completo" id="full_name"></simple-input>

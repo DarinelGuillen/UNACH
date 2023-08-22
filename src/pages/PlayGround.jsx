@@ -1,35 +1,9 @@
-import { useState } from 'react';
+import { useContext,useEffect } from 'react';
+import SharedDataContext from '../contexts/SharedDataContext';
+import { dataDictionary } from '../webComponents/input';
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
-function navigateToPage() {
-  // Navigation logic
-  console.log('Navigating to another page');
-}
-
-function showAlert() {
-  // Alert logic
-  alert('This is an alert');
-}
-
-function performCustomAction() {
-  // Custom action logic
-  console.log('Custom action performed');
-}
 function PlayGround() {
-  const [inputValues, setInputValues] = useState({
-    password: '',
-    email: '',
-  });
-
-  const handleInputChange = (id, value) => {
-    setInputValues((prevValues) => ({
-      ...prevValues,
-      [id]: value,
-    }));
-    console.log("🚀 ~ file: Home.jsx:20 ~ handleInputChange ~ inputValues:", inputValues);
-  };
-
-
-
 
   return (
     <>
@@ -38,12 +12,25 @@ function PlayGround() {
         <div className="box">
           <h1>First Componets</h1>
           <h1>Input simple look in console</h1>
-          <simple-input type="email" placeholder="Enter email" id="emailInput" width="20%"></simple-input>
-          <simple-input type="password" placeholder="Enter password" id="passwordInput" width="50%"></simple-input>
+          <ButtonSaveInfo/>
+          <simple-input
+            type="email"
+            type1OR2="1"
+            placeholder="Enter email"
+            id="emailInput"
+            width="80%"
+          ></simple-input>
+          <simple-input
+            type="textArea"
+            type1OR2="2"
+            placeholder="Enter password"
+            id="textArea"
+            width="80%"
+          ></simple-input>
           <simple-input type="number" placeholder="Enter Phone" id="PhoneInput" width="90%"></simple-input>
-          <simple-input type="text" placeholder="Enter text" id="textareaInput" width="50%" height="auto"></simple-input>
+          <simple-input type="textArea" placeholder="Enter text" id="textareaInput" width="50%" height="auto"></simple-input>
           <simple-textarea type="text" placeholder="Web componet Input-mediano TextArea" id="textareaInput1" width="60%" height="90px"></simple-textarea>
-          <simple-textarea type="text" placeholder="Web componet Input-Grande TextArea" id="textareaInput2" width="100%" height="90px"></simple-textarea>
+          <simple-textarea type="textArea" placeholder="Web componet Input-Grande TextArea" id="textareaInput2" width="100%" height="90px"></simple-textarea>
 
 
         </div>
@@ -92,3 +79,18 @@ function PlayGround() {
 }
 
 export default PlayGround;
+
+function navigateToPage() {
+  // Navigation logic
+  console.log('Navigating to another page');
+}
+
+function showAlert() {
+  // Alert logic
+  alert('This is an alert');
+}
+
+function performCustomAction() {
+  // Custom action logic
+  console.log('Custom action performed');
+}
