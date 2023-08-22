@@ -6,12 +6,16 @@ import logoSave from "../assets/img/Icon/Save.svg"
 function ButtonSaveInfo() {
   const { isShareData, setIsShareData } = useContext(SharedDataContext);
 
-    const HandlerClickSetData =((e)=>{
-        e.preventDefault();
-        setIsShareData(dataDictionary);
-        console.log("🚀 ~ file: button.jsx:13 ~ HandlerClickSetData ~ isShareData:", isShareData)
-         
-    })
+  const HandlerClickSetData = ((e) => {
+    e.preventDefault();
+    
+    // Merge dataDictionary and dataDictionaryTextArea into a single object
+    const mergedData = { ...dataDictionary, ...dataDictionaryTextArea };
+    
+    setIsShareData(mergedData);
+    console.log("🚀 ~ file: button.jsx:13 ~ HandlerClickSetData ~ isShareData:", isShareData);
+  })
+  
 
     useEffect(() => {
         console.log("🚀 ~ useEffect ~ dataDictionary:", dataDictionary);
