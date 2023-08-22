@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ColorComponent = '0000'; // Cambia este valor según tus necesidades
+const ColorComponent = '1111'; // Cambia este valor según tus necesidades
 
 function Iconos() {
     const obtenerClaseColor = (indice) => {
