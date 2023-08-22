@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
@@ -6,18 +6,55 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
+import logoListo from "../assets/img/Icon/checkVerificado.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
-
+import "../assets/css/botoncito.css";
 
 function Seccion1Pag4() {
+
+  const [isInfoComplete, setIsInfoComplete] = useState(false);
+  const [isInfoCompleteGrupoTrabajo, setIsInfoCompleteGrupoTrabajo] = useState(false);
+  const requiredFields = ['element1', 'element2', 'scope'];
+  const initialState = {
+    element1: '',
+    element2: '',
+    scope: '',
+  };
+  const [sectionValues, setSectionValues] = useState(initialState);
+
+  const handleInputChange = (id, value) => {
+    setSectionValues((prevValues) => ({
+      ...prevValues,
+      [id]: value,
+    }));
+  };
+
+  const handleSave = () => {
+    const areFieldsComplete = requiredFields.every(
+      (field) => sectionValues[field].trim() !== ''
+    );
+
+    if (areFieldsComplete) {
+      setIsInfoComplete(true);
+    } else {
+      setIsInfoComplete(false);
+      alert('Por favor, complete todos los campos antes de guardar.');
+    }
+  };
+
+  useEffect(() => {
+    const jsonData = isInfoComplete ? sectionValues : null;
+    console.log('JSON Data:', jsonData);
+  }, [isInfoComplete, sectionValues]);
+
   const [rowCount, setRowCount] = useState(1);
   const [rowData, setRowData] = useState([])
 
   const handleAddRow = () => {
     if (rowCount < 7) {
-      setRowCount(rowCount+1);
+      setRowCount(rowCount + 1);
       setRowData([...rowData, {}]);
     }
   };
@@ -39,8 +76,8 @@ function Seccion1Pag4() {
   const HandlerClickFetch = () => {
     alert("Datos guardaditos", rowData);
     console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    setIsInfoCompleteGrupoTrabajo(true);
   };
-
   return (
     <>
       <Header />
@@ -55,31 +92,55 @@ function Seccion1Pag4() {
           </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-
-            <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
-
-            <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
-              <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
+            <img src={isInfoComplete ? logoListo : logoSinNadita} className="h-10 lg:h-20" />
+            <div className="bg-[#BCB785] w-full lg:w-5/6 text-white p-3 rounded-md">
+              <p className="text-xl lg:text-3xl">1.7 Tipo de investigación</p>
             </div>
-
-            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+            <button onClick={handleSave}><img src={logoSave} className="h-10 lg:h-20"></img></button>
           </div>
 
-          <div className='flex flex-col w-full items-center'>
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="scope"></simple-input>  {/*checkboxito*/}
-            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+          <div className='text-center'>
+            <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
           </div>
 
-          <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
-            <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
-
-            <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
-              <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
-            </div>
-
-            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+          <div className='flex flex-col w-full'>
+            <input
+              className="input-style"
+              type="text"
+              placeholder="Elija un elemento"
+              value={sectionValues.element1}
+              onChange={(e) => handleInputChange('element1', e.target.value)}
+            />
+            <input
+              className="input-style"
+              type="text"
+              placeholder="Elija un elemento"
+              value={sectionValues.element2}
+              onChange={(e) => handleInputChange('element2', e.target.value)}
+            />
+            <input
+              className="input-style"
+              placeholder="Alcance"
+              value={sectionValues.scope}
+              onChange={(e) => handleInputChange('scope', e.target.value)}
+            />
           </div>
+
+          <div className='flex items-center place-content-around text-center w-full mt-10 lg:mt-20'>
+  <img
+    src={isInfoCompleteGrupoTrabajo ? logoListo : logoSinNadita}
+    className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'
+  />
+  <div className='bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center'>
+    <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
+  </div>
+  <button onClick={HandlerClickFetch}>
+    <img
+      src={logoSave}
+      className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'
+    />
+  </button>
+</div>
 
           <div className='text-center'>
             <p className='font-bold text-xl text-gray-500'>No incluir a la Persona responsable técnica en el listado y anotar un máximo de 6 personas colaboradoras</p>
@@ -130,17 +191,14 @@ function Seccion1Pag4() {
               </tbody>
             </table>
             <div className='grid place-content-center ml-5 mr-5'>
-                <button onClick={handleAddRow}>
-                    <img src={masIcono} alt="Agregar fila"></img>
-                </button>
-                <button onClick={handleRemoveRow}>
-                    <img src={menosIcono} alt="Eliminar última fila"></img>
-                </button>
+              <button onClick={handleAddRow}>
+                <img src={masIcono} alt="Agregar fila"></img>
+              </button>
+              <button onClick={handleRemoveRow}>
+                <img src={menosIcono} alt="Eliminar última fila"></img>
+              </button>
             </div>
-        </div>
-        <div className='flex justify-center mt-9'>
-          <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>  
-        </div>
+          </div>
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">
               <button>
