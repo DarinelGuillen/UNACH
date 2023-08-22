@@ -6,9 +6,9 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 
 function Seccion1Pag4() {
@@ -49,7 +49,7 @@ function Seccion1Pag4() {
           <VerticalText />
         </div>
 
-        <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+        <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
           <div>
             <ClaveDeAcceso />
           </div>
@@ -62,7 +62,7 @@ function Seccion1Pag4() {
               <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
             </div>
 
-            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+            <ButtonSaveInfo />
           </div>
 
           <div className='flex flex-col w-full items-center'>
@@ -78,7 +78,8 @@ function Seccion1Pag4() {
               <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
             </div>
 
-            <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+            {/* TIENES QUE DALRE  2 VECES PARA GUARDAR LOS DATOS Y EL ÚLTIMO INPUT NO ES DETECTADO */}
+            <ButtonSaveInfo />
           </div>
 
           <div className='text-center'>
@@ -140,11 +141,14 @@ function Seccion1Pag4() {
                 <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
               </button>
             </div>
-            
+
           </div>
 
           <div className='flex justify-center mt-9'>
-            <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+            {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+            <ButtonSaveInfo onClick={(e) => HandlerClickFetch(e)} />
+            {/* NO SE DETECTAN LOS DATOS DE LA TABLA*/}
+
           </div>
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

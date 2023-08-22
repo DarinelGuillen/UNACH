@@ -6,8 +6,9 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+
 
 function Seccion1() {
     const [inputValues, setInputValues] = useState({
@@ -44,8 +45,9 @@ function Seccion1() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
                         </div>
-                        
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
+
+                        {/* EL BOTÓN NO FUNCIONA CORRECTAMENTE, TIENES QUE DARLE VARIAS VECES PARA QUE GUARDE LOS DATOS 1 POR 1 */}
+                        <ButtonSaveInfo/>
                     </div>
 
                     <div className='text-center'>
@@ -59,19 +61,26 @@ function Seccion1() {
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-10">
                     <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
+
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.2 Periodo de ejerción del proyecto</p>
                         </div>
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+
+                        {/* TIENES QUE DARLE 2 VECES PARA SALVAR LOS DATOS DE LOS INPUTS */}
+                        <ButtonSaveInfo/>
                     </div>
+
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>(proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                     </div>
+
                     <div className='flex flex-col w-full items-center'>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Inicio" id="start_date"></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Conclusión" id="end_date"></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id="weekly_hours_dedicated"></simple-input>
                     </div>
+
                     <div className='flex place-content-around ml-2 mt-10 mb-10 lg:mt-24'>
                         <Link to="/">
                             <button>

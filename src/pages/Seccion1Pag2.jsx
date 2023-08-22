@@ -6,10 +6,10 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import  SharedDataContext  from '../contexts/SharedDataContext';
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+
 function Seccion1Pag1() {
     const { isShareData } = useContext(SharedDataContext);
 
@@ -26,7 +26,7 @@ function Seccion1Pag1() {
                 <div className="flex hidden lg:block lg:w-1/6 justify-center mt-20 mb-20">
                     <VerticalText />
                 </div>
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -35,9 +35,10 @@ function Seccion1Pag1() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.3 Persona responsable técnica</p>
                         </div>
+
                         <ButtonSaveInfo/>
-                        {/* <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button> */}
                     </div>
+
                     <div className='flex flex-col w-full items-center'>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre completo" id="full_name"></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Correo electrónico" id="email"></simple-input>
@@ -55,7 +56,8 @@ function Seccion1Pag1() {
                             <p className='text-xl lg:text-3xl'>1.4 Área de conocimiento</p>
                         </div>
                         
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+                        {/* NO FUNCIONA EL ÚLTIMOS INPUT, GUARDA TODOS LOS DATOS, MENOS EL ÚLTIMO */}
+                        <ButtonSaveInfo/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>

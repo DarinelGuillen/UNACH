@@ -10,6 +10,7 @@ import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 function Seccion2Pag9() {
 
@@ -50,7 +51,7 @@ function Seccion2Pag9() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -60,7 +61,7 @@ function Seccion2Pag9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.15 Desglose Financiero (Opcional)</p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
@@ -127,7 +128,9 @@ function Seccion2Pag9() {
                     </div>
 
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+                        {/* NO GUARDA DATOS DE LAS TABLAS */}
+                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+                        <ButtonSaveInfo />
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -135,7 +138,7 @@ function Seccion2Pag9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.16 Productos de la investigación comprometidos </p>
                         </div>
-                        <button><img src={logoSave} className='h-10 lg:h-20'></img></button>
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>
@@ -177,7 +180,9 @@ function Seccion2Pag9() {
                     </div>
 
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+                        {/* NO GUARDA DATOS DE LAS TABLAS */}
+                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+                        <ButtonSaveInfo />
                     </div>
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>

@@ -7,6 +7,7 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 function Seccion2Pag10() {
     return (
@@ -17,7 +18,7 @@ function Seccion2Pag10() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -28,8 +29,8 @@ function Seccion2Pag10() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>2.17 Referencias </p>
                         </div>
-
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
+                        {/* NO GUARDA DATOS */}
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
@@ -44,9 +45,12 @@ function Seccion2Pag10() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Declaración de cesión de derechos, de originalidad y autoría</p>
                     </div>
 
-                    <div className='text-center w-5/6 mt-2 ml-14 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Manifiesto bajo protesta de decir verdad que esta propuesta es original y soy el autor intelectual y la inclusión de material de terceros en esta propuesta está debidamente referenciada y cuento con la autorización respecto de los derechos de Claro que la propuesta no presenta plagios parciales o totales ni controversiales legales a la vez que el desarrollo de la investigación adoptaré las medidas éticas y consideraciones legales pertinentes a sí mismo se darán los créditos a la Universidad Autónoma de Chiapas de los productos académicos que de esta propuesta emanen al participar en este proceso de registro acato los procedimientos lineamientos y políticas que la Universidad Autónoma de Chiapas establezca para tales efectos.</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 mt-2'>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Manifiesto bajo protesta de decir verdad que esta propuesta es original y soy el autor intelectual y la inclusión de material de terceros en esta propuesta está debidamente referenciada y cuento con la autorización respecto de los derechos de Claro que la propuesta no presenta plagios parciales o totales ni controversiales legales a la vez que el desarrollo de la investigación adoptaré las medidas éticas y consideraciones legales pertinentes a sí mismo se darán los créditos a la Universidad Autónoma de Chiapas de los productos académicos que de esta propuesta emanen al participar en este proceso de registro acato los procedimientos lineamientos y políticas que la Universidad Autónoma de Chiapas establezca para tales efectos.</p>
+                        </div>
                     </div>
+
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-[201px]'>
                         <Link to="/seccion2Pag9">

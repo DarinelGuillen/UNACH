@@ -5,7 +5,7 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import "../assets/css/botoncito.css";
 
 function Seccion1Pag3() {
@@ -17,7 +17,7 @@ function Seccion1Pag3() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -30,8 +30,8 @@ function Seccion1Pag3() {
                             <p className='text-xl lg:text-3xl'>1.5 Redes y grupos de investigación</p>
                         </div>
 
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
-
+                        {/*  TIENES QUE DARLE 2 VECES AL BOTÓN PARA GUARDAR LOS DATOS */}
+                        <ButtonSaveInfo/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
@@ -51,8 +51,9 @@ function Seccion1Pag3() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.6 Tipo de financiamiento</p>
                         </div>
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
-                        
+
+                        {/*  TIENES QUE DARLE 2 VECES AL BOTÓN PARA GUARDAR LOS DATOS */}
+                        <ButtonSaveInfo/>
                     </div>
 
                     <div className='text-center'>

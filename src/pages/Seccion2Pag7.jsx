@@ -6,10 +6,10 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 function Seccion2Pag7() {
 
@@ -50,7 +50,7 @@ function Seccion2Pag7() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -62,19 +62,22 @@ function Seccion2Pag7() {
                             <p className='text-xl lg:text-3xl'>2.12 Etapa y actividades</p>
                         </div>
 
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:h-[40px] xl:w-[40px] xl:mr-[10px]'></img></button>
+                        {/* TIENES QUE DARLE 2 VECES PARA QUE SE GUARDEN LOS DATOS */}
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>(El proyecto deberá ajustarse a un año de vigencia)</p>
                     </div>
+
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte cuantas filas necesite*</p>
                     </div>
+
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 1</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-2 mb-5'>Etapa 1</p>
                     </div>
-                    {/* ml-[30px] */}
+
                     <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
@@ -83,8 +86,8 @@ function Seccion2Pag7() {
                         </thead>
                         <tr>
                             <div className='flex flex-col w-full items-center'>
-                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Inicio(Fecha)" id=""></simple-input>
-                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fin(Fecha)" id=""></simple-input>
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Inicio(Fecha)" id="startDate"></simple-input>
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fin(Fecha)" id="endDate"></simple-input>
                             </div>
                         </tr>
                     </table>
@@ -124,8 +127,11 @@ function Seccion2Pag7() {
                     </div>
 
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+                        {/* NO GUARDA DATOS DE LAS TASBLAS */}
+                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+                        <ButtonSaveInfo />
                     </div>
+
                     <div className='text-center mt-10'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 2</p>
                     </div>
@@ -179,9 +185,13 @@ function Seccion2Pag7() {
                                 <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
                             </button>
                         </div>
+
                     </div>
+
                     <div className='flex justify-center mt-9'>
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button>
+                        {/* NO GUARDA DATOS DE LAS TASBLAS */}
+                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+                        <ButtonSaveInfo />
                     </div>
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag6">

@@ -7,6 +7,7 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 function Seccion2Pag3() {
     return (
@@ -17,7 +18,7 @@ function Seccion2Pag3() {
                     <VerticalText />
                 </div>
 
-                <div className='flex flex-col w-full lg:w-5/6 bg-white rounded-tl-lg'>
+                <div className='flex flex-col w-full lg:w-5/6 bg-white lg:rounded-tl-lg'>
                     <div>
                         <ClaveDeAcceso />
                     </div>
@@ -28,8 +29,9 @@ function Seccion2Pag3() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.5 Marco teórico/conceptual</p>
                         </div>
-
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+                    
+                        {/* NINGUN BOTÓN SALVA DATOS */}
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>
@@ -51,7 +53,7 @@ function Seccion2Pag3() {
                             <p className='text-xl lg:text-3xl'>2.6 Justificación de la investigación</p>
                         </div>
 
-                        <button><img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'></img></button>
+                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>
