@@ -23,9 +23,9 @@ function Seccion2Pag1() {
                         <ClaveDeAcceso />
                     </div>
 
-                    <div className='text-center'>
+                    <div className='flex flex-col text-center w-full  mt-3 mb-3'>
                         <p className='font-bold text-gray-700 text-base mt-9 lg:text-xl'>PROTOCOLO DEL PROYECTO <br /> </p>
-                        <p className='text-base text-gray-700'>Si el proyecto tiene financiamiento externo, para realizar su trámite de registro NO es necesario llenar esta sección 2, solo adjunte copia del protocolo aprobado por la instancia financiadora, la notificación de aprobación y copia del convenio o carta de asignación de curso que indique el monto de financiamiento y la vigencia. </p>
+                        <p className='text-base text-gray-700 w-[90%] ml-[6%]'>Si el proyecto tiene financiamiento externo, para realizar su trámite de registro NO es necesario llenar esta sección 2, solo adjunte copia del protocolo aprobado por la instancia financiadora, la notificación de aprobación y copia del convenio o carta de asignación de curso que indique el monto de financiamiento y la vigencia. </p>
                     </div>
 
                     <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
