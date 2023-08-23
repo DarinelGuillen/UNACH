@@ -1,20 +1,22 @@
 import React from 'react';
 
-const ColorComponent = '1112'; // Cambia este valor según tus necesidades
+const ColorComponent = '1432'; 
 
 function Iconos() {
     const obtenerClaseColor = (indice) => {
         const valor = ColorComponent[indice];
         
         if (valor === '0') {
-            return 'bg-gray-500';
+            return 'bg-gray-500'; // Inactivo
         } else if (valor === '1') {
-            return 'bg-green-500';
+            return 'bg-green-500'; // Sin problema
         } else if (valor === '2') {
-            return 'bg-red-500';
+            return 'bg-red-500'; // Rechazado
+        } else if (valor === '3') {
+            return 'bg-yellow-500'; // Rechazado con observación (color #14b8a6)
         }
-        // return 'bg-gray-500'; // Valor incorrecto, se muestra en gris
-        return console.log("ningún color correcto")
+        return 'bg-blue-500';//4 cualquier otro valor representa que se encuentra en ese estado
+        
     };
 
     return (
