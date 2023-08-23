@@ -5,7 +5,7 @@ import logoUnach from '../assets/img/Icon/LOGO-UNACH.png'
 const Card = () => {
     return (
         <>
-            <div className='relative flex flex-col ml-2 w-[185px] h-[208px] bg-white rounded-[12px] font-sans rounded-3xl border-[1px] border-black'>
+            <div className='relative flex flex-col ml-[3%] w-[95%] h-[208px] bg-white rounded-[12px] font-sans rounded-3xl border-[1px] border-black'>
 
                 <div className='flex ml-5 gap-2 justify-center h-full'>
                     <div className="flex flex-col justify-center mt-7">
@@ -14,7 +14,7 @@ const Card = () => {
                         <p className='text-base text-[#868686]'>Escuela</p>
                         <p className='text-[#5964E0] text-sm font-semibold relative top-3 w-full'>Nombre del alumno</p>
                     </div>
-                    <img src={logoUnach} alt="" className='flex w-[50px] h-[40px] mt-[10%] mr-[8%]' />
+                    <img src={logoUnach} alt="" className='flex w-[50px] h-[40px] mt-[6%] mr-[6%]' />
                 </div>
 
                 <div className="flex justify-end">
