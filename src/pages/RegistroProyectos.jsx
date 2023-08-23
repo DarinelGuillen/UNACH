@@ -25,7 +25,7 @@ const RegistroProyectos = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <input className='rounded-3xl border-[1px] border-black w-5/6 h-10' type="text" />
+                    <input className='rounded-3xl border-[1px] border-black h-10 w-5/6 md:w-[80%] lg:h-14 lg:mb-5' type="text" />
                 </div>
 
                 <div className="pb-10 mt-5">
@@ -42,9 +42,9 @@ const RegistroProyectos = () => {
 
                 <div className="flex justify-center pb-7">
                     <button>
-                        <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#18386B] ">
+                        <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#18386B] lg:w-[120px] h-[55px]">
                             {/* <img src={arrow} className='h-[20px]' alt="" /> */}
-                            <p className='text-white w-full p-4'>Siguiente</p>
+                            <p className='text-base text-white w-full p-4 lg:text-xl'>Siguiente</p>
                         </div>
                     </button>
                 </div>

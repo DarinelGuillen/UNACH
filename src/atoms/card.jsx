@@ -4,17 +4,19 @@ import logoUnach from '../assets/img/Icon/LOGO-UNACH.png'
 
 const Card = () => {
     return (
-        <>
-            <div className='relative flex flex-col ml-[3%] w-[95%] h-[208px] bg-white rounded-[12px] font-sans rounded-3xl border-[1px] border-black'>
-
+        <div className='font-sans'>
+            {/* relative  abajo */}
+            <div className='flex flex-col w-[95%] ml-[3%] h-[208px] bg-white rounded-[12px] rounded-3xl border-[1px] border-black md:w-[90%] md:ml-[10%] '>
                 <div className='flex ml-5 gap-2 justify-center h-full'>
-                    <div className="flex flex-col justify-center mt-7">
-                        <p className='text-base text-[#868686]'>Fecha de entrega</p>
-                        <h2 className='text-xl font-bold'>Nombre del proyecto</h2>
-                        <p className='text-base text-[#868686]'>Escuela</p>
-                        <p className='text-[#5964E0] text-sm font-semibold relative top-3 w-full'>Nombre del alumno</p>
+                    
+                <div className="flex flex-col justify-center mt-9 md:w-[60%] md:mt-[9%]">
+                        <p className='text-base text-[#868686] md:text-lg'>Fecha de entrega</p>
+                        <p className='text-xl font-bold md:text-2xl'>Nombre del proyecto</p>
+                        <p className='text-base text-[#868686] md:text-lg'>Escuela</p>
+                        <p className='text-[#5964E0] text-sm font-semibold mt-3 w-full md:text-lg'>Nombre del alumno</p>
                     </div>
-                    <img src={logoUnach} alt="" className='flex w-[50px] h-[40px] mt-[6%] mr-[6%]' />
+
+                    <img src={logoUnach} alt="" className='flex w-[50px] h-[40px] mt-[6%] mr-[6%] md:w-[70px] md:h-[60px]' />
                 </div>
 
                 <div className="flex justify-end">
@@ -24,7 +26,7 @@ const Card = () => {
                 </div>
 
             </div>
-        </>
+        </div>
     )
 }
 
