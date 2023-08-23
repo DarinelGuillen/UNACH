@@ -24,7 +24,58 @@ import RegistroProyectos from "../pages/RegistroProyectos.jsx";
 //Contexts 
 import SharedDataContext from '../contexts/SharedDataContext.js';
 function App() {
-  const [isShareData, setIsShareData] = useState("");
+  const [isShareData, setIsShareData] = useState(
+    {
+      email: 'random_email@example.com',
+      full_name: 'John Doe',
+      academic_degree: 'Ph.D.',
+      affiliation_center_id: 'University XYZ',
+      office_phone: '123-456-7890',
+      cellphone: '987-654-3210',
+      employment_status: 'Professor',
+      other: 'Random Information',
+      end_date: '2023-12-31',
+      specific_topic: 'Random Research Topic',
+      textareaInput1: 'Random Text',
+      executive_summary: 'Random Executive Summary',
+      title: 'Random Project Title',
+      start_date: '2023-01-01',
+      name: 'Research Group Name',
+      status: 'Active',
+      research_group_name: 'Research Group Name',
+      group_instance: 'University Department',
+      collaboration_networks: 'Random Networks',
+      network_name: 'Random Network',
+      research_line: 'Random Research Line',
+      funding_type: 'Grant',
+      funding_source_institution: 'Funding Institution',
+      program: 'Research Program',
+      program_link: 'https://example.com/program',
+      year: '2023',
+      evaluating_instance: 'Evaluation Department',
+      perspective: 'Random Perspective',
+      scope: 'Random Scope',
+      introduction: 'Random Introduction',
+      main_contribution: 'Random Main Contribution',
+      proposal_alignment: 'Random Proposal Alignment',
+      theoretical_marco: 'Random Theoretical Marco',
+      research_justification: 'Random Research Justification',
+      specific_objectives: 'Random Specific Objectives',
+      hypotheses_or_assumptions: 'Random Hypotheses or Assumptions',
+      typeOfPay: 'Type of Funding',
+      Institution: 'Funding Institution',
+      Program: 'Funding Program',
+      Url: 'https://example.com/funding',
+      inst: 'Evaluation Department',
+      consentimiento: 'Consent',
+      codes: 'Random Codes',
+      startDate: '2023-01-01',
+      endDate: '2023-12-31',
+      infraestructura: 'Random Infrastructure',
+      recursos: 'Random Resources'
+    }
+    
+  );
 
 
   return (

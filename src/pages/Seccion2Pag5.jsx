@@ -8,8 +8,10 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 function Seccion2Pag5() {
+    const { isShareData } = useContext(SharedDataContext);
     return (
         <>
             <Header />
@@ -43,7 +45,8 @@ function Seccion2Pag5() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="specific_objectives"></simple-textarea>
+                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="specific_objectives" value={isShareData.specific_objectives || ''}></simple-textarea>
+
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-[35px]">
@@ -66,7 +69,8 @@ function Seccion2Pag5() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="hypotheses_or_assumptions"></simple-textarea>
+                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="hypotheses_or_assumptions" value={isShareData.hypotheses_or_assumptions || ''}></simple-textarea>
+
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

@@ -1,4 +1,5 @@
 export let dataDictionaryTextArea = {};
+
 class SimpleTextArea extends HTMLElement {
   constructor() {
     super();
@@ -34,7 +35,7 @@ class SimpleTextArea extends HTMLElement {
       const newKey = e.target.id;
       const newValue = e.target.value;
 
-      // Update the value for the id in dataDictionary
+      // Update the value for the id in dataDictionaryTextArea
       dataDictionaryTextArea[newKey] = newValue;
       console.log(
         "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionaryTextArea:",
@@ -57,6 +58,12 @@ class SimpleTextArea extends HTMLElement {
     this.textAreaElement.setAttribute('id', id);
     this.textAreaElement.style.setProperty('width', width);
     this.textAreaElement.style.setProperty('height', height);
+
+    // Check if a value attribute is provided and set the textarea value accordingly
+    const valueAttribute = this.getAttribute('value');
+    if (valueAttribute !== null) {
+      this.textAreaElement.value = valueAttribute;
+    }
 
     console.log(` ${id}`);
   }

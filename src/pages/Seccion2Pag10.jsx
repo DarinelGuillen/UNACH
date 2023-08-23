@@ -8,8 +8,10 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 function Seccion2Pag10() {
+    const { isShareData } = useContext(SharedDataContext);
     return (
         <>
             <Header />

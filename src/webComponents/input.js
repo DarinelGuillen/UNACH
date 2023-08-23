@@ -30,18 +30,14 @@ class SimpleInput extends HTMLElement {
 
     this.inputElement = this.shadowRoot.querySelector('input');
 
-    // Listen for the input event and call onInputChange
     this.inputElement.addEventListener('input', (e) => {
-      
       const newKey = e.target.id;
       const newValue = e.target.value;
 
-      // Update the value for the id in dataDictionary
       dataDictionary[newKey] = newValue;
 
       console.log("🚀 ~ file: input.js:57 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionary:", dataDictionary);
 
-      // Create a custom event to notify the change
       const event = new CustomEvent('inputChange', { detail: dataDictionary });
       this.dispatchEvent(event);
     });
@@ -59,6 +55,11 @@ class SimpleInput extends HTMLElement {
     this.inputElement.setAttribute('id', id);
     this.inputElement.style.setProperty('width', width);
     this.inputElement.style.setProperty('height', height);
+
+    const valueAttribute = this.getAttribute('value');
+    if (valueAttribute !== null) {
+      this.inputElement.value = valueAttribute;
+    }
 
     console.log(` ${id}`);
   }

@@ -8,8 +8,11 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 
 function Seccion2Pag1() {
+    const { isShareData } = useContext(SharedDataContext);
     return (
         <>
             <Header />
@@ -36,7 +39,7 @@ function Seccion2Pag1() {
                         <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] lg:ml-[20px] xl:ml-6 lg:ml-4'></img>
 
                         <div className='flex flex-col w-full items-center'>
-                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%] mr-[30px]" height="30px" placeholder="Título del proyecto" id="executive_summary"></simple-input>
+                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%] mr-[30px]" height="30px" value={isShareData.title || ''} placeholder="Título del proyecto" id="title"></simple-input>
                         </div>
 
                         {/* NINGUN BOTÓN SALVA DATOS DE LOS INPUTS */}
@@ -58,7 +61,8 @@ function Seccion2Pag1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="introduction"></simple-textarea>
+                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="executive_summary" value={isShareData.executive_summary || ''}></simple-textarea>
+
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-7 lg:mt-[35px]">
@@ -76,7 +80,8 @@ function Seccion2Pag1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="introduction" value={isShareData.introduction || ''}></simple-textarea>
+
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

@@ -8,9 +8,11 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 
 function Seccion1() {
+    const { isShareData } = useContext(SharedDataContext);
     
     return (
         <>
@@ -42,9 +44,29 @@ function Seccion1() {
                         <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Título" id="title"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fecha de elaboración de propuesta" id=""></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Lugar de realización" id=""></simple-input>
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.title || ''}
+                    height="30px"
+                    placeholder="Título"
+                    id="title"
+                    ></simple-input>
+
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.proposal_date || ''}
+                    height="30px"
+                    placeholder="Fecha de elaboración de propuesta"
+                    id="proposal_date"
+                    ></simple-input>
+
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.location || ''}
+                    height="30px"
+                    placeholder="Lugar de realización"
+                    id="location"
+                    ></simple-input>
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-10">
@@ -64,9 +86,29 @@ function Seccion1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Inicio" id="start_date"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Vigencia:Conclusión" id="end_date"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Horas dedicadas semanalmente al proyecto (HSM)" id="weekly_hours_dedicated"></simple-input>
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.start_date || ''}
+                    height="30px"
+                    placeholder="Vigencia:Inicio"
+                    id="start_date"
+                    ></simple-input>
+
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.end_date || ''}
+                    height="30px"
+                    placeholder="Vigencia:Conclusión"
+                    id="end_date"
+                    ></simple-input>
+
+                    <simple-input
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={isShareData.weekly_hours_dedicated || ''}
+                    height="30px"
+                    placeholder="Horas dedicadas semanalmente al proyecto (HSM)"
+                    id="weekly_hours_dedicated"
+                    ></simple-input>
                     </div>
 
                     <div className='flex place-content-around ml-2 mt-10 mb-10 lg:mt-24'>

@@ -7,8 +7,11 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import "../assets/css/botoncito.css";
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 
 function Seccion1Pag3() {
+    const { isShareData } = useContext(SharedDataContext);
     return (
         <>
             <Header />
@@ -35,13 +38,20 @@ function Seccion1Pag3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del Cuerpo Académico (CA)" id="name"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Estatus del (CA)" id="status"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Nombre del grupo colegiado de investigación" id="research_group_name"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia donde está formalizado el grupo o CA (Ej. PRODEP, DGIP-UNACH...)" id="group_instance"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Redes de colaboración" id="collaboration_networks"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Indicar nombre de la red" id="network_name"></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Línea de investigación a desarrollar en el proyecto" id="research_line"></simple-input>
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.name || ''} height="30px" placeholder="Nombre del Cuerpo Académico (CA)" id="name"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.status || ''} height="30px" placeholder="Estatus del (CA)" id="status"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.research_group_name || ''} height="30px" placeholder="Nombre del grupo colegiado de investigación" id="research_group_name"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.group_instance || ''} height="30px" placeholder="Instancia donde está formalizado el grupo o CA (Ej. PRODEP, DGIP-UNACH...)" id="group_instance"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.collaboration_networks || ''} height="30px" placeholder="Redes de colaboración" id="collaboration_networks"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.network_name || ''} height="30px" placeholder="Indicar nombre de la red" id="network_name"></simple-input>
+
+                    <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.research_line || ''} height="30px" placeholder="Línea de investigación a desarrollar en el proyecto" id="research_line"></simple-input>
+
                     </div>
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-10">
@@ -61,12 +71,18 @@ function Seccion1Pag3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type"></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution"></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program"></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link"></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Año de la convocatoria" id="year"></simple-input>
-                        <simple-input  class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance"></simple-input>
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.funding_type || ''} height="30px" placeholder="Tipo de financiamiento" id="funding_type"></simple-input>
+
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.funding_source_institution || ''} height="30px" placeholder="Institución/fuente" id="funding_source_institution"></simple-input>
+
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.program || ''} height="30px" placeholder="Convocatoria/programa" id="program"></simple-input>
+
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.program_link || ''} height="30px" placeholder="Enlace de la convocatoria" id="program_link"></simple-input>
+
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.year || ''} height="30px" placeholder="Año de la convocatoria" id="year"></simple-input>
+
+                    <simple-input class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.evaluating_instance || ''} height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance"></simple-input>
+
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

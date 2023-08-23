@@ -9,9 +9,11 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 
 function Seccion1Pag4() {
+  const { isShareData } = useContext(SharedDataContext);
   const [rowCount, setRowCount] = useState(1);
   const [rowData, setRowData] = useState([])
 
@@ -66,10 +68,12 @@ function Seccion1Pag4() {
           </div>
 
           <div className='flex flex-col w-full items-center'>
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Elija un elemento" id="scope"></simple-input>  {/*checkboxito*/}
-            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
-          </div>
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
+
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
+
+            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+            </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
             <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
@@ -104,28 +108,28 @@ function Seccion1Pag4() {
                   </tr>
                 </thead>
                 <tbody>
-                  {rowData.map((row, rowIndex) => (
+                {rowData.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`no${rowIndex}`] || ''} placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`academic_degree${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `academic_degree${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`academic_degree${rowIndex}`] || ''} placeholder="..." id={`academic_degree${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`full_name${rowIndex}`] || ''} placeholder="..." id={`full_name${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`affiliation_center_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `affiliation_center_id${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`affiliation_center_id${rowIndex}`] || ''} placeholder="..." id={`affiliation_center_id${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`specialization_area${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `specialization_area${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`specialization_area${rowIndex}`] || ''} placeholder="..." id={`specialization_area${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`tasks${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `tasks${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`tasks${rowIndex}`] || ''} placeholder="..." id={`tasks${rowIndex}`}></simple-input>
                       </td>
                       <td>
-                        <input type="text" className='text-center w-[95%]' placeholder="..." id={`participation_level${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `participation_level${rowIndex}`, e.target.value)} />
+                        <simple-input class="text-center w-[95%]" value={isShareData[`participation_level${rowIndex}`] || ''} placeholder="..." id={`participation_level${rowIndex}`}></simple-input>
                       </td>
                     </tr>
                   ))}

@@ -11,8 +11,10 @@ import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-
+import  SharedDataContext  from '../contexts/SharedDataContext';
+import { useContext } from 'react';
 function Seccion2Pag9() {
+    const { isShareData } = useContext(SharedDataContext);
 
     const [rowCount, setRowCount] = useState(1);
     const [rowData, setRowData] = useState([])
