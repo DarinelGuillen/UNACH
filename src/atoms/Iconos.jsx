@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ColorComponent = '0112'; // Cambia este valor según tus necesidades
+const ColorComponent = '1112'; // Cambia este valor según tus necesidades
 
 function Iconos() {
     const obtenerClaseColor = (indice) => {
@@ -13,7 +13,8 @@ function Iconos() {
         } else if (valor === '2') {
             return 'bg-red-500';
         }
-        return 'bg-gray-500'; // Valor incorrecto, se muestra en gris
+        // return 'bg-gray-500'; // Valor incorrecto, se muestra en gris
+        return console.log("ningún color correcto")
     };
 
     return (
