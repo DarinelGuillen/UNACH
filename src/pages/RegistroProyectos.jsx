@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Card from '../atoms/card';
 import CardRight from '../atoms/cardRight';
 import Footer from '../atoms/Footer';
@@ -6,6 +6,60 @@ import CardXl from '../atoms/cardXl';
 import Header2 from '../atoms/header2';
 
 const RegistroProyectos = () => {
+    const [cardXlData, setCardXlData] = useState([
+        {
+            date: "Fecha 1",
+            projectName: "Proyecto 1",
+            school: "Escuela 1",
+            studentName: "Alumno 1",
+            buttonUrl: "/seccion1Pag1"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        {
+            date: "Fecha 2",
+            projectName: "Proyecto 2",
+            school: "Escuela 2",
+            studentName: "Alumno 2",
+            buttonUrl: "/seccion1Pag2"
+        },
+        
+        // Agrega más objetos con los datos de CardXl según sea necesario
+    ]);
+
     return (
         <>
             <div className='bg-white font-sans'>
@@ -25,57 +79,23 @@ const RegistroProyectos = () => {
                         <Card />
                         <CardRight />
 
-                        <CardXl
-                            date="Fecha 1"
-                            projectName="Proyecto 1"
-                            school="Escuela 1"
-                            studentName="Alumno 1"
-                            buttonUrl="/seccion1Pag1"
-                        />
-                        <CardXl
-                            date="Fecha 2"
-                            projectName="Proyecto 2"
-                            school="Escuela 2"
-                            studentName="Alumno 2"
-                            buttonUrl="/seccion1Pag2"
-                        />
-                        <CardXl
-                            date="Fecha 3"
-                            projectName="Proyecto 3"
-                            school="Escuela 3"
-                            studentName="Alumno 3"
-                            buttonUrl="/seccion1Pag3"
-                        />
-                        <CardXl
-                            date="Fecha 4"
-                            projectName="Proyecto 4"
-                            school="Escuela 4"
-                            studentName="Alumno 4"
-                            buttonUrl="/seccion1Pag4"
-                        />
-                        <CardXl
-                            date="Fecha 5"
-                            projectName="Proyecto 5"
-                            school="Escuela 5"
-                            studentName="Alumno 5"
-                            buttonUrl="/seccion2Pag1"
-                        />
-                        <CardXl
-                            date="Fecha 6"
-                            projectName="Proyecto 6"
-                            school="Escuela 6"
-                            studentName="Alumno 6"
-                            buttonUrl="/seccion2Pag2"
-                        />
-
+                        {/* Mapea los datos de cardXlData para crear las tarjetas */}
+                        {cardXlData.map((cardData, index) => (
+                            <CardXl
+                                key={index}
+                                date={cardData.date}
+                                projectName={cardData.projectName}
+                                school={cardData.school}
+                                studentName={cardData.studentName}
+                                buttonUrl={cardData.buttonUrl}
+                            />
+                        ))}
                     </div>
                 </div>
-
 
                 <div className="flex justify-center pb-10">
                     <button>
                         <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#18386B] lg:w-[110px] h-[45px]">
-                            {/* <img src={arrow} className='h-[20px]' alt="" /> */}
                             <p className='text-base text-white w-full p-3 lg:text-xl'>Siguiente</p>
                         </div>
                     </button>
@@ -87,4 +107,4 @@ const RegistroProyectos = () => {
     )
 }
 
-export default RegistroProyectos
+export default RegistroProyectos;

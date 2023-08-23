@@ -102,7 +102,6 @@ function App() {
         <Route path='/seccion2Pag9' element={<Seccion2Pag9/>}/>
         <Route path='/seccion2Pag10' element={<Seccion2Pag10/>}/>
         <Route path='/registroProyectos' element={<RegistroProyectos/>}/>
-
       </Routes>
     </SharedDataContext.Provider>
     </BrowserRouter>
