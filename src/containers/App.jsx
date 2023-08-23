@@ -19,6 +19,8 @@ import Seccion2Pag7 from '../pages/Seccion2Pag7.jsx';
 import Seccion2Pag8 from '../pages/Seccion2Pag8.jsx';
 import Seccion2Pag9 from '../pages/Seccion2Pag9.jsx';
 import Seccion2Pag10 from '../pages/Seccion2Pag10.jsx';
+import RegistroProyectos from "../pages/RegistroProyectos.jsx";
+
 //Contexts 
 import SharedDataContext from '../contexts/SharedDataContext.js';
 function App() {
@@ -48,6 +50,8 @@ function App() {
         <Route path='/seccion2Pag8' element={<Seccion2Pag8/>}/>
         <Route path='/seccion2Pag9' element={<Seccion2Pag9/>}/>
         <Route path='/seccion2Pag10' element={<Seccion2Pag10/>}/>
+        <Route path='/registroProyectos' element={<RegistroProyectos/>}/>
+
       </Routes>
     </SharedDataContext.Provider>
     </BrowserRouter>

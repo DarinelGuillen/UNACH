@@ -5,8 +5,8 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 
 function Seccion2Pag4() {
     return (
