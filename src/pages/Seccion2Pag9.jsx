@@ -79,11 +79,11 @@ function Seccion2Pag9() {
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Rubros</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo de gasto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Etapa</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Justificación</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Rubros</th> {/* id="¿?" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo de gasto</th> {/* id="expense_type" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto</th> {/* id="amount" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Etapa</th> {/* id="phase_id" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Justificación</th> {/* id="justification" */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -152,8 +152,8 @@ function Seccion2Pag9() {
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo del producto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Descripción</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo del producto</th> {/* id="type_id" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Descripción</th> {/* id="description" */}
                                     </tr>
                                 </thead>
                                 <tbody>
