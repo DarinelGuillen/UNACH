@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
 import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
@@ -9,13 +8,13 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
-import { useContext } from 'react';
+import SharedDataContext from '../contexts/SharedDataContext';
+import arrowselector from '../assets/img/Icon/arrow.svg';
 
 function Seccion1Pag4() {
   const { isShareData } = useContext(SharedDataContext);
   const [rowCount, setRowCount] = useState(1);
-  const [rowData, setRowData] = useState([])
+  const [rowData, setRowData] = useState([]);
 
   const handleAddRow = () => {
     if (rowCount < 7) {
@@ -39,7 +38,7 @@ function Seccion1Pag4() {
   };
 
   const HandlerClickFetch = () => {
-    alert("Datos guardaditos", rowData);
+    alert("Datos guardados: " + JSON.stringify(rowData));
     console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
   };
 
@@ -57,32 +56,24 @@ function Seccion1Pag4() {
           </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-20">
-
             <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
-
             <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
               <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
             </div>
-
             <ButtonSaveInfo />
           </div>
 
           <div className='flex flex-col w-full items-center'>
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
-
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
-
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input>
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input>
             <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
-            </div>
+          </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
             <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
-
             <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
               <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
             </div>
-
-            {/* TIENES QUE DALRE  2 VECES PARA GUARDAR LOS DATOS Y EL ÚLTIMO INPUT NO ES DETECTADO */}
             <ButtonSaveInfo />
           </div>
 
@@ -108,7 +99,7 @@ function Seccion1Pag4() {
                   </tr>
                 </thead>
                 <tbody>
-                {rowData.map((row, rowIndex) => (
+                  {rowData.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                       <td>
                         <simple-input class="text-center w-[95%]" value={isShareData[`no${rowIndex}`] || ''} placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`}></simple-input>
@@ -136,7 +127,6 @@ function Seccion1Pag4() {
                 </tbody>
               </table>
             </div>
-
             <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
               <button onClick={handleAddRow}>
                 <img src={masIcono} className='h-14' alt="Agregar fila"></img>
@@ -145,14 +135,10 @@ function Seccion1Pag4() {
                 <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
               </button>
             </div>
-
           </div>
 
           <div className='flex justify-center mt-9'>
-            {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-            <ButtonSaveInfo onClick={(e) => HandlerClickFetch(e)} />
-            {/* NO SE DETECTAN LOS DATOS DE LA TABLA*/}
-
+            <ButtonSaveInfo onClick={HandlerClickFetch} />
           </div>
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
@@ -160,7 +146,7 @@ function Seccion1Pag4() {
               <button>
                 <div className='grid'>
                   <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
-                    <img src={arrowselector}></img>
+                    <img src={arrowselector} alt="Anterior"></img>
                   </div>
                 </div>
               </button>
