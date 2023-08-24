@@ -49,13 +49,7 @@ const RegistroProyectos = () => {
             studentName: "Alumno 2",
             buttonUrl: "/seccion1Pag2"
         },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
+
         
         // Agrega más objetos con los datos de CardXl según sea necesario
     ]);
@@ -95,7 +89,7 @@ const RegistroProyectos = () => {
 
                 <div className="flex justify-center pb-10">
                     <button>
-                        <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#18386B] lg:w-[110px] h-[45px]">
+                        <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
                             <p className='text-base text-white w-full p-3 lg:text-xl'>Siguiente</p>
                         </div>
                     </button>
