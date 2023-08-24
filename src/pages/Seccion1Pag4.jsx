@@ -5,8 +5,6 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import masIcono from "../assets/img/Icon/mas.svg";
-import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
 import arrowselector from '../assets/img/Icon/arrow.svg';
@@ -15,11 +13,16 @@ import Table from '../atoms/Table';
 function Seccion1Pag4() {
   const { isShareData } = useContext(SharedDataContext);
 
-  const exampleColumns = [
+  const ColumnsTable = [
     { id: "id", title: "No°" },
     { id: "academic_degree", title: "Grado" },
-    // ... Define otros encabezados de columna
-];
+    { id: "full_name", title: "Nombre completo" },
+    { id: "affiliation_center_id", title: "Adscripción" },
+    { id: "specialization_area", title: "Área de especialización" },
+    { id: "tasks", title: "Tareas específicas" },
+    { id: "participation_level", title: "Nivel de participación" },
+  ];
+
 
 const exampleHeaders = ['Encabezado 1', 'Encabezado 2', 'Encabezado 3', /* ... */];
   
@@ -67,8 +70,7 @@ const exampleHeaders = ['Encabezado 1', 'Encabezado 2', 'Encabezado 3', /* ... *
             <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
           </div>
 
-          <Table />
-
+          <Table columns={ColumnsTable}/>
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">
