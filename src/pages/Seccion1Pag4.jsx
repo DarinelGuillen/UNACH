@@ -9,7 +9,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
+import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
 
 function Seccion1Pag4() {
@@ -70,10 +70,10 @@ function Seccion1Pag4() {
           <div className='flex flex-col w-full items-center'>
             <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
 
-            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
+            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" placeholder="Elija un elemento" id="textareaInput1"></simple-input> {/*checkboxito*/}
 
-            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
-            </div>
+            <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" type="text" placeholder="Alcance" id="scope"></simple-textarea>
+          </div>
 
           <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
             <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
@@ -98,17 +98,18 @@ function Seccion1Pag4() {
               <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                   <tr>
-                    <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>No°</th>
-                    <th className='font-normal text-sm w-[70px] sm:text-base sm:font-medium lg:text-base'>Grado</th>
-                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre completo</th>
-                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Adscripción</th>
-                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Área de especialización</th>
-                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tareas específicas</th>
-                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nivel de participación</th>
+                    <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>No°</th>  {/* id="id" -> ¿ES ESTE ID? */}
+                    <th className='font-normal text-sm w-[70px] sm:text-base sm:font-medium lg:text-base'>Grado</th> {/* id="academic_degree" */}
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre completo</th> {/* id="full_name" */}
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Adscripción</th> {/* id="affiliation_center_id" -> ¿ES ESTE ID? */}
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Área de especialización</th> {/* id="specialization_area" */}
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tareas específicas</th> {/* id="tasks" */}
+                    <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nivel de participación</th> {/* id="participation_level" */}
                   </tr>
                 </thead>
                 <tbody>
-                {rowData.map((row, rowIndex) => (
+
+                  {rowData.map((row, rowIndex) => (
                     <tr key={rowIndex}>
                       <td>
                         <simple-input class="text-center w-[95%]" value={isShareData[`no${rowIndex}`] || ''} placeholder={`No° ${rowIndex + 1}`} id={`no${rowIndex}`}></simple-input>

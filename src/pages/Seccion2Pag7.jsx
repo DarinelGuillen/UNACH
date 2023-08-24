@@ -99,8 +99,8 @@ function Seccion2Pag7() {
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded  ml-[30px] lg:ml-[90px] text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th> {/* id="activity" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th> {/* id="expected_product" */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -146,15 +146,21 @@ function Seccion2Pag7() {
                             </tr>
                         </thead>
                         <tr>
-                            {/* ml-[30px] lg:ml-[90px]" */}
-                            {/* ml-[30px] lg:ml-[90px]" */}
                             <div className='flex flex-col w-full items-center'>
-                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Inicio(Fecha)" id="startDate" value="🚀 ~ file: Seccion2Pag7.jsx:153 ~ Seccion2Pag7 ~ value:"
-                                // {isShareData.startDate || ''}
+
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px" 
+                                placeholder="Inicio(Fecha)"
+                                id="start_date" 
+                                value={isShareData.start_date || ''}
                                 ></simple-input>
-                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fin(Fecha)" id="endDate" value="🚀 ~ file: Seccion2Pag7.jsx:155 ~ Seccion2Pag7 ~ value:"
-                                // {isShareData.endDate || ''}
-                                ></simple-input>
+
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px"
+                                placeholder="Fin(Fecha)" 
+                                id="end_date" 
+                                value={isShareData.end_date|| ''}>
+                                </simple-input>
                             </div>
                         </tr>
                     </table >
@@ -164,8 +170,8 @@ function Seccion2Pag7() {
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th> {/* id="activity" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th> {/* id="expected_product" */}
                                     </tr>
                                 </thead>
                                 <tbody>

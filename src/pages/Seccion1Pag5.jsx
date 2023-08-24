@@ -42,7 +42,6 @@ function Seccion1Pag5() {
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
     };
 
-
     return (
         <>
             <Header />
@@ -79,10 +78,10 @@ function Seccion1Pag5() {
                             <table class="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Nombre del participante</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Tipo de participante</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Producto esperado</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Especifique</th>
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Nombre del participante</th> {/* id -> ¿ES ESTE ID? */}
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Tipo de participante</th> {/* type -> ¿ES ESTE ID?*/}
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Producto esperado</th> {/* expected_product */}
+                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Especifique</th> {/* ¿? */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -142,9 +141,9 @@ function Seccion1Pag5() {
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre de la entidad</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Describa el tipo de participación de forma breve</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Contacto (Número célular y correo eléctronico)</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre de la entidad</th> {/* id="name" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Describa el tipo de participación de forma breve</th> {/* id="description" */}
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Contacto (Número célular y correo eléctronico)</th> {/* id="contact_name" */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -165,7 +164,7 @@ function Seccion1Pag5() {
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
                             <button onClick={handleAddRow}>
                                 <img src={masIcono} className='h-14' alt="Agregar fila"></img>
