@@ -61,7 +61,8 @@ function Seccion1Pag5() {
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} />
+                    <Table columns={ColumnsTable} savedInfo={""||''} />
+
 
 
                     <div className='flex justify-center mt-9'>
@@ -85,7 +86,7 @@ function Seccion1Pag5() {
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable2} />
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.work_team||''} />
 
                     <div className='flex justify-center mt-9'>
                         {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}

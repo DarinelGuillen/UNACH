@@ -4,10 +4,10 @@ import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from './ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
 
-const Table = ({ columns, ...otherProps }) => {
+const Table = ({ columns, savedInfo }) => {
     const { isShareData } = useContext(SharedDataContext);
-    const [rowCount, setRowCount] = useState(1);
-    const [rowData, setRowData] = useState([]);
+    const [rowCount, setRowCount] = useState(savedInfo.length || 1);
+    const [rowData, setRowData] = useState(savedInfo.length ? savedInfo : [{}]);
 
     const handleAddRow = () => {
         if (rowCount < 7) {
@@ -49,26 +49,23 @@ const Table = ({ columns, ...otherProps }) => {
                                 ))}
                             </tr>
                         </thead>
-                        
-                        {/* <th id="id" className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>No°</th>  ?????
-                        <th id="academic_degree" className='font-normal text-sm w-[70px] sm:text-base sm:font-medium lg:text-base'>Grado</th>
-                        <th id="full_name" className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre completo</th>
-                        <th id="affiliation_center_id" className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Adscripción</th> ?????
-                        <th id="specialization_area" className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Área de especialización</th>
-                        <th id="tasks" className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tareas específicas</th>
-                        <th id="participation_level" className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nivel de participación</th> */}
-
                         <tbody>
                             {rowData.map((row, rowIndex) => (
                                 <tr key={rowIndex} >
                                     {columns.map(column => (
                                         <td key={column.id}>
-                                            <simple-input
-                                                class="w-[50px]"
-                                                value={isShareData[`${column.id}${rowIndex}`] || ''}
-                                                placeholder={``} //props para pasar valores personalizados 
-                                                id={`${column.id}${rowIndex}`}
-                                            />
+                                            <div>
+                                                <div>
+                                                    {console.log(row[column.id])}
+                                                    <simple-input
+                                                        class="w-[50px]"
+                                                        value={row[column.id] || ''}
+                                                        placeholder={``}
+                                                        id={`${column.id}${rowIndex}`}
+                                                        onChange={(e) => handleInputC(rowIndex, column.id, e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
                                         </td>
                                     ))}
                                 </tr>

@@ -26,6 +26,33 @@ import SharedDataContext from '../contexts/SharedDataContext.js';
 function App() {
   const [isShareData, setIsShareData] = useState(
     {
+      work_team:[//Que las tablas de agregar + y - Rows define el key que tendran aqui
+        {
+          academic_degree:"Pedrossssss",
+          full_name:"Pedro perez",
+          affiliation_center_id:"",
+          specialization_area:"",
+          tasks:"",
+          participation_level:"",
+        },
+        {
+          academic_degree: "Grado 1",
+          full_name: "Carlos Pedro",
+          affiliation_center_id: "Centro 123",
+          specialization_area: "Área A",
+          tasks: "Tarea 1",
+          participation_level: "Nivel Alto"
+        },
+        {
+          academic_degree: "Grado 2",
+          full_name: "Juanita López",
+          affiliation_center_id: "Centro 456",
+          specialization_area: "Área B",
+          tasks: "Tarea 2",
+          participation_level: "Nivel Medio"
+        },
+        
+      ],
       email: 'random_email@example.com',
       full_name: 'John Doe',
       academic_degree: 'Ph.D.',

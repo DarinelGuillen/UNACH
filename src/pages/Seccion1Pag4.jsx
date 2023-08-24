@@ -70,7 +70,7 @@ const exampleHeaders = ['Encabezado 1', 'Encabezado 2', 'Encabezado 3', /* ... *
             <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
           </div>
 
-          <Table columns={ColumnsTable}/>
+          <Table columns={ColumnsTable} savedInfo={isShareData.work_team||''}/>
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">
