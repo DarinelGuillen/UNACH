@@ -53,6 +53,21 @@ function App() {
         },
         
       ],
+      test_table:[
+        {
+          id: "1",
+          type: "Pedrossssss",
+          expected_product: "Pedro perez",
+          Especifique: "",
+          
+      },
+      {
+        id: "1",
+        type: "dffff",
+        expected_product: "f fffff",
+        Especifique: "",
+      },
+      ],
       email: 'random_email@example.com',
       full_name: 'John Doe',
       academic_degree: 'Ph.D.',

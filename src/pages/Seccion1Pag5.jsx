@@ -21,7 +21,7 @@ function Seccion1Pag5() {
         { id: "id", title: "Nombre del participante" },
         { id: "type", title: "Tipo de participante" },
         { id: "expected_product", title: "Producto esperado" },
-        { id: "¿?", title: "Especifique" },
+        { id: "Especifique", title: "Especifique" },
     ];
 
     const ColumnsTable2 = [
@@ -50,7 +50,6 @@ function Seccion1Pag5() {
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
 
-                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>
@@ -61,7 +60,7 @@ function Seccion1Pag5() {
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={""||''} />
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test_table||''} />
 
 
 
@@ -79,7 +78,6 @@ function Seccion1Pag5() {
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
 
-                        <ButtonSaveInfo />
                     </div>
 
                     <div className='text-center'>

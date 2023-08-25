@@ -4,8 +4,8 @@ import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from './ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
 
-const Table = ({ columns, savedInfo }) => {
-    const { isShareData } = useContext(SharedDataContext);
+const Table = ({ columns, savedInfo, keyIsShareData}) => {
+    const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const [rowCount, setRowCount] = useState(savedInfo.length || 1);
     const [rowData, setRowData] = useState(savedInfo.length ? savedInfo : [{}]);
 
@@ -23,10 +23,17 @@ const Table = ({ columns, savedInfo }) => {
         }
     };
 
-    const handleInputC = (index, key, other) => {
-        const inputElement = document.getElementById(key).value;
+    const handleInputC = (index, key, value, LocalKey) => {
+        console.log("🚀 ~ file: Table.jsx:27 ~ handleInputC ~ LocalKey:", LocalKey)
         const updatedRowData = [...rowData];
-        updatedRowData[index][key] = inputElement;
+        updatedRowData[index][key] = value;
+
+        // Update the specific item in the work_team array
+        const updatedWorkTeam = [...isShareData[LocalKey]];
+        updatedWorkTeam[index] = { ...updatedWorkTeam[index], [key]: value };
+
+        setIsShareData({ ...isShareData, work_team: updatedWorkTeam });
+
         setRowData(updatedRowData);
     };
 
@@ -56,13 +63,12 @@ const Table = ({ columns, savedInfo }) => {
                                         <td key={column.id}>
                                             <div>
                                                 <div>
-                                                    {console.log(row[column.id])}
-                                                    <simple-input
-                                                        class="w-[50px]"
+                                                    <input
+                                                        className="w-[50px]"
                                                         value={row[column.id] || ''}
                                                         placeholder={``}
                                                         id={`${column.id}${rowIndex}`}
-                                                        onChange={(e) => handleInputC(rowIndex, column.id, e.target.value)}
+                                                        onChange={(e) => handleInputC(rowIndex, column.id, e.target.value, keyIsShareData)}
                                                     />
                                                 </div>
                                             </div>

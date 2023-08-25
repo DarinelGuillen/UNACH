@@ -124,7 +124,7 @@ function Seccion2Pag9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} />
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''} />
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>

@@ -85,7 +85,7 @@ function Seccion2Pag7() {
                         </tr>
                     </table>
 
-                    <Table columns={ColumnsTable} />
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''}/>
 
                     <div className='text-center mt-10'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 2</p>
@@ -117,7 +117,7 @@ function Seccion2Pag7() {
                         </tr>
                     </table >
 
-                    <Table columns={ColumnsTable2} />
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.test||''} />
                                         
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag6">
