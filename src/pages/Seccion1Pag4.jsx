@@ -23,9 +23,10 @@ function Seccion1Pag4() {
     { id: "participation_level", title: "Nivel de participación" },
   ];
 
-
-const exampleHeaders = ['Encabezado 1', 'Encabezado 2', 'Encabezado 3', /* ... */];
-  
+  const HandlerClickFetch = () => {
+    alert("Datos guardados: " + JSON.stringify(rowData));
+    console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+  };
   return (
     <>
       <Header />
@@ -60,17 +61,21 @@ const exampleHeaders = ['Encabezado 1', 'Encabezado 2', 'Encabezado 3', /* ... *
             <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
               <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
             </div>
-            <ButtonSaveInfo />
+            <ButtonSaveInfo onClick={HandlerClickFetch} />
           </div>
 
           <div className='text-center'>
             <p className='font-bold text-xl text-gray-500'>No incluir a la Persona responsable técnica en el listado y anotar un máximo de 6 personas colaboradoras</p>
           </div>
-          <div className='text-center p-10'>
-            <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
+
+
+          <div className="flex justify-center mt-3 mb-5">
+            <div className='text-center w-5/6 mt-2'>
+              <p className='font-bold text-xl text-gray-400'>Solo se considerará la participación de seis personas colaboradoras académicas por proyecto de investigación con financiamiento propio. Si anotan más, estos no serán mencionados en constancias de registro, conclusión o estatus. Esto no aplica para proyectos con financiamiento externo.</p>
+            </div>
           </div>
 
-          <Table columns={ColumnsTable} savedInfo={isShareData.work_team||''} keyIsShareData={"work_team"}/>
+          <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"work_team"} />
 
           <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
             <Link to="/seccion1Pag3">

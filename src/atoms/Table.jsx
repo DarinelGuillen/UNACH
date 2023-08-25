@@ -6,7 +6,7 @@ import SharedDataContext from '../contexts/SharedDataContext';
 import "../assets/css/inputTable.css"
 
 //Error handling if user does not fill any input where index 1 has been filled
-//but index 2 has not been filled (Index 2 get ass undefine and it breaks) 
+//but index 2 has not been filled (Index 2 get ass undefine and it breaks)
 //index 3 has been filled
 
 const Table = ({ columns, savedInfo, keyIsShareData}) => {
@@ -30,31 +30,30 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
 
     const handleInputC = (index, key, value, localKey) => {
         console.log("🚀 ~ file: Table.jsx:28 ~ handleInputC ~ LocalKey:", localKey);
-    
+
         // Verifica si el localKey no existe en isShareData
         if (!isShareData.hasOwnProperty(localKey)) {
             // Si no existe, crea un nuevo key con un array vacío
             setIsShareData({ ...isShareData, [localKey]: [] });
         }
-    
+
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
-    
+
         // Actualiza el elemento específico en el array correspondiente a localKey
         const updatedArray = [...isShareData[localKey]];
         updatedArray[index] = { ...updatedArray[index], [key]: value };
-    
+
         // Actualiza isShareData con el nuevo valor
         setIsShareData({ ...isShareData, [localKey]: updatedArray });
-    
+
         setRowData(updatedRowData);
     };
-    
 
-    const HandlerClickFetch = () => {
-        alert("Datos guardados: " + JSON.stringify(rowData));
-        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-    };
+    // const HandlerClickFetch = () => {
+    //     alert("Datos guardados: " + JSON.stringify(rowData));
+    //     console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    // };
 
     return (
         <>
@@ -104,9 +103,9 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
                 </div>
             </div>
 
-            <div className='flex justify-center mt-9'>
+            {/* <div className='flex justify-center mt-9'>
                 <ButtonSaveInfo onClick={HandlerClickFetch} />
-            </div>
+            </div> */}
         </>
     );
 };
