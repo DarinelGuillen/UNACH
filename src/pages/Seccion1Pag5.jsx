@@ -10,38 +10,30 @@ import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import SharedDataContext from '../contexts/SharedDataContext';
+import Table from '../atoms/Table';
+import { useContext } from 'react';
 
 function Seccion1Pag5() {
+    const { isShareData } = useContext(SharedDataContext);
 
-    const [rowCount, setRowCount] = useState(1);
-    const [rowData, setRowData] = useState([])
+    const ColumnsTable = [
+        { id: "id", title: "Nombre del participante" },
+        { id: "type", title: "Tipo de participante" },
+        { id: "expected_product", title: "Producto esperado" },
+        { id: "Especifique", title: "Especifique" },
+    ];
 
-    const handleAddRow = () => {
-        if (rowCount < 10) {
-            setRowCount(rowCount + 1);
-            setRowData([...rowData, {}]);
-        }
-    };
-
-    const handleRemoveRow = () => {
-        if (rowCount > 1) {
-            setRowCount(rowCount - 1);
-            setRowData(rowData.slice(0, -1));
-        }
-    };
-
-    const handleInputC = (index, key, other) => {
-        const inputElement = document.getElementById(key).value;
-        const updatedRowData = [...rowData];
-        updatedRowData[index][key] = inputElement;
-        setRowData(updatedRowData);
-    };
+    const ColumnsTable2 = [
+        { id: "name", title: "Nombre de la entidad" },
+        { id: "description", title: "Describa el tipo de participación de forma breve" },
+        { id: "contact_name", title: "Contacto (Número célular y correo eléctronico)" },
+    ];
 
     const HandlerClickFetch = () => {
-        alert("Datos guardaditos", rowData);
+        alert("Datos guardados: " + JSON.stringify(rowData));
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
     };
-
 
     return (
         <>
@@ -63,64 +55,18 @@ function Seccion1Pag5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
-
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mt-3'>
                         <p className='font-bold text-xl text-gray-500'>Indicara las personas que formará el proyecto</p>
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mb-3'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
-                    <div className='flex'>
-                        <div className='flex flex-col items-center w-full'>
-                            <table class="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Nombre del participante</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Tipo de participante</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Producto esperado</th>
-                                        <th className='font-normal text-sm w-[50px] sm:text-base sm:font-medium	lg:text-base'>Especifique</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`full_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `full_name${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`type${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `type${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`expected_research_product_id${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `expected_research_product_id${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`other${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `other${rowIndex}`, e.target.value)} />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
 
-                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} alt="Eliminar última fila"></img>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                        {/* NO GUARDA DATOS DE LAS TABLAS */}
-                    </div>
+                    <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"type_investigation"} />
 
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -129,57 +75,14 @@ function Seccion1Pag5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
-
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mt-3 mb-3'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <div className='flex'>
-                        <div className='flex flex-col items-center w-full'>
-                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Nombre de la entidad</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Describa el tipo de participación de forma breve</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Contacto (Número célular y correo eléctronico)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `name${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`description${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `description${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`contact_name${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `contact_name${rowIndex}`, e.target.value)} />
-                                            </td>
-
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                    </div>
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.work_team || ''} keyIsShareData={"entities"} />
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-72'>
                         <Link to="/seccion1Pag4">
@@ -209,8 +112,17 @@ function Seccion1Pag5() {
             </div>
             <Footer />
 
+
+
+
+
         </>
     );
 }
 
 export default Seccion1Pag5;
+
+
+
+
+

@@ -6,45 +6,26 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import logoSave from "../assets/img/Icon/Save.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
 import { useContext } from 'react';
+import SharedDataContext from '../contexts/SharedDataContext';
+import Table from '../atoms/Table';
+
 function Seccion2Pag9() {
     const { isShareData } = useContext(SharedDataContext);
 
-    const [rowCount, setRowCount] = useState(1);
-    const [rowData, setRowData] = useState([])
-
-    const handleAddRow = () => {
-        if (rowCount < 7) {
-            setRowCount(rowCount + 1);
-            setRowData([...rowData, {}]);
-        }
-    };
-
-    const handleRemoveRow = () => {
-        if (rowCount > 1) {
-            setRowCount(rowCount - 1);
-            setRowData(rowData.slice(0, -1));
-        }
-    };
-
-    const handleInputC = (index, key, other) => {
-        const inputElement = document.getElementById(key).value;
-        const updatedRowData = [...rowData];
-        updatedRowData[index][key] = inputElement;
-        setRowData(updatedRowData);
-    };
+    const ColumnsTable = [
+        { id: "type_id", title: "Tipo del producto" },
+        { id: "description", title: "Descripcion" },
+    ];
 
     const HandlerClickFetch = () => {
-        alert("Datos guardaditos", rowData);
+        alert("Datos guardados: " + JSON.stringify(rowData));
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
     };
-
     return (
         <>
             <Header />
@@ -63,27 +44,29 @@ function Seccion2Pag9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.15 Desglose Financiero (Opcional)</p>
                         </div>
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo  onClick={HandlerClickFetch}/>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 '>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
+                        </div>
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <div className="flex">
+                    {/* <div className="flex">
                         <div className='flex flex-col items-center w-full'>
                             <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
                                 <thead className='bg-[#25313A] h-12 rounded text-white'>
                                     <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Rubros</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo de gasto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Etapa</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Justificación</th>
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Rubros</th> id="¿?"
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo de gasto</th> id="expense_type"
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto</th> id="amount"
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Etapa</th> id="phase_id"
+                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Justificación</th> id="justification"
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -130,10 +113,10 @@ function Seccion2Pag9() {
                     </div>
 
                     <div className='flex justify-center mt-9'>
-                        {/* NO GUARDA DATOS DE LAS TABLAS */}
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
+                        NO GUARDA DATOS DE LAS TABLAS 
+                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> ********ESTO DEBERIA DE ESTAR COMENTADO*********
                         <ButtonSaveInfo />
-                    </div>
+                    </div> */}
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
@@ -147,45 +130,8 @@ function Seccion2Pag9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <div className="flex">
-                        <div className='flex flex-col items-center w-full'>
-                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo del producto</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Descripción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test || ''} />
 
-                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        {/* NO GUARDA DATOS DE LAS TABLAS */}
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                    </div>
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
                     </div>

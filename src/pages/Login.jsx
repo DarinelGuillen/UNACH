@@ -30,7 +30,7 @@ function Login() {
                                     </div>
                                 </button>
                             </Link>
-                            <Link to="/seccion1Pag1"><button>
+                            <Link to="/registroProyectos"><button>
                                 <div className='estiloBotonSiguiente grid'>
                                     <div className='grid place-content-center'>
                                         <p>Siguiente</p>

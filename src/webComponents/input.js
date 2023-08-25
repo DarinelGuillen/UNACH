@@ -61,7 +61,7 @@ class SimpleInput extends HTMLElement {
       this.inputElement.value = valueAttribute;
     }
 
-    console.log(` ${id}`);
+    // console.log(` ${id}`);
   }
 }
 

@@ -7,7 +7,7 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
+import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
 function Seccion2Pag6() {
     const { isShareData } = useContext(SharedDataContext);
@@ -35,12 +35,12 @@ function Seccion2Pag6() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="typeOfPay" value={isShareData.typeOfPay || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="Institution" value={isShareData.Institution || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="Program" value={isShareData.Program || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="Url" value={isShareData.Url || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type" value={isShareData.funding_type || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution" value={isShareData.funding_source_institution || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program" value={isShareData.program || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link" value={isShareData.program_link || ''}></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Año de la convocatoria" id="year" value={isShareData.year || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="inst" value={isShareData.inst || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance" value={isShareData.evaluating_instance || ''}></simple-input>
 
 
                         <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>

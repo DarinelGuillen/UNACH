@@ -7,47 +7,35 @@ import logoSave from "../assets/img/Icon/Save.svg";
 function ButtonSaveInfo() {
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
 
-    const handleSave = async () => {
-        const mergedData = { ...dataDictionary, ...dataDictionaryTextArea };
+  const mergeDataIntoContext = (newData, existingData) => {
+    // Merge newData into existingData without overwriting existing keys
+    return { ...existingData, ...newData };
+  };
 
-        try {
-            setIsShareData(mergedData);
-
-            const response = await fetch('url_del_servidor', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(mergedData)
-            });
-
-            if (response.ok) {
-                console.log('Datos guardados exitosamente');
-            } else {
-                console.error('Error al guardar los datos');
-            }
-        } catch (error) {
-            console.error('Error en la solicitud:', error);
-        }
-    }
-
-    useEffect(() => {
-        console.log("🚀 ~ useEffect ~ dataDictionary:", dataDictionary);
-    }, [dataDictionary]);
-
-    useEffect(() => {
-        console.log("🚀 ~ useEffect ~ isShareData:", isShareData);
-    }, [isShareData]);
-
-    return (
-        <button onClick={handleSave}>
-            <img
-                src={logoSave}
-                className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]'
-                alt="Guardar"
-            />
-        </button>
+  const HandlerClickSetData = (e) => {
+    e.preventDefault();
+    
+    // Merge dataDictionary and dataDictionaryTextArea into isShareData
+    const mergedData = mergeDataIntoContext(
+      { ...dataDictionary, ...dataDictionaryTextArea },
+      isShareData
     );
+    
+    setIsShareData(mergedData);
+    console.log("🚀 ~ file: button.jsx:13 ~ HandlerClickSetData ~ isShareData:", isShareData);
+  }
+
+  useEffect(() => {
+    console.log("🚀 ~ useEffect ~ dataDictionary:", dataDictionary);
+  }, [dataDictionary]);
+
+  return ( 
+    <>
+      <button onClick={HandlerClickSetData}>
+        <img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]' alt="Save" />
+      </button>
+    </>
+  );
 }
 
 export default ButtonSaveInfo;

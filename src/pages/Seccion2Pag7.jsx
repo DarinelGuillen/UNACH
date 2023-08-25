@@ -6,44 +6,30 @@ import VerticalText from '../atoms/VerticalText';
 import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
 import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import masIcono from "../assets/img/Icon/mas.svg";
-import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
+import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
+import Table from '../atoms/Table';
+
 function Seccion2Pag7() {
     const { isShareData } = useContext(SharedDataContext);
 
-    const [rowCount, setRowCount] = useState(1);
-    const [rowData, setRowData] = useState([])
+    const ColumnsTable = [
+        { id: "activity", title: "Actividades a desarrollar" },
+        { id: "expected_product", title: "Producto esperado" },
+    ];
 
-    const handleAddRow = () => {
-        if (rowCount < 10) {
-            setRowCount(rowCount + 1);
-            setRowData([...rowData, {}]);
-        }
-    };
-
-    const handleRemoveRow = () => {
-        if (rowCount > 1) {
-            setRowCount(rowCount - 1);
-            setRowData(rowData.slice(0, -1));
-        }
-    };
-
-    const handleInputC = (index, key, other) => {
-        const inputElement = document.getElementById(key).value;
-        const updatedRowData = [...rowData];
-        updatedRowData[index][key] = inputElement;
-        setRowData(updatedRowData);
-    };
+    const ColumnsTable2 = [
+        { id: "activity", title: "Actividades a desarrollar" },
+        { id: "expected_product", title: "Producto esperado" },
+    ];
 
     const HandlerClickFetch = () => {
-        alert("Datos guardaditos", rowData);
+        alert("Datos guardados: " + JSON.stringify(rowData));
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
     };
-
+    
     return (
         <>
             <Header />
@@ -64,8 +50,7 @@ function Seccion2Pag7() {
                             <p className='text-xl lg:text-3xl'>2.12 Etapa y actividades</p>
                         </div>
 
-                        {/* TIENES QUE DARLE 2 VECES PARA QUE SE GUARDEN LOS DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
                     <div className='text-center'>
@@ -77,10 +62,10 @@ function Seccion2Pag7() {
                     </div>
 
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-2 mb-5'>Etapa 1</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-2 '>Etapa 1</p>
                     </div>
 
-                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12">
+                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-5">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th>Primer semestre de ejecución</th>
@@ -88,117 +73,57 @@ function Seccion2Pag7() {
                         </thead>
                         <tr>
                             <div className='flex flex-col w-full items-center'>
-                            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Inicio(Fecha)" id="start_date" value={isShareData.startDate || ''}></simple-input>
-                            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fin(Fecha)" id="end_date" value={isShareData.endDate || ''}></simple-input>
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px" 
+                                placeholder="Inicio(Fecha)" 
+                                id="start_date" 
+                                value={isShareData.startDate || ''}  keyIsShareData={"date_start"}
+                                ></simple-input>
+
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px" 
+                                placeholder="Fin(Fecha)"
+                                id="end_date" 
+                                value={isShareData.endDate || ''}  keyIsShareData={"date_end"}
+                                ></simple-input>
                             </div>
                         </tr>
                     </table>
 
-                    <div className="flex mt-20">
-                        <div className='flex flex-col items-center w-full'>
-                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded  ml-[30px] lg:ml-[90px] text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        {/* NO GUARDA DATOS DE LAS TASBLAS */}
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                    </div>
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''}  keyIsShareData={"first_semester"}/>
 
                     <div className='text-center mt-10'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 2</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5'>Etapa 2</p>
                     </div>
 
                     {/* ml-[30px] lg:ml-[90px] */}
-                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12">
+                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-5">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th>Segundo semestre de ejecución</th>
                             </tr>
                         </thead>
                         <tr>
-                            {/* ml-[30px] lg:ml-[90px]" */}
-                            {/* ml-[30px] lg:ml-[90px]" */}
                             <div className='flex flex-col w-full items-center'>
-                            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Inicio(Fecha)" id="startDate" value= "🚀 ~ file: Seccion2Pag7.jsx:153 ~ Seccion2Pag7 ~ value:"
-                            // {isShareData.startDate || ''}
-                            ></simple-input>
-                            <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Fin(Fecha)" id="endDate" value="🚀 ~ file: Seccion2Pag7.jsx:155 ~ Seccion2Pag7 ~ value:"
-                            // {isShareData.endDate || ''}
-                            ></simple-input>
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px" 
+                                placeholder="Inicio(Fecha)"
+                                id="start_date" 
+                                value={isShareData.start_date || ''} keyIsShareData={"date_start2"}
+                                ></simple-input>
+
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                height="30px"
+                                placeholder="Fin(Fecha)" 
+                                id="end_date" 
+                                value={isShareData.end_date|| ''} keyIsShareData={"date_end2"}
+                                ></simple-input>
                             </div>
                         </tr>
                     </table >
 
-                    <div className="flex mt-20">
-                        <div className='flex flex-col items-center w-full'>
-                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Actividades a desarrollar</th>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Producto esperado</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div className='flex flex-col mr-1 sm:mr-[15px] w-[5%] mt-[50px]'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        {/* NO GUARDA DATOS DE LAS TASBLAS */}
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                    </div>
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.test||''}  keyIsShareData={"second_semester"}/>
+                                        
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag6">
                             <button>

@@ -1,0 +1,20 @@
+/* styles.css */
+
+.Input_Table {
+    width: 98%;
+    height: auto;
+    margin-top: 0.8rem;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    color: linear-gradient(40deg, black 40%, transparent 40%);
+    background-color: #D9D9D9;
+  }
+  
+  .Input_Table::placeholder {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  

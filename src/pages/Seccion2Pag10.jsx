@@ -8,7 +8,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
+import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
 function Seccion2Pag10() {
     const { isShareData } = useContext(SharedDataContext);
@@ -35,12 +35,14 @@ function Seccion2Pag10() {
                         <ButtonSaveInfo />
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>Indicar las referencias en estilo de citación de la American Psychological Association, APA 7º edición</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 '>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>Indicar las referencias en estilo de citación de la American Psychological Association, APA 7º edición</p>
+                        </div>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="textareaInput1"></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="references" value={isShareData.references || ''}></simple-textarea>
                     </div>
 
                     <div className='text-center mt-16'>
