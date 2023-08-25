@@ -3,6 +3,11 @@ import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from './ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
+import "../assets/css/inputTable.css"
+
+//Error handling if user does not fill any input where index 1 has been filled
+//but index 2 has not been filled (Index 2 get ass undefine and it breaks) 
+//index 3 has been filled
 
 const Table = ({ columns, savedInfo, keyIsShareData}) => {
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
@@ -23,19 +28,28 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
         }
     };
 
-    const handleInputC = (index, key, value, LocalKey) => {
-        console.log("🚀 ~ file: Table.jsx:27 ~ handleInputC ~ LocalKey:", LocalKey)
+    const handleInputC = (index, key, value, localKey) => {
+        console.log("🚀 ~ file: Table.jsx:28 ~ handleInputC ~ LocalKey:", localKey);
+    
+        // Verifica si el localKey no existe en isShareData
+        if (!isShareData.hasOwnProperty(localKey)) {
+            // Si no existe, crea un nuevo key con un array vacío
+            setIsShareData({ ...isShareData, [localKey]: [] });
+        }
+    
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
-
-        // Update the specific item in the work_team array
-        const updatedWorkTeam = [...isShareData[LocalKey]];
-        updatedWorkTeam[index] = { ...updatedWorkTeam[index], [key]: value };
-
-        setIsShareData({ ...isShareData, work_team: updatedWorkTeam });
-
+    
+        // Actualiza el elemento específico en el array correspondiente a localKey
+        const updatedArray = [...isShareData[localKey]];
+        updatedArray[index] = { ...updatedArray[index], [key]: value };
+    
+        // Actualiza isShareData con el nuevo valor
+        setIsShareData({ ...isShareData, [localKey]: updatedArray });
+    
         setRowData(updatedRowData);
     };
+    
 
     const HandlerClickFetch = () => {
         alert("Datos guardados: " + JSON.stringify(rowData));
@@ -64,7 +78,7 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
                                             <div>
                                                 <div>
                                                     <input
-                                                        className="w-[50px]"
+                                                        className="Input_Table"
                                                         value={row[column.id] || ''}
                                                         placeholder={``}
                                                         id={`${column.id}${rowIndex}`}
