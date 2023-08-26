@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 // import Card from '../../atoms/card';
 // import CardRight from '../../atoms/cardRight';
 import Footer from '../../atoms/Footer';
 import CardXl from '../../atoms/cardXl';
 import Header2 from '../../atoms/header2';
 import SearchBar from '../../atoms/SearchBar';
-
+import UserContext from '../../contexts/UserContext';
 const RegistroProyectos = () => {
+  const {isUser, setIsUser}=useContext(UserContext)
+
     const [cardXlData, setCardXlData] = useState([
         {
             date: "Fecha 1",
@@ -91,6 +93,10 @@ const RegistroProyectos = () => {
                 <div className="flex justify-center pb-10">
                     <button>
                         <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
+                            {/*
+                            //! next does not work properly
+                            //~~FIx if possible
+                            */}
                             <p className='text-base text-white w-full p-3 lg:text-xl'>Siguiente</p>
                         </div>
                     </button>

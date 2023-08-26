@@ -26,7 +26,8 @@ import SharedDataContext from '../contexts/SharedDataContext.js';
 import UserContext from "../contexts/UserContext.js";
 function App() {
   // const [isShareData, setIsShareData] = useState({})
-   const [isUser, setIsUser] = useState(1)
+  //!Student = 1   Commite = 2  Evaluators = 3
+   const [isUser, setIsUser] = useState(2)
   const [isShareData, setIsShareData] = useState(
     {
       work_team:[//Que las tablas de agregar + y - Rows define el key que tendran aqui
@@ -126,7 +127,7 @@ function App() {
   return (
     <BrowserRouter>
     <SharedDataContext.Provider value={{ isShareData, setIsShareData }}>
-    <SharedDataContext.Provider value={{ isUser, setIsUser }}>
+    <UserContext.Provider value={{ isUser, setIsUser }}>
       <Routes>
         <Route path="/" element={<Home/>}/>
         {/* <Route path="/play" element={<PlayGround/>}/> */}
@@ -149,7 +150,7 @@ function App() {
         <Route path='/seccion2Pag10' element={<Seccion2Pag10/>}/>
         {/* <Route path='/registroProyectos' element={<RegistroProyectos/>}/> */}
       </Routes>
-    </SharedDataContext.Provider>
+    </UserContext.Provider>
     </SharedDataContext.Provider>
     </BrowserRouter>
   );
