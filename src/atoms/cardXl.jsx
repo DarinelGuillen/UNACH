@@ -6,9 +6,9 @@ const CardXl = ({ date, projectName, school, studentName, buttonUrl }) => {
     const statusContex = "1401"
     return (
         <div className='font-sans'>
-            <div className='flex flex-col w-[95%] h-[150px] bg-white rounded-[12px] rounded-3xl border-[1px] border-black ml-[2%] md:h-[208px] md:w-[90%] md:ml-[4%]'>
+            <div className='flex flex-col w-[95%] h-[150px] bg-white rounded-[12px] rounded-3xl border-[1px] border-black ml-[2%] md:h-[208px] md:w-[90%] md:ml-[4%] xl:ml-[1%]'>
 
-                <div className='flex ml-[16%] gap-2 h-full sm:justify-normal sm:ml-[45px] xl:ml-[35px]'>
+                <div className='flex ml-[16%] gap-2 h-full sm:justify-normal sm:ml-[45px] xl:ml-[10%]'>
                     <div className="flex flex-col justify-center mt-9 md:w-[60%] md:mt-[9%]">
                         <p className='text-base text-[#868686] md:text-lg lg:text-2xl'>{date}</p>
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl'>{projectName}</p>
