@@ -8,28 +8,29 @@ function ButtonSaveInfo() {
   const { isShareData, setIsShareData } = useContext(SharedDataContext);
 
   const mergeDataIntoContext = (newData, existingData) => {
-    // Merge newData into existingData without overwriting existing keys
+    // * Merge newData into existingData without overwriting existing keys
     return { ...existingData, ...newData };
   };
 
   const HandlerClickSetData = (e) => {
     e.preventDefault();
-    
-    // Merge dataDictionary and dataDictionaryTextArea into isShareData
+
+    // * Merge dataDictionary and dataDictionaryTextArea into isShareData
     const mergedData = mergeDataIntoContext(
       { ...dataDictionary, ...dataDictionaryTextArea },
       isShareData
     );
-    
+
     setIsShareData(mergedData);
     console.log("🚀 ~ file: button.jsx:13 ~ HandlerClickSetData ~ isShareData:", isShareData);
   }
 
   useEffect(() => {
+    // * Log dataDictionary when it changes
     console.log("🚀 ~ useEffect ~ dataDictionary:", dataDictionary);
   }, [dataDictionary]);
 
-  return ( 
+  return (
     <>
       <button onClick={HandlerClickSetData}>
         <img src={logoSave} className='h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]' alt="Save" />
