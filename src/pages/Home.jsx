@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+import RegistroProyectos from '../components/organism/RegistroProyectos';
+import UserContext from '../contexts/UserContext';
 
 function Home() {
+  const {isUser, setIsUser}=useContext(UserContext)
   return (
     <>
-      <Login/>
+    <RegistroProyectos/>
     </>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Card from '../atoms/card';
-import CardRight from '../atoms/cardRight';
-import Footer from '../atoms/Footer';
-import CardXl from '../atoms/cardXl';
-import Header2 from '../atoms/header2';
-import SearchBar from '../atoms/SearchBar';
+// import Card from '../../atoms/card';
+// import CardRight from '../../atoms/cardRight';
+import Footer from '../../atoms/Footer';
+import CardXl from '../../atoms/cardXl';
+import Header2 from '../../atoms/header2';
+import SearchBar from '../../atoms/SearchBar';
 
 const RegistroProyectos = () => {
     const [cardXlData, setCardXlData] = useState([
@@ -67,12 +67,12 @@ const RegistroProyectos = () => {
 
                 <div className="pb-5 mt-5">
                     <div className="grid grid-cols-2 grid-rows-3 gap-10 bg-white xl:grid-cols-3 xl:grid-rows-2 xl:ml-[3%] xl:mt-10 xl:mb-10">
-                        <Card />
+                        {/* <Card />
                         <CardRight />
                         <Card />
                         <CardRight />
                         <Card />
-                        <CardRight />
+                        <CardRight /> */}
 
                         {/* Mapea los datos de cardXlData para crear las tarjetas */}
                         {cardXlData.map((cardData, index) => (
