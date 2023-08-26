@@ -34,19 +34,48 @@ function Seccion2Pag10() {
   
     async function handleConfirmarEnvio() {
       setIsSending(true);
-      // Simulate sending data
       await new Promise((resolve) => setTimeout(resolve, 1000));
   
       setIsSending(false);
       closeModal();
   
-      // Log when the data is successfully sent
       console.log('Proyecto enviado exitosamente');
       
-      // Use navigate to redirect
       navigate('/');
     }
-  
+  //Simulación de fetch
+    // async function handleConfirmarEnvio() {
+    //     setIsSending(true);
+    
+    //     const fakeApiUrl = 'https://example.com/api';
+    //     const requestData = {
+    //         ...isShareData, 
+    //         references: isShareData.reference || '', 
+    //     };
+    
+    //     try {
+    //         const response = await fetch(fakeApiUrl, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(requestData),
+    //         });
+    
+    //         if (response.ok) {
+    //             console.log('Proyecto enviado exitosamente');
+    //             setIsSending(false);
+    //             closeModal();
+    //             navigate('/');
+    //         } else {
+    //             console.error('Error al enviar el proyecto:', response.statusText);
+    //             setIsSending(false);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error al enviar el proyecto:', error);
+    //         setIsSending(false);
+    //     }
+    // }
     return (
         <>
             <Header />
