@@ -14,33 +14,6 @@ import { useContext } from 'react';
 function Seccion1() {
     const { isShareData } = useContext(SharedDataContext);
 
-    const handleSave = async () => {
-        const data = {
-            title: isShareData.title || '',
-            proposal_date: isShareData.proposal_date || '',
-            location: isShareData.location || ''
-        };
-
-        try {
-            const response = await fetch('url_de_tu_servidor', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                console.log('Datos guardados exitosamente');
-            } else {
-                console.error('Error al guardar los datos');
-            }
-        } catch (error) {
-            console.error('Error en la solicitud:', error);
-        }
-    };
-
-
     return (
         <>
             <Header />

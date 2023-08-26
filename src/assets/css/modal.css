@@ -1,0 +1,57 @@
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Estilos para el overlay del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos específicos para el botón dentro del modal */
+.modal-content button {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+
+/* Estilos para el texto dentro del modal */
+.modal-content p {
+    color: gray;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para los botones de acción dentro del modal */
+.modal-content .modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Estilos para el botón de cancelar dentro del modal */
+.modal-content .modal-actions button.cancel-button {
+    background-color: #ccc; 
+    color: #555; 
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}

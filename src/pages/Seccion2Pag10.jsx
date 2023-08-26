@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import arrowselector from '../assets/img/Icon/arrow.svg';
 import Header from '../atoms/Header';
 import VerticalText from '../atoms/VerticalText';
@@ -7,11 +8,45 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
+import "../assets/css/modal.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
-import { useContext } from 'react';
+import Modal from 'react-modal';
+Modal.setAppElement('#root');
+
 function Seccion2Pag10() {
     const { isShareData } = useContext(SharedDataContext);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [isSending, setIsSending] = useState(false);
+    const navigate = useNavigate(); // Initialize useNavigate
+  
+    function openModal() {
+      setModalOpen(true);
+    }
+  
+    function closeModal() {
+      setModalOpen(false);
+    }
+  
+    async function handleEnviarClick() {
+      openModal();
+    }
+  
+    async function handleConfirmarEnvio() {
+      setIsSending(true);
+      // Simulate sending data
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+  
+      setIsSending(false);
+      closeModal();
+  
+      // Log when the data is successfully sent
+      console.log('Proyecto enviado exitosamente');
+      
+      // Use navigate to redirect
+      navigate('/');
+    }
+  
     return (
         <>
             <Header />
@@ -66,13 +101,38 @@ function Seccion2Pag10() {
                                 </div>
                             </button>
                         </Link>
-                        <button>
+                        <button onClick={handleEnviarClick}>
                             <div className='grid'>
                                 <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                                    <Link to="/seccion2Pag10"><p className='text-2xl lg:text-3xl'>Enviar</p></Link>
+                                    <p className='text-2xl lg:text-3xl'>Enviar</p>
                                 </div>
                             </div>
                         </button>
+                        <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+        overlayClassName="modal-overlay"
+      >
+        <div className="text-center">
+          <p className="text-lg font-semibold mb-2 estiloTextoRegistro">
+            ¿Está seguro que quiere enviar el proyecto? Ya no tendrá otra oportunidad de modificación.
+          </p>
+          <button onClick={handleConfirmarEnvio} className="estiloBotonSiguiente" disabled={isSending}>
+          {isSending ? 'Enviando...' : 'Enviar'}
+          </button>
+          <button
+            onClick={closeModal}
+            className="border px-4 py-2 rounded-md ml-2 estiloBotonCierre cancel-button"
+            
+          >
+            Cancelar
+          </button>
+        </div>
+      </Modal>
+
+
+
                         <div className='flex'>
                             <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>10 - 10</p>
                         </div>
