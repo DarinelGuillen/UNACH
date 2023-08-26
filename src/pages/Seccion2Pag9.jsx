@@ -22,6 +22,10 @@ function Seccion2Pag9() {
         { id: "description", title: "Descripcion" },
     ];
 
+    const HandlerClickFetch = () => {
+        alert("Datos guardados: " + JSON.stringify(rowData));
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    };
     return (
         <>
             <Header />
@@ -40,11 +44,13 @@ function Seccion2Pag9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.15 Desglose Financiero (Opcional)</p>
                         </div>
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo  onClick={HandlerClickFetch}/>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 '>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Este apartado es con el fin de prever y ministrar los gastos, es opcional requisarlo en proyectos con financiamiento de la propia persona investigadora.</p>
+                        </div>
                     </div>
 
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
@@ -124,7 +130,7 @@ function Seccion2Pag9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''} />
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test || ''} />
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>

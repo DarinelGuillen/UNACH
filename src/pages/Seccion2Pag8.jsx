@@ -12,6 +12,12 @@ import { useContext } from 'react';
 
 function Seccion2Pag8() {
     const { isShareData } = useContext(SharedDataContext);
+
+    const HandlerClickFetch = () => {
+        alert("Datos guardados: " + JSON.stringify(rowData));
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    };
+    
     return (
         <>
             <Header />
@@ -36,12 +42,14 @@ function Seccion2Pag8() {
                         <ButtonSaveInfo />
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa la infraestructura y los recursos institucionales que se considera utilizar para el desarrollo de la investigación</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 '>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa la infraestructura y los recursos institucionales que se considera utilizar para el desarrollo de la investigación</p>
+                        </div>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Infraestructura" id="infrastructure" value= {isShareData.infrastructure || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Infraestructura" id="infrastructure" value={isShareData.infrastructure || ''}></simple-input>
                         <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Recursos" id="resources" value={isShareData.resources || ''}></simple-input>
                     </div>
 
@@ -52,16 +60,17 @@ function Seccion2Pag8() {
                             <p className='text-xl lg:text-3xl'>2.14 Consideraciones éticas</p>
                         </div>
 
-                        {/* NO GUARDA DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo onClick={HandlerClickFetch}/>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 100 palabras</p>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describir los criterios éticos a tomar en cuenta para desarrollar la investigación</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 '>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describir los criterios éticos a tomar en cuenta para desarrollar la investigación</p>
+                        </div>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>

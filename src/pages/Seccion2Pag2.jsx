@@ -8,7 +8,7 @@ import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../assets/img/Icon/Save.svg";
 import "../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
-import  SharedDataContext  from '../contexts/SharedDataContext';
+import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
 function Seccion2Pag2() {
     const { isShareData } = useContext(SharedDataContext);
@@ -40,12 +40,14 @@ function Seccion2Pag2() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 200 palabras</p>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa cómo su propuesta ayuda a la generación y/o aplicación del conocimiento original dentro del campo/s de estudio donde se inserta.</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 mt-2'>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Describa cómo su propuesta ayuda a la generación y/o aplicación del conocimiento original dentro del campo/s de estudio donde se inserta.</p>
+                        </div>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={isShareData.main_contribution || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={isShareData.main_contribution || ''}></simple-textarea>
 
                     </div>
 
@@ -63,12 +65,15 @@ function Seccion2Pag2() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl'>Máximo 200 palabras</p>
                     </div>
 
-                    <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                        <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Comente explicitamente cómo su propuesta de investigación está articulada con una o varias funciones sustantivas de la UNACH</p>
+                    <div className="flex justify-center">
+                        <div className='text-center w-5/6 mt-2'>
+                            <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5'>Comente explicitamente cómo su propuesta de investigación está articulada con una o varias funciones sustantivas de la UNACH</p>
+                        </div>
                     </div>
 
+
                     <div className='flex flex-col w-full items-center'>
-                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>

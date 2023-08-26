@@ -25,6 +25,11 @@ function Seccion2Pag7() {
         { id: "expected_product", title: "Producto esperado" },
     ];
 
+    const HandlerClickFetch = () => {
+        alert("Datos guardados: " + JSON.stringify(rowData));
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    };
+    
     return (
         <>
             <Header />
@@ -45,8 +50,7 @@ function Seccion2Pag7() {
                             <p className='text-xl lg:text-3xl'>2.12 Etapa y actividades</p>
                         </div>
 
-                        {/* TIENES QUE DARLE 2 VECES PARA QUE SE GUARDEN LOS DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
                     <div className='text-center'>
@@ -58,10 +62,10 @@ function Seccion2Pag7() {
                     </div>
 
                     <div className='text-center'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-2 mb-5'>Etapa 1</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-2 '>Etapa 1</p>
                     </div>
 
-                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-10">
+                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-5">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th>Primer semestre de ejecución</th>
@@ -73,26 +77,27 @@ function Seccion2Pag7() {
                                 height="30px" 
                                 placeholder="Inicio(Fecha)" 
                                 id="start_date" 
-                                value={isShareData.startDate || ''}
+                                value={isShareData.startDate || ''}  keyIsShareData={"date_start"}
                                 ></simple-input>
+
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Fin(Fecha)"
                                 id="end_date" 
-                                value={isShareData.endDate || ''}
+                                value={isShareData.endDate || ''}  keyIsShareData={"date_end"}
                                 ></simple-input>
                             </div>
                         </tr>
                     </table>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''}/>
+                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''}  keyIsShareData={"first_semester"}/>
 
                     <div className='text-center mt-10'>
-                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>Etapa 2</p>
+                        <p className='font-bold text-gray-500 text-base lg:text-xl mt-5'>Etapa 2</p>
                     </div>
 
                     {/* ml-[30px] lg:ml-[90px] */}
-                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-10">
+                    <table class="table-auto lg:ml-[90px] text-center w-full lg:w-10/12 mb-10 mt-5">
                         <thead className='bg-[#25313A] h-12 rounded text-white'>
                             <tr>
                                 <th>Segundo semestre de ejecución</th>
@@ -104,20 +109,20 @@ function Seccion2Pag7() {
                                 height="30px" 
                                 placeholder="Inicio(Fecha)"
                                 id="start_date" 
-                                value={isShareData.start_date || ''}
+                                value={isShareData.start_date || ''} keyIsShareData={"date_start2"}
                                 ></simple-input>
 
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px"
                                 placeholder="Fin(Fecha)" 
                                 id="end_date" 
-                                value={isShareData.end_date|| ''}>
-                                </simple-input>
+                                value={isShareData.end_date|| ''} keyIsShareData={"date_end2"}
+                                ></simple-input>
                             </div>
                         </tr>
                     </table >
 
-                    <Table columns={ColumnsTable2} savedInfo={isShareData.test||''} />
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.test||''}  keyIsShareData={"second_semester"}/>
                                         
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
                         <Link to="/seccion2Pag6">

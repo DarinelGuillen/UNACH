@@ -38,7 +38,7 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
         if (!isShareData.hasOwnProperty(localKey)) {
             setIsShareData({ ...isShareData, [localKey]: [] });
         }
-    
+
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
     
@@ -47,7 +47,7 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
     
         // ! Alert: Update the shared data context
         setIsShareData({ ...isShareData, [localKey]: updatedArray });
-    
+
         setRowData(updatedRowData);
     };
     
@@ -105,9 +105,9 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
                 </div>
             </div>
 
-            <div className='flex justify-center mt-9'>
+            {/* <div className='flex justify-center mt-9'>
                 <ButtonSaveInfo onClick={HandlerClickFetch} />
-            </div>
+            </div> */}
         </>
     );
 };

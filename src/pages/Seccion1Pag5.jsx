@@ -29,6 +29,12 @@ function Seccion1Pag5() {
         { id: "description", title: "Describa el tipo de participación de forma breve" },
         { id: "contact_name", title: "Contacto (Número célular y correo eléctronico)" },
     ];
+
+    const HandlerClickFetch = () => {
+        alert("Datos guardados: " + JSON.stringify(rowData));
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    };
+
     return (
         <>
             <Header />
@@ -49,26 +55,18 @@ function Seccion1Pag5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
-
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mt-3'>
                         <p className='font-bold text-xl text-gray-500'>Indicara las personas que formará el proyecto</p>
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mb-3'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.test_table||''} />
-
-
-
-                    <div className='flex justify-center mt-9'>
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                        {/* NO GUARDA DATOS DE LAS TABLAS */}
-                    </div>
+                    <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"type_investigation"} />
 
 
                     <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -77,19 +75,14 @@ function Seccion1Pag5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
-
+                        <ButtonSaveInfo onClick={HandlerClickFetch} />
                     </div>
 
-                    <div className='text-center'>
+                    <div className='text-center mt-3 mb-3'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable2} savedInfo={isShareData.work_team||''} />
-
-                    <div className='flex justify-center mt-9'>
-                        {/* <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> */}
-                        <ButtonSaveInfo />
-                    </div>
+                    <Table columns={ColumnsTable2} savedInfo={isShareData.work_team || ''} keyIsShareData={"entities"} />
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-72'>
                         <Link to="/seccion1Pag4">
