@@ -37,10 +37,10 @@ class SimpleTextArea extends HTMLElement {
 
       // Update the value for the id in dataDictionaryTextArea
       dataDictionaryTextArea[newKey] = newValue;
-      console.log(
-        "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionaryTextArea:",
-        dataDictionaryTextArea
-      );
+      // // // console.log(
+      // // // "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionaryTextArea:",
+      // // // dataDictionaryTextArea
+      // // // );
 
       // Create a custom event to notify the change
       const event = new CustomEvent('textAreaChange', { detail: dataDictionaryTextArea });
@@ -65,7 +65,7 @@ class SimpleTextArea extends HTMLElement {
       this.textAreaElement.value = valueAttribute;
     }
 
-    console.log(` ${id}`);
+    // console.log(` ${id}`);
   }
 }
 

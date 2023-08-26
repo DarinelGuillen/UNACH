@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+import RegistroProyectos from '../components/organism/RegistroProyectos';
 
 function Home() {
   return (
     <>
-      <Login/>
+    <RegistroProyectos/>
     </>
   );
 }

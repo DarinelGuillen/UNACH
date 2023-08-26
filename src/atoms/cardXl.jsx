@@ -3,6 +3,7 @@ import logoUnach from '../assets/img/Icon/LOGO-UNACH.png'
 import arrowBlack from '../assets/img/Icon/arrowBlack.png'
 
 const CardXl = ({ date, projectName, school, studentName, buttonUrl }) => {
+    const statusContex="1401"
     return (
         <div className='font-sans hidden xl:block'>
             <div className='flex flex-col w-[95%] h-[208px] bg-white rounded-[12px] rounded-3xl border-[1px] border-black md:w-[90%]'>
@@ -17,12 +18,20 @@ const CardXl = ({ date, projectName, school, studentName, buttonUrl }) => {
 
                     <img src={logoUnach} alt="" className='flex w-[50px] h-[40px] mt-[6%] mr-[6%] md:w-[70px] md:h-[60px] xl:mr-[0%]' />
                 </div>
-
+                {
+                    statusContex!="1400"?(<>
                 <div className="flex justify-end">
                     <a href={buttonUrl} className='flex items-center justify-center w-[50px] h-[30px] bg-[#CACACA] rounded-tl-[12px] rounded-br-[12px] hover:bg-[#BABABA]'>
                         <img src={arrowBlack} className='h-[25px]' alt="" />
                     </a>
                 </div>
+                </>):(<>
+                    {/* // TODO: go to the PDF window and send the necessary parameters */}
+                    <h1>pdf window please</h1>
+                    {/* <button onClick={alert("PFD WINDOW PLEASE")}>PDF</button> */}
+                </>
+                )
+                }
 
             </div>
         </div>

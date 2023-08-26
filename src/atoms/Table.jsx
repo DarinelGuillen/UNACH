@@ -5,15 +5,16 @@ import ButtonSaveInfo from './ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
 import "../assets/css/inputTable.css"
 
-//Error handling if user does not fill any input where index 1 has been filled
-//but index 2 has not been filled (Index 2 get ass undefine and it breaks)
-//index 3 has been filled
+// ! Alert: Error handling if the user does not fill any input where index 1 has been filled
+// ? Query: What happens if index 2 has not been filled? (Index 2 gets assigned 'undefined' and it breaks)
+// ~~ Important to Read: Note that index 3 has been filled.
 
 const Table = ({ columns, savedInfo, keyIsShareData}) => {
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const [rowCount, setRowCount] = useState(savedInfo.length || 1);
     const [rowData, setRowData] = useState(savedInfo.length ? savedInfo : [{}]);
 
+    // * Highlight: Function to add a new row if the row count is less than 7
     const handleAddRow = () => {
         if (rowCount < 7) {
             setRowCount(rowCount + 1);
@@ -21,6 +22,7 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
         }
     };
 
+    // * Highlight: Function to remove the last row if the row count is greater than 1
     const handleRemoveRow = () => {
         if (rowCount > 1) {
             setRowCount(rowCount - 1);
@@ -28,32 +30,32 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
         }
     };
 
+    // ! Alert: Function to handle input changes and update the shared data context
     const handleInputC = (index, key, value, localKey) => {
         console.log("🚀 ~ file: Table.jsx:28 ~ handleInputC ~ LocalKey:", localKey);
-
-        // Verifica si el localKey no existe en isShareData
+    
+        // ? Query: What happens if 'localKey' doesn't exist in 'isShareData'?
         if (!isShareData.hasOwnProperty(localKey)) {
-            // Si no existe, crea un nuevo key con un array vacío
             setIsShareData({ ...isShareData, [localKey]: [] });
         }
 
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
-
-        // Actualiza el elemento específico en el array correspondiente a localKey
+    
         const updatedArray = [...isShareData[localKey]];
         updatedArray[index] = { ...updatedArray[index], [key]: value };
-
-        // Actualiza isShareData con el nuevo valor
+    
+        // ! Alert: Update the shared data context
         setIsShareData({ ...isShareData, [localKey]: updatedArray });
 
         setRowData(updatedRowData);
     };
-
-    // const HandlerClickFetch = () => {
-    //     alert("Datos guardados: " + JSON.stringify(rowData));
-    //     console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-    // };
+    
+    // ? Query: What happens when this button is clicked?
+    const HandlerClickFetch = () => {
+        alert("Datos guardados: " + JSON.stringify(rowData));
+        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
+    };
 
     return (
         <>
