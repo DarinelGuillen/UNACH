@@ -14,17 +14,12 @@ function ButtonSaveInfo({ onSave, onSend }) {
   };
 
   const handleSaveLocally = () => {
-    // Assuming dataDictionary and dataDictionaryTextArea are defined
     const mergedData = mergeDataIntoContext(
       { ...dataDictionary, ...dataDictionaryTextArea },
       isShareData
     );
     setIsShareData(mergedData);
-    console.log("Local data saved:", mergedData);
-  };
-
-  const sendDataToAPI = async (data) => {
-    // API sending logic here
+    console.log("Datos locales guardados: ", mergedData);
   };
 
   const handleSend = async () => {

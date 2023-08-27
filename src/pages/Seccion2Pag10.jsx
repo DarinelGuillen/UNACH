@@ -19,60 +19,59 @@ function Seccion2Pag10() {
     const [isModalOpen, setModalOpen] = useState(false);
     const [isSending, setIsSending] = useState(false);
     const navigate = useNavigate();
-  
-    function openModal() {
-      setModalOpen(true);
-    }
-  
-    function closeModal() {
-      setModalOpen(false);
-    }
-  
-    async function handleEnviarClick() {
-      openModal();
-    }
-  
-    async function handleConfirmarEnvio() {
-      setIsSending(true);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-  
-      setIsSending(false);
-      closeModal();
-  
 
-      const fakeApiUrl = 'https://example.com/api';
-      const requestData = {
-        ...isShareData,
-        references: isShareData.references || '',
-      };
-  
-      try {
-        const response = await fetch(fakeApiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(requestData),
-        });
-  
-        if (response.ok) {
-          console.log('Proyecto enviado exitosamente');
-          navigate('/');
-        } else {
-          console.error('Error al enviar el proyecto:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error al enviar el proyecto:', error);
-      }
+    function openModal() {
+        setModalOpen(true);
     }
-  
+
+    function closeModal() {
+        setModalOpen(false);
+    }
+
+    async function handleEnviarClick() {
+        openModal();
+    }
+
+    async function handleConfirmarEnvio() {
+        setIsSending(true);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        setIsSending(false);
+        closeModal();
+
+        const fakeApiUrl = 'https://example.com/api';
+        const requestData = {
+            ...isShareData,
+            references: isShareData.references || '',
+        };
+
+        try {
+            const response = await fetch(fakeApiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            });
+
+            if (response.ok) {
+                console.log('Proyecto enviado exitosamente');
+                navigate('/');
+            } else {
+                console.error('Error al enviar el proyecto:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error al enviar el proyecto:', error);
+        }
+    }
+
     function handleSaveLocally() {
-      const updatedData = {
-        ...isShareData,
-        references: document.getElementById('references').value,
-      };
-      setIsShareData(updatedData);
-      console.log('Local data saved:', updatedData);
+        const updatedData = {
+            ...isShareData,
+            references: document.getElementById('references').value,
+        };
+        setIsShareData(updatedData);
+        console.log('Local data saved:', updatedData);
     }
     return (
         <>
@@ -136,26 +135,26 @@ function Seccion2Pag10() {
                             </div>
                         </button>
                         <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          className="modal-content"
-          overlayClassName="modal-overlay"
-        >
-          <div className="text-center">
-            <p className="text-lg font-semibold mb-2 estiloTextoRegistro">
-              ¿Está seguro que quiere enviar el proyecto? Ya no tendrá otra oportunidad de modificación.
-            </p>
-            <button onClick={handleConfirmarEnvio} className="estiloBotonSiguiente" disabled={isSending}>
-              {isSending ? 'Enviando...' : 'Enviar'}
-            </button>
-            <button
-              onClick={closeModal}
-              className="border px-4 py-2 rounded-md ml-2 estiloBotonCierre cancel-button"
-            >
-              Cancelar
-            </button>
-          </div>
-        </Modal>
+                            isOpen={isModalOpen}
+                            onRequestClose={closeModal}
+                            className="modal-content"
+                            overlayClassName="modal-overlay"
+                        >
+                            <div className="text-center">
+                                <p className="text-lg font-semibold mb-2 estiloTextoRegistro">
+                                    ¿Está seguro que quiere enviar el proyecto? Ya no tendrá otra oportunidad de modificación.
+                                </p>
+                                <button onClick={handleConfirmarEnvio} className="estiloBotonSiguiente" disabled={isSending}>
+                                    {isSending ? 'Enviando...' : 'Enviar'}
+                                </button>
+                                <button
+                                    onClick={closeModal}
+                                    className="border px-4 py-2 rounded-md ml-2 estiloBotonCierre cancel-button"
+                                >
+                                    Cancelar
+                                </button>
+                            </div>
+                        </Modal>
 
 
 
