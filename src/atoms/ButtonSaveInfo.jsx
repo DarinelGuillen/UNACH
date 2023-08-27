@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
-import SharedDataContext from "../contexts/SharedDataContext";
+import React, { useContext, useState } from 'react';
+import SharedDataContext from '../contexts/SharedDataContext';
+import logoSave from '../assets/img/Icon/Save.svg';
 import { dataDictionary } from "../webComponents/input";
 import { dataDictionaryTextArea } from "../webComponents/textArea";
-import logoSave from "../assets/img/Icon/Save.svg";
 
-function ButtonSaveInfo({ onSend }) {
+
+function ButtonSaveInfo({ onSave, onSend }) {
   const { isShareData, setIsShareData } = useContext(SharedDataContext);
   const [isSaving, setIsSaving] = useState(false);
 
@@ -12,48 +13,53 @@ function ButtonSaveInfo({ onSend }) {
     return { ...existingData, ...newData };
   };
 
-  const HandlerClickSetData = (e) => {
-    e.preventDefault();
+  const handleSaveLocally = () => {
+    // Assuming dataDictionary and dataDictionaryTextArea are defined
     const mergedData = mergeDataIntoContext(
       { ...dataDictionary, ...dataDictionaryTextArea },
       isShareData
     );
     setIsShareData(mergedData);
-    console.log("isShareData:", isShareData);
+    console.log("Local data saved:", mergedData);
   };
 
-  const handleSave = async () => {
+  const sendDataToAPI = async (data) => {
+    // API sending logic here
+  };
+
+  const handleSend = async () => {
     setIsSaving(true);
-    const data = {
-      title: isShareData.title || '',
-      proposal_date: isShareData.proposal_date || '',
-      location: isShareData.location || ''
-    };
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await sendDataToAPI(isShareData);
 
-      console.log("Data:", data);
-      setIsSaving(false);
-      onSend();
+      if (response.success) {
+        console.log('Response Data:', response.message);
+        setIsSaving(false);
+        onSend();
+      } else {
+        console.error('Error:', response.message);
+        setIsSaving(false);
+      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
       setIsSaving(false);
     }
   };
 
   return (
-    <>
-      <div>
-        <button onClick={HandlerClickSetData}>
-          <img
-            src={logoSave}
-            className="h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]"
-            alt="Save"
-          />
-        </button>
-      </div>
-    </>
+    <div>
+      <button onClick={handleSaveLocally}>
+        <img
+          src={logoSave}
+          className="h-[40px] w-[30px] lg:w-[40px] lg:h-[50px] md:h-[30px] md:mr-[10px] sm:h-[30px] xl:mr-[10px]"
+          alt="Save"
+        />
+      </button>
+      <button onClick={handleSend}>
+        Enviar
+      </button>
+    </div>
   );
 }
 

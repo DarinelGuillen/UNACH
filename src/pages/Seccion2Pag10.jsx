@@ -15,10 +15,10 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 function Seccion2Pag10() {
-    const { isShareData } = useContext(SharedDataContext);
+    const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const [isModalOpen, setModalOpen] = useState(false);
     const [isSending, setIsSending] = useState(false);
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
   
     function openModal() {
       setModalOpen(true);
@@ -39,43 +39,41 @@ function Seccion2Pag10() {
       setIsSending(false);
       closeModal();
   
-      console.log('Proyecto enviado exitosamente');
-      
-      navigate('/');
+
+      const fakeApiUrl = 'https://example.com/api';
+      const requestData = {
+        ...isShareData,
+        references: isShareData.references || '',
+      };
+  
+      try {
+        const response = await fetch(fakeApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestData),
+        });
+  
+        if (response.ok) {
+          console.log('Proyecto enviado exitosamente');
+          navigate('/');
+        } else {
+          console.error('Error al enviar el proyecto:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error al enviar el proyecto:', error);
+      }
     }
-  //Simulación de fetch
-    // async function handleConfirmarEnvio() {
-    //     setIsSending(true);
-    
-    //     const fakeApiUrl = 'https://example.com/api';
-    //     const requestData = {
-    //         ...isShareData, 
-    //         references: isShareData.reference || '', 
-    //     };
-    
-    //     try {
-    //         const response = await fetch(fakeApiUrl, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify(requestData),
-    //         });
-    
-    //         if (response.ok) {
-    //             console.log('Proyecto enviado exitosamente');
-    //             setIsSending(false);
-    //             closeModal();
-    //             navigate('/');
-    //         } else {
-    //             console.error('Error al enviar el proyecto:', response.statusText);
-    //             setIsSending(false);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error al enviar el proyecto:', error);
-    //         setIsSending(false);
-    //     }
-    // }
+  
+    function handleSaveLocally() {
+      const updatedData = {
+        ...isShareData,
+        references: document.getElementById('references').value,
+      };
+      setIsShareData(updatedData);
+      console.log('Local data saved:', updatedData);
+    }
     return (
         <>
             <Header />
@@ -138,27 +136,26 @@ function Seccion2Pag10() {
                             </div>
                         </button>
                         <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        className="modal-content"
-        overlayClassName="modal-overlay"
-      >
-        <div className="text-center">
-          <p className="text-lg font-semibold mb-2 estiloTextoRegistro">
-            ¿Está seguro que quiere enviar el proyecto? Ya no tendrá otra oportunidad de modificación.
-          </p>
-          <button onClick={handleConfirmarEnvio} className="estiloBotonSiguiente" disabled={isSending}>
-          {isSending ? 'Enviando...' : 'Enviar'}
-          </button>
-          <button
-            onClick={closeModal}
-            className="border px-4 py-2 rounded-md ml-2 estiloBotonCierre cancel-button"
-            
-          >
-            Cancelar
-          </button>
-        </div>
-      </Modal>
+          isOpen={isModalOpen}
+          onRequestClose={closeModal}
+          className="modal-content"
+          overlayClassName="modal-overlay"
+        >
+          <div className="text-center">
+            <p className="text-lg font-semibold mb-2 estiloTextoRegistro">
+              ¿Está seguro que quiere enviar el proyecto? Ya no tendrá otra oportunidad de modificación.
+            </p>
+            <button onClick={handleConfirmarEnvio} className="estiloBotonSiguiente" disabled={isSending}>
+              {isSending ? 'Enviando...' : 'Enviar'}
+            </button>
+            <button
+              onClick={closeModal}
+              className="border px-4 py-2 rounded-md ml-2 estiloBotonCierre cancel-button"
+            >
+              Cancelar
+            </button>
+          </div>
+        </Modal>
 
 
 
