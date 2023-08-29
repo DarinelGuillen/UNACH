@@ -51,9 +51,6 @@ function ButtonSaveInfo({ onSave, onSend }) {
           alt="Save"
         />
       </button>
-      <button onClick={handleSend}>
-        Enviar
-      </button>
     </div>
   );
 }
