@@ -17,16 +17,9 @@ const Header2 = () => {
                     <p className='text-white text-xs text-center xl:text-base'>Registro de proyecto de investigación</p>
                 </div>
             </div> */}
-            {
-                isUser == 1 ? (
                     <div className="flex w-full justify-end">
                         <Link to="/seccion1Pag1" className='mr-[6%] mt-[2.5%]'><img src={more} className='h-[35px] ' alt="" /></Link>
                     </div>
-                ) : (<>
-                    <h1><strong>can render another component if so</strong> </h1>
-                    <h1><strong>User =1</strong> </h1>
-                </>)
-            }
         </div>
     )
 }

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import RegistroProyectos from '../components/organism/RegistroProyectos';
+import RegistroProyectosStudent from '../components/organism/RegistroProyectosStudent';
 
 function Home() {
   return (
     <>
-    <RegistroProyectos/>
+    <RegistroProyectosStudent/>
     </>
   );
 }
