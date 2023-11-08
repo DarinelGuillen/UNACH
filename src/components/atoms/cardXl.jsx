@@ -1,6 +1,6 @@
 import React from 'react';
-import logoUnach from '../assets/img/Icon/LOGO-UNACH.png'
-import arrowBlack from '../assets/img/Icon/arrowBlack.png'
+import logoUnach from '../../assets/img/Icon/LOGO-UNACH.png'
+import arrowBlack from '../../assets/img/Icon/arrowBlack.png'
 
 const CardXl = ({ date, projectName, school, studentName, buttonUrl }) => {
     const statusContex = "1401"

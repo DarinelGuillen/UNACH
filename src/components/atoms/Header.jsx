@@ -1,6 +1,6 @@
-import componentitoUnachLogo from '../assets/img/Icon/componenteUnachLogo.svg';
-import logoMobile from '../assets/img/Icon/LOGO-UNACH.png'
-import codiguitoQRcito from "../assets/img/Icon/qr-Unach.svg";
+import componentitoUnachLogo from '../../assets/img/Icon/componenteUnachLogo.svg';
+import logoMobile from '../../assets/img/Icon/LOGO-UNACH.png'
+import codiguitoQRcito from "../../assets/img/Icon/qr-Unach.svg";
 
 function Header() {
     return (
@@ -18,7 +18,7 @@ function Header() {
                         <p className='hidden lg:block'>Coordinación de Investigación y Posgrado de la UA</p>
                     </div>
                 </div>
-                
+
                 <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-2 lg:place-items-center">
                     <div className=''>
                         {/* Aquí ira el número de Registro de Proyecto de Investigación*/}

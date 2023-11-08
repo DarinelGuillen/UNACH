@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import arrowselector from '../assets/img/Icon/arrow.svg';
-import Header from '../atoms/Header';
-import VerticalText from '../atoms/VerticalText';
-import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
-import Footer from '../atoms/Footer';
+import Header from '../components/atoms/Header';
+import VerticalText from '../components/atoms/VerticalText';
+import ClaveDeAcceso from '../components/atoms/ClaveDeAcceso';
+import Footer from '../components/atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import masIcono from "../assets/img/Icon/mas.svg";
 import menosIcono from "../assets/img/Icon/menos.svg";
 import "../assets/css/botoncito.css";
-import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import ButtonSaveInfo from '../components/atoms/ButtonSaveInfo';
 import { useContext } from 'react';
 import SharedDataContext from '../contexts/SharedDataContext';
-import Table from '../atoms/Table';
+import Table from '../components/atoms/Table';
 
 function Seccion2Pag9() {
     const { isShareData } = useContext(SharedDataContext);

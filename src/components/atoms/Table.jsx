@@ -1,15 +1,15 @@
 import React, { useState, useContext } from 'react';
-import masIcono from "../assets/img/Icon/mas.svg";
-import menosIcono from "../assets/img/Icon/menos.svg";
+import masIcono from "../../assets/img/Icon/mas.svg";
+import menosIcono from "../../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from './ButtonSaveInfo';
-import SharedDataContext from '../contexts/SharedDataContext';
-import "../assets/css/inputTable.css"
+import SharedDataContext from '../../contexts/SharedDataContext';
+import "../../assets/css/inputTable.css"
 
 // ! Alert: Error handling if the user does not fill any input where index 1 has been filled
 // ? Query: What happens if index 2 has not been filled? (Index 2 gets assigned 'undefined' and it breaks)
 // ~~ Important to Read: Note that index 3 has been filled.
 
-const Table = ({ columns, savedInfo, keyIsShareData}) => {
+const Table = ({ columns, savedInfo, keyIsShareData }) => {
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const [rowCount, setRowCount] = useState(savedInfo.length || 1);
     const [rowData, setRowData] = useState(savedInfo.length ? savedInfo : [{}]);
@@ -33,7 +33,7 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
     // ! Alert: Function to handle input changes and update the shared data context
     const handleInputC = (index, key, value, localKey) => {
         console.log("🚀 ~ file: Table.jsx:28 ~ handleInputC ~ LocalKey:", localKey);
-    
+
         // ? Query: What happens if 'localKey' doesn't exist in 'isShareData'?
         if (!isShareData.hasOwnProperty(localKey)) {
             setIsShareData({ ...isShareData, [localKey]: [] });
@@ -41,16 +41,16 @@ const Table = ({ columns, savedInfo, keyIsShareData}) => {
 
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
-    
+
         const updatedArray = [...isShareData[localKey]];
         updatedArray[index] = { ...updatedArray[index], [key]: value };
-    
+
         // ! Alert: Update the shared data context
         setIsShareData({ ...isShareData, [localKey]: updatedArray });
 
         setRowData(updatedRowData);
     };
-    
+
     // ? Query: What happens when this button is clicked?
     const HandlerClickFetch = () => {
         alert("Datos guardados: " + JSON.stringify(rowData));

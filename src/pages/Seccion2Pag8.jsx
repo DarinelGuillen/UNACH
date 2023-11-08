@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import arrowselector from '../assets/img/Icon/arrow.svg';
-import Header from '../atoms/Header';
-import VerticalText from '../atoms/VerticalText';
-import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
-import Footer from '../atoms/Footer';
+import Header from '../components/atoms/Header';
+import VerticalText from '../components/atoms/VerticalText';
+import ClaveDeAcceso from '../components/atoms/ClaveDeAcceso';
+import Footer from '../components/atoms/Footer';
 import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
 import "../assets/css/botoncito.css";
-import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import ButtonSaveInfo from '../components/atoms/ButtonSaveInfo';
 import SharedDataContext from '../contexts/SharedDataContext';
 import { useContext } from 'react';
 

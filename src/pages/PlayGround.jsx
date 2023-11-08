@@ -1,7 +1,7 @@
 // import { useContext,useEffect } from 'react';
 // import SharedDataContext from '../contexts/SharedDataContext';
 // import { dataDictionary } from '../webComponents/input';
-// import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+// import ButtonSaveInfo from '../components/atoms/ButtonSaveInfo';
 
 // function PlayGround() {
 

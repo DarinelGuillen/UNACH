@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
-import SharedDataContext from '../contexts/SharedDataContext';
-import logoSave from '../assets/img/Icon/Save.svg';
-import { dataDictionary } from "../webComponents/input";
-import { dataDictionaryTextArea } from "../webComponents/textArea";
+import SharedDataContext from '../../contexts/SharedDataContext';
+import logoSave from '../../assets/img/Icon/Save.svg';
+import { dataDictionary } from "../../webComponents/input";
+import { dataDictionaryTextArea } from "../../webComponents/textArea";
 
 
 function ButtonSaveInfo({ onSave, onSend }) {

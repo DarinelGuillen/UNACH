@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
-import Footer from '../../atoms/Footer';
-import CardXl from '../../atoms/cardXl';
-import Header2 from '../../atoms/header2';
-import SearchBar from '../../atoms/SearchBar';
+import Footer from '../atoms/Footer';
+import CardXl from '../atoms/cardXl';
+import Header2 from '../atoms/header2';
+import SearchBar from '../atoms/SearchBar';
 import UserContext from '../../contexts/UserContext';
 const RegistroProyectos = () => {
     const { isUser, setIsUser } = useContext(UserContext)
