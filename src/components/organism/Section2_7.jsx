@@ -1,18 +1,19 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
-import arrowselector from '../assets/img/Icon/arrow.svg';
-import Header from '../components/atoms/Header';
-import VerticalText from '../components/atoms/VerticalText';
-import ClaveDeAcceso from '../components/atoms/ClaveDeAcceso';
-import Footer from '../components/atoms/Footer';
-import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import "../assets/css/botoncito.css";
-import ButtonSaveInfo from '../components/atoms/ButtonSaveInfo';
-import SharedDataContext from '../contexts/SharedDataContext';
-import { useContext } from 'react';
-import Table from '../components/atoms/Table';
+import React, { useState, useContext } from 'react';
+import arrowselector from '../../assets/img/Icon/arrow.svg';
+import Header from '../atoms/Header';
+import VerticalText from '../atoms/VerticalText';
+import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
+import Footer from '../atoms/Footer';
+import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import SharedDataContext from '../../contexts/SharedDataContext';
+import Table from '../atoms/Table';
+import "../../assets/css/botoncito.css";
 
-function Seccion2Pag7() {
+
+
+function Section2_7() {
     const { isShareData } = useContext(SharedDataContext);
 
     const ColumnsTable = [
@@ -152,4 +153,4 @@ function Seccion2Pag7() {
     );
 }
 
-export default Seccion2Pag7;
+export default Section2_7;

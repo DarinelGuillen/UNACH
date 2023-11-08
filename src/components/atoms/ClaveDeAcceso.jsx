@@ -11,7 +11,7 @@ function ClaveDeAcceso() {
 
                     <div className="flex flex-col mt-8 md:mt-[35px] lg:mt-[55px] lg:w-full lg:mt-[45px] xl:w-full xl:mt-[45px] ">
                         <p className="text-center ml-[20px] xl:text-start lg:text-start"> <b>Clave de Registro </b>(Uso exclusivo DI)</p>
-                        <simple-input class="w-[200px] ml-[20px] sm:w-[250px] md:w-[300px] lg:w-[200px] lg:ml-[10px] xl:w-[300px]" height="20%" type="text" placeholder="DI" id="text"></simple-input>
+                        <simple-input className="w-[200px] ml-[20px] sm:w-[250px] md:w-[300px] lg:w-[200px] lg:ml-[10px] xl:w-[300px]" height="20%" type="text" placeholder="DI" id="text"></simple-input>
                     </div>
                 </div>
                 <Iconos />

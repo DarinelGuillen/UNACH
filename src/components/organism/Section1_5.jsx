@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import arrowselector from '../assets/img/Icon/arrow.svg';
-import Header from '../components/atoms/Header';
-import VerticalText from '../components/atoms/VerticalText';
-import ClaveDeAcceso from '../components/atoms/ClaveDeAcceso';
-import Footer from '../components/atoms/Footer';
-import logoSinNadita from "../assets/img/Icon/checkSinNada.svg";
-import masIcono from "../assets/img/Icon/mas.svg";
-import menosIcono from "../assets/img/Icon/menos.svg";
-import "../assets/css/botoncito.css";
-import ButtonSaveInfo from '../components/atoms/ButtonSaveInfo';
-import SharedDataContext from '../contexts/SharedDataContext';
-import Table from '../components/atoms/Table';
+import arrowselector from '../../assets/img/Icon/arrow.svg';
+import Header from '../atoms/Header';
+import VerticalText from '../atoms/VerticalText';
+import ClaveDeAcceso from '../atoms/ClaveDeAcceso';
+import Footer from '../atoms/Footer';
+import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
+import masIcono from "../../assets/img/Icon/mas.svg";
+import menosIcono from "../../assets/img/Icon/menos.svg";
+import "../../assets/css/botoncito.css";
+import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import SharedDataContext from '../../contexts/SharedDataContext';
+import Table from '../atoms/Table';
 import { useContext } from 'react';
 
-function Seccion1Pag5() {
+function Section1_5() {
     const { isShareData } = useContext(SharedDataContext);
 
     const ColumnsTable = [
@@ -120,9 +120,4 @@ function Seccion1Pag5() {
     );
 }
 
-export default Seccion1Pag5;
-
-
-
-
-
+export default Section1_5;

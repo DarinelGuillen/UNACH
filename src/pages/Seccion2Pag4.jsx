@@ -24,7 +24,7 @@ function Seccion2Pag4() {
                         <ClaveDeAcceso />
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
+                    <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
 
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
@@ -44,12 +44,12 @@ function Seccion2Pag4() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_question" value={isShareData.research_question || ''}></simple-textarea>
+                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_question" value={isShareData.research_question || ''}></simple-textarea>
                         
 
                     </div>
 
-                    <div class="flex items-center place-content-around text-center w-full mt-5 lg:mt-[35px]">
+                    <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-[35px]">
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px] xl:ml-2'></img>
 
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
@@ -69,7 +69,7 @@ function Seccion2Pag4() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                    <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="general_objective" value={isShareData.general_objective || ''}></simple-textarea>
+                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="general_objective" value={isShareData.general_objective || ''}></simple-textarea>
                     </div>
 
                     <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
