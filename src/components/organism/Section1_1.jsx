@@ -26,6 +26,47 @@ function Section1_1() {
                         <ClaveDeAcceso />
                     </div>
                     <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
+                        <p className='text-[#BCB785] text-4xl '>Sección 0: Datos Del Proyecto</p>
+                    </div>
+                    {/* ! Start Section 0 */}
+                    <div className='flex flex-col w-full items-center'>
+
+                        <p className='font-bold text-base lg:text-xl text-gray-500'>
+                            Titulo del Proyecto Acorde a la Investigacion que se hara
+                        </p>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.title_project || ''}
+                            height="30px"
+                            placeholder=" Título del proyecto de investigación"
+                            id="title_project"
+                        ></simple-input>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.start_date || ''}
+                            height="30px"
+                            placeholder="Fecha de inicio del proyecto"
+                            id="start_date"
+                        ></simple-input>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.end_date || ''}
+                            height="30px"
+                            placeholder="Fecha de finalización del proyecto"
+                            id="end_date"
+                        ></simple-input>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.student_name || ''}
+                            height="30px"
+                            placeholder="Nombre completo del estudiante asociado al proyecto "
+                            id="student_name"
+                        ></simple-input>
+
+                    </div>
+                    {/* ! END  Section 0 */}
+
+                    <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
                         <p className='text-[#BCB785] text-4xl '>Sección 1: <br />Protocolo del proyecto</p>
                     </div>
                     <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-20">
@@ -44,7 +85,7 @@ function Section1_1() {
                     </div>
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.title || ''}
                             height="30px"
                             placeholder="Título"
@@ -52,7 +93,7 @@ function Section1_1() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.proposal_date || ''}
                             height="30px"
                             placeholder="Fecha de elaboración de propuesta"
@@ -60,7 +101,7 @@ function Section1_1() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.location || ''}
                             height="30px"
                             placeholder="Lugar de realización"
@@ -86,7 +127,7 @@ function Section1_1() {
 
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.start_date || ''}
                             height="30px"
                             placeholder="Vigencia:Inicio"
@@ -94,7 +135,7 @@ function Section1_1() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.end_date || ''}
                             height="30px"
                             placeholder="Vigencia:Conclusión"
@@ -102,7 +143,7 @@ function Section1_1() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.weekly_hours_dedicated || ''}
                             height="30px"
                             placeholder="Horas dedicadas semanalmente al proyecto (HSM)"

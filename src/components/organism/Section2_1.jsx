@@ -40,7 +40,7 @@ function Section2_1() {
                         <img src={logoSinNadita} className='h-[40px] ml-2 lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[50px] lg:ml-[20px] xl:ml-6 lg:ml-4'></img>
 
                         <div className='flex flex-col w-full items-center'>
-                            <simple-input className="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%] mr-[30px]" height="30px" value={isShareData.title || ''} placeholder="Título del proyecto" id="title"></simple-input>
+                            <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%] mr-[30px]" height="30px" value={isShareData.title || ''} placeholder="Título del proyecto" id="title"></simple-input>
                         </div>
 
                         {/* NINGUN BOTÓN SALVA DATOS DE LOS INPUTS */}
@@ -62,7 +62,7 @@ function Section2_1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="executive_summary" value={isShareData.executive_summary || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="executive_summary" value={isShareData.executive_summary || ''}></simple-textarea>
 
                     </div>
 
@@ -81,7 +81,7 @@ function Section2_1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="introduction" value={isShareData.introduction || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="introduction" value={isShareData.introduction || ''}></simple-textarea>
 
                     </div>
 

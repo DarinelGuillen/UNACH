@@ -108,7 +108,7 @@ function Section2_10() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="references" value={isShareData.references || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" type="text" placeholder="Especifique" id="references" value={isShareData.references || ''}></simple-textarea>
                     </div>
 
                     <div className='text-center mt-16'>

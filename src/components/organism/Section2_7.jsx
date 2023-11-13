@@ -76,14 +76,14 @@ function Section2_7() {
                         </thead>
                         <tr>
                             <div className='flex flex-col w-full items-center'>
-                                <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Inicio(Fecha)" 
                                 id="start_date" 
                                 value={isShareData.startDate || ''}  keyIsShareData={"date_start"}
                                 ></simple-input>
 
-                                <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Fin(Fecha)"
                                 id="end_date" 
@@ -108,14 +108,14 @@ function Section2_7() {
                         </thead>
                         <tr>
                             <div className='flex flex-col w-full items-center'>
-                                <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Inicio(Fecha)"
                                 id="start_date" 
                                 value={isShareData.start_date || ''} keyIsShareData={"date_start2"}
                                 ></simple-input>
 
-                                <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
+                                <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px"
                                 placeholder="Fin(Fecha)" 
                                 id="end_date" 

@@ -35,7 +35,7 @@ function Section1_2() {
 
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.full_name || ''}
                             height="30px"
                             placeholder="Nombre completo"
@@ -43,7 +43,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.email || ''}
                             height="30px"
                             placeholder="Correo electrónico"
@@ -51,7 +51,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.academic_degree || ''}
                             height="30px"
                             placeholder="Grado"
@@ -59,7 +59,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.affiliation_center_id || ''}
                             height="30px"
                             placeholder="Centro de adscripción"
@@ -67,7 +67,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.office_phone || ''}
                             height="30px"
                             placeholder="Teléfono célular"
@@ -75,7 +75,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.cellphone || ''}
                             height="30px"
                             placeholder="Teléfono oficina"
@@ -83,7 +83,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.employment_status || ''}
                             height="30px"
                             placeholder="Situación laboral"
@@ -105,7 +105,7 @@ function Section1_2() {
 
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.other || ''}
                             height="30px"
                             placeholder="Elija un elemento checkBox"
@@ -113,7 +113,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.end_date || ''}
                             height="30px"
                             placeholder="Vigencia:Conclusión"
@@ -121,7 +121,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-input
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.specific_topic || ''}
                             height="30px"
                             placeholder="Tema específico"
@@ -129,7 +129,7 @@ function Section1_2() {
                         ></simple-input>
 
                         <simple-textarea
-                            className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             height="150px"
                             type="text"
                             placeholder="Especifique"

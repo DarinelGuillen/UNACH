@@ -47,7 +47,7 @@ function Section2_5() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="specific_objectives" value={isShareData.specific_objectives || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="specific_objectives" value={isShareData.specific_objectives || ''}></simple-textarea>
 
                     </div>
 
@@ -71,7 +71,7 @@ function Section2_5() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="hypotheses_or_assumptions" value={isShareData.hypotheses_or_assumptions || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="hypotheses_or_assumptions" value={isShareData.hypotheses_or_assumptions || ''}></simple-textarea>
 
                     </div>
 

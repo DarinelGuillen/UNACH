@@ -50,7 +50,7 @@ function Section2_2() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={isShareData.main_contribution || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={isShareData.main_contribution || ''}></simple-textarea>
 
                     </div>
 
@@ -76,7 +76,7 @@ function Section2_2() {
 
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
                     </div>
                     <ButtonSections/>
                     

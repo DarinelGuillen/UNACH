@@ -50,11 +50,11 @@ function Section1_4() {
             </div>
   
             <div className='flex flex-col w-full items-center'>
-              <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
   
-              <simple-input className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
   
-              <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+              <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
             </div>
   
             <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">

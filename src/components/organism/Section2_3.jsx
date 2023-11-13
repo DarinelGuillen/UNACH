@@ -48,7 +48,7 @@ function Section2_3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="theoretical_marco" value={isShareData.theoretical_marco || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="theoretical_marco" value={isShareData.theoretical_marco || ''}></simple-textarea>
 
 
                     </div>
@@ -72,7 +72,7 @@ function Section2_3() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_justification" value={isShareData.research_justification || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_justification" value={isShareData.research_justification || ''}></simple-textarea>
                     </div>
                     <ButtonSections/>
                     

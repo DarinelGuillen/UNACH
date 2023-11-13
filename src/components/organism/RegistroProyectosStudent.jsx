@@ -1,56 +1,33 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Footer from '../atoms/Footer';
 import CardXl from '../atoms/cardXl';
 import Header2 from '../atoms/header2';
-import SearchBar from '../atoms/SearchBar';
 import UserContext from '../../contexts/UserContext';
-const RegistroProyectosStudent = () => {
-    const { isUser, setIsUser } = useContext(UserContext)
 
-    const [cardXlData, setCardXlData] = useState([
-        {
-            date: "Fecha 1",
-            projectName: "Proyecto 1",
-            school: "Escuela 1",
-            studentName: "Alumno 1",
-            buttonUrl: "/seccion1Pag1"
-        },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
-        {
-            date: "Fecha 2",
-            projectName: "Proyecto 2",
-            school: "Escuela 2",
-            studentName: "Alumno 2",
-            buttonUrl: "/seccion1Pag2"
-        },
-    ]);
+const RegistroProyectosStudent = () => {
+    const { isUser, setIsUser } = useContext(UserContext);
+    const [cardXlData, setCardXlData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/projects/ABC123' );
+
+                if (response.ok) {
+                    const data = await response.json();
+                    // Assuming the data structure is similar to cardXlData
+                    setCardXlData(data.projects);
+                } else {
+                    console.error('Failed to fetch data');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        // Call the fetchData function when the component mounts
+        fetchData();
+    }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
     return (
         <>
@@ -63,11 +40,13 @@ const RegistroProyectosStudent = () => {
                         {cardXlData.map((cardData, index) => (
                             <CardXl
                                 key={index}
-                                date={cardData.date}
-                                projectName={cardData.projectName}
-                                school={cardData.school}
-                                studentName={cardData.studentName}
-                                buttonUrl={cardData.buttonUrl}
+                                id={cardData.id}
+                                start_date={cardData.start_date}
+                                end_date={cardData.end_date}
+                                title_project={cardData.title_project}
+                                status={cardData.status}
+                                student_name={cardData.student_name}
+                                created_at={cardData.created_at}
                             />
                         ))}
                     </div>
