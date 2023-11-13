@@ -9,6 +9,7 @@ import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../../assets/img/Icon/Save.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
+import ButtonSections from '../molecules/ButtonSections';
 import Modal from 'react-modal';
 
 // Configurar el elemento de la aplicación para el modal

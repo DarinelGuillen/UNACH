@@ -8,7 +8,7 @@ import Footer from '../atoms/Footer';
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
-
+import ButtonSections from '../molecules/ButtonSections';
 import '../../assets/css/botoncito.css';
 
 function Section1_2() {
@@ -138,29 +138,7 @@ function Section1_2() {
                         ></simple-textarea>
                     </div>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
-                        <Link to="/seccion1Pag1">
-                            <button>
-                                <div className='grid'>
-                                    <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
-                                        <img src={arrowselector}></img>
-                                    </div>
-                                </div>
-                            </button>
-                        </Link>
-                        <Link to="/seccion1Pag3">
-                            <button>
-                                <div className='grid'>
-                                    <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                                        <p className='text-2xl lg:text-3xl'>Siguiente</p>
-                                    </div>
-                                </div>
-                            </button>
-                        </Link>
-                        <div className='flex'>
-                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>2 - 5</p>
-                        </div>
-                    </div>
+                    <ButtonSections/>
                 </div>
             </div>
             <Footer />

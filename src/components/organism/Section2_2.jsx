@@ -9,6 +9,7 @@ import Footer from '../atoms/Footer';
 import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
 import logoSave from "../../assets/img/Icon/Save.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import ButtonSections from '../molecules/ButtonSections';
 import "../../assets/css/botoncito.css";
 
 
@@ -77,28 +78,8 @@ function Section2_2() {
                     <div className='flex flex-col w-full items-center'>
                         <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
                     </div>
-
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
-                        <Link to="/seccion2Pag1">
-                            <button>
-                                <div className='grid'>
-                                    <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
-                                        <img src={arrowselector}></img>
-                                    </div>
-                                </div>
-                            </button>
-                        </Link>
-                        <button>
-                            <div className='grid'>
-                                <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                                    <Link to="/seccion2Pag3"><p className='text-2xl lg:text-3xl'>Siguiente</p></Link>
-                                </div>
-                            </div>
-                        </button>
-                        <div className='flex'>
-                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>2 - 10</p>
-                        </div>
-                    </div>
+                    <ButtonSections/>
+                    
                 </div>
             </div>
             <Footer />

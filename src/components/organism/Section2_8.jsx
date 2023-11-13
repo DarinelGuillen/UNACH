@@ -8,6 +8,7 @@ import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
 import "../../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
+import ButtonSections from '../molecules/ButtonSections';
 import { useContext } from 'react';
 
 
@@ -78,27 +79,7 @@ function Section2_8() {
                         <simple-textarea className="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="100px" type="text" placeholder="Especifique" id="ethical_considerations" value={isShareData.ethical_considerations || ''}></simple-textarea>
                     </div>
 
-                    <div className='flex place-content-around mt-10 mb-10 lg:mt-[161px]'>
-                        <Link to="/seccion2Pag7">
-                            <button>
-                                <div className='grid'>
-                                    <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
-                                        <img src={arrowselector}></img>
-                                    </div>
-                                </div>
-                            </button>
-                        </Link>
-                        <button>
-                            <div className='grid'>
-                                <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                                    <Link to="/seccion2Pag9"><p className='text-2xl lg:text-3xl'>Siguiente</p></Link>
-                                </div>
-                            </div>
-                        </button>
-                        <div className='flex'>
-                            <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>8 - 10</p>
-                        </div>
-                    </div>
+                    <ButtonSections/>
                 </div>
             </div>
             <Footer />

@@ -12,7 +12,11 @@ import UserContext from "../contexts/UserContext.js";
 function App() {
   // const [isShareData, setIsShareData] = useState({})
   //!Student = 1   Commite = 2  Evaluators = 3
-   const [isUser, setIsUser] = useState(2)
+   const [isUser, setIsUser] = useState(
+    {
+      page:1,
+    }
+   )
   const [isShareData, setIsShareData] = useState(
     {
       work_team:[//Que las tablas de agregar + y - Rows define el key que tendran aqui

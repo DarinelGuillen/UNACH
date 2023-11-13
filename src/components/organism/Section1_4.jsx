@@ -9,6 +9,7 @@ import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import arrowselector from '../../assets/img/Icon/arrow.svg';
 import Table from '../atoms/Table';
+import ButtonSections from '../molecules/ButtonSections';
 
 function Section1_4() {
     const { isShareData } = useContext(SharedDataContext);
@@ -77,29 +78,7 @@ function Section1_4() {
   
             <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"work_team"} />
   
-            <div className='flex place-content-around mt-10 mb-10 lg:mt-24'>
-              <Link to="/seccion1Pag3">
-                <button>
-                  <div className='grid'>
-                    <div className='grid place-content-center bg-[#BCB785] w-[3rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[6rem]'>
-                      <img src={arrowselector} alt="Anterior"></img>
-                    </div>
-                  </div>
-                </button>
-              </Link>
-              <Link to="/seccion1Pag5">
-                <button>
-                  <div className='grid'>
-                    <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
-                      <p className='text-2xl lg:text-3xl'>Siguiente</p>
-                    </div>
-                  </div>
-                </button>
-              </Link>
-              <div className='flex'>
-                <p className='grid bg-[#BCB785] w-[4rem] h-[3rem] place-content-center text-white text-xl rounded-md lg:text-3xl lg:h-[4rem] lg:w-[6rem]'>4 - 5</p>
-              </div>
-            </div>
+            <ButtonSections/>
           </div>
         </div>
         <Footer />
