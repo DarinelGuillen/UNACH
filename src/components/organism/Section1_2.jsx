@@ -36,10 +36,10 @@ function Section1_2() {
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.full_name || ''}
+                            value={isShareData.full_name_technical_responsible || ''}
                             height="30px"
                             placeholder="Nombre completo"
-                            id="full_name"
+                            id="full_name_technical_responsible"
                         ></simple-input>
 
                         <simple-input
@@ -52,34 +52,35 @@ function Section1_2() {
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.academic_degree || ''}
+                            value={isShareData.degree || ''}
                             height="30px"
                             placeholder="Grado"
-                            id="academic_degree"
+                            id="degree"
                         ></simple-input>
 
+                        {/*TODO CheckBOX */}
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.affiliation_center_id || ''}
+                            value={isShareData.affiliation_center || ''}
                             height="30px"
                             placeholder="Centro de adscripción"
-                            id="affiliation_center_id"
-                        ></simple-input>
-
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.office_phone || ''}
-                            height="30px"
-                            placeholder="Teléfono célular"
-                            id="office_phone"
+                            id="affiliation_center"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.cellphone || ''}
                             height="30px"
-                            placeholder="Teléfono oficina"
+                            placeholder="Teléfono célular"
                             id="cellphone"
+                        ></simple-input>
+
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.office_phone || ''}
+                            height="30px"
+                            placeholder="Teléfono oficina"
+                            id="office_phone"
                         ></simple-input>
 
                         <simple-input
@@ -104,38 +105,39 @@ function Section1_2() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
+
+                        {/*TODO CheckBOX */}
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.other || ''}
+                            value={isShareData.knowledge_area || ''}
                             height="30px"
-                            placeholder="Elija un elemento checkBox"
-                            id="other"
+                            placeholder="Selecione Area de conocimiento "
+                            id="knowledge_area"
+                        ></simple-input>
+                        {/*TODO CheckBOX */}
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={isShareData.discipline || ''}
+                            height="30px"
+                            placeholder="Diciplina"
+                            id="discipline"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.end_date || ''}
+                            value={isShareData.specify || ''}
                             height="30px"
-                            placeholder="Vigencia:Conclusión"
-                            id="end_date"
+                            placeholder="Especifique Diciplina"
+                            id="specify"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.specific_topic || ''}
                             height="30px"
                             placeholder="Tema específico"
                             id="specific_topic"
+                            value={isShareData.specific_topic || ''}
                         ></simple-input>
-
-                        <simple-textarea
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            height="150px"
-                            type="text"
-                            placeholder="Especifique"
-                            id="Specific_topic"
-                            value={isShareData.Specific_topic || ''}
-                        ></simple-textarea>
                     </div>
 
                     <ButtonSections/>

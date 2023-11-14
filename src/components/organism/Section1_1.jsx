@@ -40,21 +40,9 @@ function Section1_1() {
                             height="30px"
                             placeholder=" Título del proyecto de investigación"
                             id="title_project"
+                            
                         ></simple-input>
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.start_date || ''}
-                            height="30px"
-                            placeholder="Fecha de inicio del proyecto"
-                            id="start_date"
-                        ></simple-input>
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.end_date || ''}
-                            height="30px"
-                            placeholder="Fecha de finalización del proyecto"
-                            id="end_date"
-                        ></simple-input>
+                        
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.student_name || ''}
@@ -67,7 +55,7 @@ function Section1_1() {
                     {/* ! END  Section 0 */}
 
                     <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
-                        <p className='text-[#BCB785] text-4xl '>Sección 1: <br />Protocolo del proyecto</p>
+                        <p className='text-[#BCB785] text-4xl '>Sección 1: Datos del proyecto</p>
                     </div>
                     <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-10 xl:mt-20">
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
@@ -84,28 +72,13 @@ function Section1_1() {
                         <p className='font-bold text-base lg:text-xl text-gray-500'>Rellene los siguientes campos según como se requiera</p>
                     </div>
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.title || ''}
-                            height="30px"
-                            placeholder="Título"
-                            id="title"
-                        ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.proposal_date || ''}
+                            value={isShareData.location_execution || ''}
                             height="30px"
-                            placeholder="Fecha de elaboración de propuesta"
-                            id="proposal_date"
-                        ></simple-input>
-
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.location || ''}
-                            height="30px"
-                            placeholder="Lugar de realización"
-                            id="location"
+                            placeholder="Lugar de realización del proyecto"
+                            id="location_execution"
                         ></simple-input>
                     </div>
 
@@ -113,7 +86,7 @@ function Section1_1() {
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
 
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
-                            <p className='text-xl lg:text-3xl'>1.2 Periodo de ejerción del proyecto</p>
+                            <p className='text-xl lg:text-3xl'>1.2 Periodo de ejecución del proyecto (proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                         </div>
 
                         {/* TIENES QUE DARLE 2 VECES PARA SALVAR LOS DATOS DE LOS INPUTS */}
@@ -126,28 +99,29 @@ function Section1_1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
+                        
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.start_date || ''}
                             height="30px"
-                            placeholder="Vigencia:Inicio"
+
+                            placeholder="Vigencia:Inicio/ Fecha de inicio del proyecto"
                             id="start_date"
                         ></simple-input>
-
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.end_date || ''}
                             height="30px"
-                            placeholder="Vigencia:Conclusión"
+                            placeholder="Vigencia:Conclusión / Fecha de finalización del proyecto"
                             id="end_date"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.weekly_hours_dedicated || ''}
+                            value={isShareData.weekly_hours || ''}
                             height="30px"
                             placeholder="Horas dedicadas semanalmente al proyecto (HSM)"
-                            id="weekly_hours_dedicated"
+                            id="weekly_hours"
                         ></simple-input>
                     </div>
 

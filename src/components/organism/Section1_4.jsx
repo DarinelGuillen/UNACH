@@ -16,12 +16,13 @@ function Section1_4() {
 
     const ColumnsTable = [
       { id: "id", title: "No°" },
-      { id: "academic_degree", title: "Grado" },
+      { id: "degree", title: "Grado" },
       { id: "full_name", title: "Nombre completo" },
-      { id: "affiliation_center_id", title: "Adscripción" },
+      { id: "affiliation", title: "Adscripción" },
       { id: "specialization_area", title: "Área de especialización" },
-      { id: "tasks", title: "Tareas específicas" },
+      { id: "specific_tasks", title: "Tareas específicas" },
       { id: "participation_level", title: "Nivel de participación" },
+      
     ];
   
     const HandlerClickFetch = () => {
@@ -50,11 +51,12 @@ function Section1_4() {
             </div>
   
             <div className='flex flex-col w-full items-center'>
-              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.perspective || ''} height="30px" placeholder="Elija un elemento" id="perspective"></simple-input> {/*checkboxito*/}
+              {/*TODO CheckBOX */}
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_perspective || ''} height="30px" placeholder="Elija un elemento" id="rt_perspective"></simple-input> {/*checkboxito*/}
+              {/*TODO CheckBOX */}
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_scope || ''} height="30px" placeholder="Elija un elemento" id="rt_scope"></simple-input> {/*checkboxito*/}
   
-              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.scope || ''} height="30px" placeholder="Elija un elemento" id="scope"></simple-input> {/*checkboxito*/}
-  
-              <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.textareaInput1 || ''} height="30px" type="text" placeholder="Alcance" id="textareaInput1"></simple-textarea>
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_specify || ''} height="30px" type="text" placeholder="Alcance" id="rt_specify"></simple-input>
             </div>
   
             <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -76,7 +78,7 @@ function Section1_4() {
               </div>
             </div>
   
-            <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"work_team"} />
+            <Table columns={ColumnsTable} savedInfo={isShareData.work_group || ''} keyIsShareData={"work_group"} />
   
             <ButtonSections/>
           </div>

@@ -32,7 +32,7 @@ const Table = ({ columns, savedInfo, keyIsShareData }) => {
 
     // ! Alert: Function to handle input changes and update the shared data context
     const handleInputC = (index, key, value, localKey) => {
-        console.log("🚀 ~ file: Table.jsx:28 ~ handleInputC ~ LocalKey:", localKey);
+    console.log("🚀 ~ file: Table.jsx:14 ~ Table ~ isShareData:", isShareData)
 
         // ? Query: What happens if 'localKey' doesn't exist in 'isShareData'?
         if (!isShareData.hasOwnProperty(localKey)) {
