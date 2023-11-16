@@ -17,7 +17,8 @@ function App() {
        page: 1,
     }
    )
-  const [isShareData, setIsShareData] = useState([]
+  const [isShareData, setIsShareData] = useState(
+    []
   //   {
   //   work_group: [//Que las tablas de agregar + y - Rows define el key que tendran aqui
   //     {

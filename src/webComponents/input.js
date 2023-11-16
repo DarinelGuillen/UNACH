@@ -36,7 +36,7 @@ class SimpleInput extends HTMLElement {
 
       dataDictionary[newKey] = newValue;
 
-      // console.log("🚀 ~ file: input.js:57 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionary:", dataDictionary);
+      console.log("🚀 ~ file: input.js:57 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionary:", dataDictionary);
 
       const event = new CustomEvent('inputChange', { detail: dataDictionary });
       this.dispatchEvent(event);
