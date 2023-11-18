@@ -30,7 +30,7 @@ function Section1_2() {
                             <p className='text-xl lg:text-3xl'>1.3 Persona responsable técnica</p>
                         </div>
 
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
@@ -101,7 +101,7 @@ function Section1_2() {
                         </div>
 
                         {/* NO FUNCIONA EL ÚLTIMOS INPUT, GUARDA TODOS LOS DATOS, MENOS EL ÚLTIMO */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
@@ -140,7 +140,7 @@ function Section1_2() {
                         ></simple-input>
                     </div>
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={2}/>
                 </div>
             </div>
             <Footer />

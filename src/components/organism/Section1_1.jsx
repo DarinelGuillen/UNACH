@@ -25,8 +25,10 @@ function Section1_1() {
                     <div>
                         <ClaveDeAcceso />
                     </div>
-                    <div className='text-center font-bold mt-5 mb-2 lg:mb-0'>
+                    <div className='text-center font-bold mt-5 mb-2 lg:mb-0 flex items-center place-content-around text-center w-full '>
                         <p className='text-[#BCB785] text-4xl '>Sección 0: Datos Del Proyecto</p>
+                        <ButtonSaveInfo casefetch={1}/>
+
                     </div>
                     {/* ! Start Section 0 */}
                     <div className='flex flex-col w-full items-center'>
@@ -61,11 +63,11 @@ function Section1_1() {
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
 
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
-                            <p className='text-xl lg:text-3xl'>1.1 Titulo del proyecto</p>
+                            <p className='text-xl lg:text-3xl'>1.1 </p>
                         </div>
 
-                        {/* EL BOTÓN NO FUNCIONA CORRECTAMENTE, TIENES QUE DARLE VARIAS VECES PARA QUE GUARDE LOS DATOS 1 POR 1 */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={2}/>
+
                     </div>
 
                     <div className='text-center'>
@@ -89,8 +91,7 @@ function Section1_1() {
                             <p className='text-xl lg:text-3xl'>1.2 Periodo de ejecución del proyecto (proyectos con recursos de la persona investigadora, la vigencia es de un año)</p>
                         </div>
 
-                        {/* TIENES QUE DARLE 2 VECES PARA SALVAR LOS DATOS DE LOS INPUTS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={2}  />
                     </div>
 
 
@@ -104,7 +105,7 @@ function Section1_1() {
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
                             value={isShareData.start_date || ''}
                             height="30px"
-
+                            type="date"
                             placeholder="Vigencia:Inicio/ Fecha de inicio del proyecto"
                             id="start_date"
                         ></simple-input>
@@ -125,7 +126,7 @@ function Section1_1() {
                         ></simple-input>
                     </div>
 
-                   <ButtonSections/>
+                   <ButtonSections  caseValue={2} />
                 </div>
             </div>
             <Footer />

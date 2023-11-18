@@ -47,7 +47,7 @@ function Section1_4() {
               <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                 <p className='text-xl lg:text-3xl'>1.7 Tipo de investigación</p>
               </div>
-              <ButtonSaveInfo />
+              <ButtonSaveInfo casefetch={2} />
             </div>
   
             <div className='flex flex-col w-full items-center'>
@@ -64,7 +64,7 @@ function Section1_4() {
               <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                 <p className='text-xl lg:text-3xl'>1.8 Grupo de trabajo</p>
               </div>
-              <ButtonSaveInfo onClick={HandlerClickFetch} />
+              <ButtonSaveInfo casefetch={2} onClick={HandlerClickFetch} />
             </div>
   
             <div className='text-center'>
@@ -80,7 +80,7 @@ function Section1_4() {
   
             <Table columns={ColumnsTable} savedInfo={isShareData.work_group || ''} keyIsShareData={"work_group"} />
   
-            <ButtonSections/>
+            <ButtonSections caseValue={2}/>
           </div>
         </div>
         <Footer />

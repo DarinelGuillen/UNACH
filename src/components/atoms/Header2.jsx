@@ -4,10 +4,13 @@ import more from '../../assets/img/Icon/more.svg';
 import {  useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import SharedDataContext from '../../contexts/SharedDataContext';
+import { getItem, setItem } from '../../utils/storage';
 
 const Header2 = () => {
     const { isUser, setIsUser } = useContext(UserContext);
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
+    const storedData = getItem('userData');
+    const { idUnach } = storedData;
     const navigate = useNavigate();
 
     const handlerNewProject = async () => {
@@ -17,13 +20,8 @@ const Header2 = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    "unach_id": "A",
+                    "unach_id": idUnach,//! obtain it from From the storage of user
                     "status": 0,
-                    "title_project": "TEST",
-                    "start_date": "2023-01-01",
-                    "end_date": "2023-12-31",
-                    "student_name": "Escobar Guillenn Christian Darinel",
-                    "link_drive": ""
                 })
             });
 
@@ -31,20 +29,15 @@ const Header2 = () => {
                 // TODO: Get data from the response and add it to the context isShareData
                 const newData = await responseNewProject.json();
                 console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ responseNewProject:", responseNewProject);
-                console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ newData.data:", newData.data.id);
-
+                console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ newData.data:", newData.data.id); 
+                setItem('currentProyectID', newData.data.id);
                 // TODO: Nested fetch POST to the route 'localhost:8080/api/Project'
                 const responseNestedProject = await fetch('http://127.0.0.1:8000/api/DataProject', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         "id_projects": newData.data.id,
-                        "unach_id": "UNACH123",
-                        "proposal_elaboration_date": "2023-11-09",
-                        "location_execution": "TESTFETCH",
-                        "project_execution_period_start": "2023-11-10",
-                        "project_execution_period_end": "2024-05-09",
-                        "weekly_hours": 10
+                        "unach_id": idUnach,//! obtain it from From the storage of user
                     })
                 });
 
@@ -57,23 +50,22 @@ const Header2 = () => {
                     //* Merge the new data with the existing state
                     // setIsShareData(prevData => [...prevData, { ...newData.data, ...nestedData.data }]);
                     setIsShareData({ ...newData.data, ...nestedData.data });
-
+                    console.log("🚀 ~ file: header2.jsx:50 ~ handlerNewProject ~ { ...newData.data, ...nestedData.data }:", { ...newData.data, ...nestedData.data })
                     // TODO: Navigate to '/PAGEx'
                     navigate('/Sections');
-                    // You can use React Router's history or any other navigation mechanism
                 } else {
                     console.error('Error in nested fetch POST to http://127.0.0.1:8000/api/DataProject');
                 }
             } else {
-                console.error('Error in fetch POST to http://127.0.0.1:8000/api/projects:', responseNewProject.status);
+                console.error('Error in fetch POST to http://127.0.0.1:8000/api/projects:', responseNewProject);
             }
         } catch (error) {
             console.error('Error in handlerNewProject:', error);
         }
     };
     useEffect(() => {
-       
-        console.log("🚀 ~ file: header2.jsx:80 ~ Header2 ~ isShareData:", isShareData)
+       console.log("🚀 ~ file: header2.jsx:65 ~ useEffect ~ useEffect:", isShareData)
+                    
     }, [isShareData])
     
 

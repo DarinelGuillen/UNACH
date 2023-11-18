@@ -36,7 +36,7 @@ function Section1_3() {
                         </div>
 
                         {/*  TIENES QUE DARLE 2 VECES AL BOTÓN PARA GUARDAR LOS DATOS */}
-                        <ButtonSaveInfo/>
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
@@ -65,7 +65,7 @@ function Section1_3() {
                         </div>
 
                         {/*  TIENES QUE DARLE 2 VECES AL BOTÓN PARA GUARDAR LOS DATOS */}
-                        <ButtonSaveInfo/>
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='text-center'>
@@ -91,7 +91,7 @@ function Section1_3() {
                         <simple-input  value={isShareData.total_amount_mexican_pesos || ''} height="30px" placeholder="Monto total en pesos mexicanos" id="total_amount_mexican_pesos" class="w-[83%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"></simple-input>
                     </div>
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={2}/>
                 </div>
             </div>
             <Footer />

@@ -85,7 +85,7 @@ function Section1_5() {
 
                     <Table columns={ColumnsTable2} savedInfo={isShareData.work_team || ''} keyIsShareData={"entities"} />
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={2}/>
 
                 </div>
             </div>
