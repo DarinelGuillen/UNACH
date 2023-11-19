@@ -1,20 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import masIcono from "../../assets/img/Icon/mas.svg";
 import menosIcono from "../../assets/img/Icon/menos.svg";
 import ButtonSaveInfo from './ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
-import "../../assets/css/inputTable.css"
+import "../../assets/css/inputTable.css";
+import { getItem, setItem } from '../../utils/storage';
 
-// ! Alert: Error handling if the user does not fill any input where index 1 has been filled
-// ? Query: What happens if index 2 has not been filled? (Index 2 gets assigned 'undefined' and it breaks)
-// ~~ Important to Read: Note that index 3 has been filled.
 
-const Table = ({ columns, savedInfo, keyIsShareData }) => {
+const Table = ({ columns, savedInfo, keyCurrent }) => {
+    // console.log("🚀 ~ file: Table.jsx:11 ~ Table ~  savedInfo, keyCurrent:", savedInfo, "=", keyCurrent)
+    const Current = getItem('currentProyect') || {};
     const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const [rowCount, setRowCount] = useState(savedInfo.length || 1);
     const [rowData, setRowData] = useState(savedInfo.length ? savedInfo : [{}]);
-
-    // * Highlight: Function to add a new row if the row count is less than 7
+    const [storageChange, setstorageChange] = useState(false);
+    
     const handleAddRow = () => {
         if (rowCount < 7) {
             setRowCount(rowCount + 1);
@@ -22,7 +22,6 @@ const Table = ({ columns, savedInfo, keyIsShareData }) => {
         }
     };
 
-    // * Highlight: Function to remove the last row if the row count is greater than 1
     const handleRemoveRow = () => {
         if (rowCount > 1) {
             setRowCount(rowCount - 1);
@@ -30,28 +29,36 @@ const Table = ({ columns, savedInfo, keyIsShareData }) => {
         }
     };
 
-    // ! Alert: Function to handle input changes and update the shared data context
     const handleInputC = (index, key, value, localKey) => {
-    console.log("🚀 ~ file: Table.jsx:14 ~ Table ~ isShareData:", isShareData)
-
-        // ? Query: What happens if 'localKey' doesn't exist in 'isShareData'?
-        if (!isShareData.hasOwnProperty(localKey)) {
-            setIsShareData({ ...isShareData, [localKey]: [] });
-        }
-
         const updatedRowData = [...rowData];
         updatedRowData[index][key] = value;
-
-        const updatedArray = [...isShareData[localKey]];
+    
+        // Initialize the key with an empty array if it doesn't exist
+        if (!Current.hasOwnProperty(localKey)) {
+            Current[localKey] = [];
+        }
+    
+        const updatedArray = [...Current[localKey]];
+        if (updatedArray[index] === undefined) {
+            updatedArray[index] = {};
+        }
         updatedArray[index] = { ...updatedArray[index], [key]: value };
-
-        // ! Alert: Update the shared data context
-        setIsShareData({ ...isShareData, [localKey]: updatedArray });
-
+    
+        // Update the storage with the modified data
+        setstorageChange({[localKey]: updatedArray })
         setRowData(updatedRowData);
     };
 
-    // ? Query: What happens when this button is clicked?
+    useEffect(() => {
+    const updatedCurrent = { ...Current, ...storageChange };
+    console.log("🚀 ~ file: Table.jsx:54 ~ useEffect ~ updatedCurrent:", updatedCurrent)
+    setItem('currentProyect', updatedCurrent);
+    setstorageChange(false);
+}, [storageChange]);
+
+    
+
+
     const HandlerClickFetch = () => {
         alert("Datos guardados: " + JSON.stringify(rowData));
         console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
@@ -73,20 +80,17 @@ const Table = ({ columns, savedInfo, keyIsShareData }) => {
                         </thead>
                         <tbody>
                             {rowData.map((row, rowIndex) => (
-                                <tr key={rowIndex} >
+                                <tr key={rowIndex}>
                                     {columns.map(column => (
                                         <td key={column.id}>
-                                            <div>
-                                                <div>
-                                                    <input
-                                                        className="Input_Table"
-                                                        value={row[column.id] || ''}
-                                                        placeholder={``}
-                                                        id={`${column.id}${rowIndex}`}
-                                                        onChange={(e) => handleInputC(rowIndex, column.id, e.target.value, keyIsShareData)}
-                                                    />
-                                                </div>
-                                            </div>
+                                            <input
+                                                className="Input_Table"
+                                                value={row[column.id] || ''}
+                                                placeholder={``}
+                                                id={`${column.id}${rowIndex}`}
+                                                onChange={(e) => handleInputC(rowIndex, column.id, e.target.value, keyCurrent)}
+                                                title={column.hover}  // Aquí se agrega la propiedad title
+                                            />
                                         </td>
                                     ))}
                                 </tr>
@@ -104,10 +108,6 @@ const Table = ({ columns, savedInfo, keyIsShareData }) => {
                     </button>
                 </div>
             </div>
-
-            {/* <div className='flex justify-center mt-9'>
-                <ButtonSaveInfo onClick={HandlerClickFetch} />
-            </div> */}
         </>
     );
 };

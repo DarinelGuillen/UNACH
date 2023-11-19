@@ -14,14 +14,17 @@ import SharedDataContext from '../../contexts/SharedDataContext';
 import Table from '../atoms/Table';
 import ButtonSections from '../molecules/ButtonSections';
 import { useContext } from 'react';
+import { getItem, setItem } from '../../utils/storage';
+
 
 function Section1_5() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+    // const { Current } = useContext(SharedDataContext);
 
     const ColumnsTable = [
         { id: "id", title: "Nombre del participante" },
-        { id: "type", title: "Tipo de participante" },
-        { id: "expected_product", title: "Producto esperado" },
+        { id: "type", title: "Tipo de participante", hover:'opciones, Estudiante interno, Estudiante Externo, Asistente de Investigación, Persona investigadora, Persona productora, Otro'},
+        { id: "expected_product", title: "Producto esperado" , hover:'opciones, Tesis de pregrado, Tesis de grado, Artículo, Capítulo de Libro, Libro, Ponencia, Producción Artística, Producción Literaria, Estancia de Investigación, Parque Tecnológico, Otro'},
         { id: "Especifique", title: "Especifique" },
     ];
 
@@ -56,7 +59,7 @@ function Section1_5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
-                        <ButtonSaveInfo onClick={HandlerClickFetch} />
+                        <ButtonSaveInfo caseValue={2}/>
                     </div>
 
                     <div className='text-center mt-3'>
@@ -67,7 +70,7 @@ function Section1_5() {
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.work_team || ''} keyIsShareData={"type_investigation"} />
+                    <Table columns={ColumnsTable} savedInfo={Current.research_training_students || ''} keyCurrent={"research_training_students"} />
 
 
                     <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -76,14 +79,14 @@ function Section1_5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
-                        <ButtonSaveInfo onClick={HandlerClickFetch} />
+                        <ButtonSaveInfo caseValue={2}/>
                     </div>
 
                     <div className='text-center mt-3 mb-3'>
                         <p className='font-bold text-xl text-gray-500'>*Puede agregar cuantas celdas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable2} savedInfo={isShareData.work_team || ''} keyIsShareData={"entities"} />
+                    <Table columns={ColumnsTable2} savedInfo={Current.participating_entities || ''} keyCurrent={"participating_entities"} />
 
                     <ButtonSections caseValue={2}/>
 

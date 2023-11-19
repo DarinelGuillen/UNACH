@@ -9,10 +9,21 @@ import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import logoSinNadita from "../../assets/img/Icon/checkSinNada.svg";
 import ButtonSections from '../molecules/ButtonSections';
+import * as Section1_2Data from '../organism/Section1_2Data';
+import { getItem, setItem } from '../../utils/storage';
+
+// import {getOptionCheckBoxAffiliationCenter,getEmploymentStatusOptions,getKnowledgeAreaOptions,getDisciplineOptions} from '../organism/Section1_2Data';
 import '../../assets/css/botoncito.css';
 
 function Section1_2() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+
+    // const { Current } = useContext(SharedDataContext);
+    let affiliation_center = Section1_2Data.AC();
+    let employment_status = Section1_2Data.ES();
+    let knowledge_area = Section1_2Data.KA();
+    let discipline = Section1_2Data.D();
+
     return (
         <>
             <Header />
@@ -36,7 +47,7 @@ function Section1_2() {
                     <div className='flex flex-col w-full items-center'>
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.full_name_technical_responsible || ''}
+                            value={Current.full_name_technical_responsible || ''}
                             height="30px"
                             placeholder="Nombre completo"
                             id="full_name_technical_responsible"
@@ -44,49 +55,60 @@ function Section1_2() {
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.email || ''}
+                            value={Current.email || ''}
                             height="30px"
+                            type="email"
                             placeholder="Correo electrónico"
                             id="email"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.degree || ''}
-                            height="30px"
+                            value={Current.degree || ''}
+                            height="40px"
+                            type="combo-box"
+                            options="Lic.,Ing.,Mtro., Mtra.,Dra., Dr."
                             placeholder="Grado"
                             id="degree"
                         ></simple-input>
 
+
                         {/*TODO CheckBOX */}
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.affiliation_center || ''}
-                            height="30px"
+                            value={Current.affiliation_center || ''}
+                            height="40px"
+                            type="combo-box"
+                            options={affiliation_center}
                             placeholder="Centro de adscripción"
                             id="affiliation_center"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.cellphone || ''}
+                            value={Current.cellphone || ''}
                             height="30px"
+                            type="number"
                             placeholder="Teléfono célular"
                             id="cellphone"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.office_phone || ''}
+                            value={Current.office_phone || ''}
                             height="30px"
+                            type="number"
                             placeholder="Teléfono oficina"
                             id="office_phone"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.employment_status || ''}
-                            height="30px"
+                            value={Current.employment_status || ''}
+                            height="40px"
+                            type="combo-box"
+
+                            options={employment_status}
                             placeholder="Situación laboral"
                             id="employment_status"
                         ></simple-input>
@@ -109,23 +131,27 @@ function Section1_2() {
                         {/*TODO CheckBOX */}
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.knowledge_area || ''}
-                            height="30px"
+                            value={Current.knowledge_area || ''}
+                            options={knowledge_area}
+                            height="40px"
+                            type="combo-box"
                             placeholder="Selecione Area de conocimiento "
                             id="knowledge_area"
                         ></simple-input>
                         {/*TODO CheckBOX */}
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.discipline || ''}
-                            height="30px"
+                            value={Current.discipline || ''}
                             placeholder="Diciplina"
+                            options={discipline}
+                            height="40px"
+                            type="combo-box"
                             id="discipline"
                         ></simple-input>
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.specify || ''}
+                            value={Current.specify || ''}
                             height="30px"
                             placeholder="Especifique Diciplina"
                             id="specify"
@@ -136,7 +162,7 @@ function Section1_2() {
                             height="30px"
                             placeholder="Tema específico"
                             id="specific_topic"
-                            value={isShareData.specific_topic || ''}
+                            value={Current.specific_topic || ''}
                         ></simple-input>
                     </div>
 

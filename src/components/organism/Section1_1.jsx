@@ -9,9 +9,10 @@ import "../../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import ButtonSections from './../molecules/ButtonSections';
+import { getItem, setItem } from '../../utils/storage';
 
 function Section1_1() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
 
     return (
         <>
@@ -38,7 +39,7 @@ function Section1_1() {
                         </p>
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.title_project || ''}
+                            value={Current.title_project || ''}
                             height="30px"
                             placeholder=" Título del proyecto de investigación"
                             id="title_project"
@@ -47,10 +48,26 @@ function Section1_1() {
                         
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.student_name || ''}
+                            value={Current.student_name || ''}
                             height="30px"
                             placeholder="Nombre completo del estudiante asociado al proyecto "
                             id="student_name"
+                        ></simple-input>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={Current.start_date || ''}
+                            height="30px"
+                            type="date"
+                            placeholder="Vigencia:Inicio/ Fecha de inicio del proyecto"
+                            id="start_date"
+                        ></simple-input>
+                        <simple-input
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            value={Current.end_date || ''}
+                            height="30px"
+                            type="date"
+                            placeholder="Vigencia:Conclusión / Fecha de finalización del proyecto"
+                            id="end_date"
                         ></simple-input>
 
                     </div>
@@ -77,7 +94,7 @@ function Section1_1() {
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.location_execution || ''}
+                            value={Current.location_execution || ''}
                             height="30px"
                             placeholder="Lugar de realización del proyecto"
                             id="location_execution"
@@ -101,32 +118,19 @@ function Section1_1() {
 
                     <div className='flex flex-col w-full items-center'>
                         
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.start_date || ''}
-                            height="30px"
-                            type="date"
-                            placeholder="Vigencia:Inicio/ Fecha de inicio del proyecto"
-                            id="start_date"
-                        ></simple-input>
-                        <simple-input
-                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.end_date || ''}
-                            height="30px"
-                            placeholder="Vigencia:Conclusión / Fecha de finalización del proyecto"
-                            id="end_date"
-                        ></simple-input>
+                        
 
                         <simple-input
                             class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
-                            value={isShareData.weekly_hours || ''}
+                            value={Current.weekly_hours || ''}
+                            type="number"
                             height="30px"
                             placeholder="Horas dedicadas semanalmente al proyecto (HSM)"
                             id="weekly_hours"
                         ></simple-input>
                     </div>
 
-                   <ButtonSections  caseValue={2} />
+                   <ButtonSections  caseValue={1} />
                 </div>
             </div>
             <Footer />

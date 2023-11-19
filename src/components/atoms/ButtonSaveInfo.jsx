@@ -14,57 +14,28 @@ function ButtonSaveInfo({ casefetch }) {
   const [isSaving, setIsSaving] = useState(false);
   const [Exe2, setExe2] = useState(false);
   const CurrentProyectID = getItem('currentProyectID');
-
-  const mergeDataIntoContext = (newData, existingData) => {
-    return { ...existingData, ...newData };
-  };
-
-  const handleSaveLocally = () => {
-    console.log("🚀 ~ file: ButtonSaveInfo.jsx:29 ~ handleSaveLocally ~ handleSaveLocally:")
-    const mergedData = mergeDataIntoContext(
-      { ...dataDictionary, ...dataDictionaryTextArea },
-      isShareData
-    );
-    setIsShareData(mergedData);
-  };
-
-  // useEffect(() => {
-  // //   console.log("🚀 ~ file: ButtonSaveInfo.jsx:30 ~ useEffect ~ useEffect:", isUser.fetchCase);
-  //   if (isUser.fetchCase && !isNaN(isUser.fetchCase)) {
-  //     handleSend(isUser.fetchCase);
-  //   }
-  // }, [isUser.fetchCase, Exe2]);
+  const Current = getItem('currentProyect') || {};
 
   useEffect(() => {
     if (isUser.fetchCase && !isNaN(isUser.fetchCase)) {
       // console.log("🚀 ~ file: ButtonSaveInfo.jsx:38 ~ useEffect ~ !isNaN(isUser.fetchCase):", !isNaN(isUser.fetchCase,isUser.fetchCase));
-      handleSaveLocally();
-      setExe2(true);
-      setIsSaving(true)
+      handleSend(isUser.fetchCase);
     }
   }, [isUser]);
-
-  useEffect(() => {
-    if (isSaving) {
-      // console.log("🚀 ~ file: ButtonSaveInfo.jsx:45 ~ useEffect ~ isSaving:", isSaving);
-      handleSend(casefetch||isUser.fetchCase);
-    }
-  }, [isSaving, Exe2]);
-
   const handleSend = async (param) => {
-    // console.log("🚀 ~ file: ButtonSaveInfo.jsx:46 ~ handleSend ~ param:", param);
+    console.log("🚀 ~ file: ButtonSaveInfo.jsx:46 ~ handleSend ~ param:", param);
     try {
       let apiUrl = '';
       let requestOptions = {};
       switch (param) {
         case 1:
-          ({ apiUrl, requestOptions } = updateCase1(CurrentProyectID, isShareData)); // Call the function and destructure the result
+          ({ apiUrl, requestOptions } = updateCase1()); // Call the function and destructure the result
           break;
         case 2:
-          ({ apiUrl, requestOptions } = updateCase2(CurrentProyectID, isShareData)); // Call the function and destructure the result
+          ({ apiUrl, requestOptions } = updateCase2()); // Call the function and destructure the result
           break;
         case 3:
-          ({ apiUrl, requestOptions } = updateCase3(CurrentProyectID, isShareData)); // Call the function and destructure the result
+          ({ apiUrl, requestOptions } = updateCase3()); // Call the function and destructure the result
           break;
         default:
           alert.error(error.message);
@@ -85,12 +56,9 @@ function ButtonSaveInfo({ casefetch }) {
       }
 
       // Reiniciar el estado de isSaving después de la ejecución del fetch
-      setIsSaving(false);
-      setExe2(false)
+      
     } catch (error) {
       console.error('Error:', error);
-      setIsSaving(false);
-      setExe2(false)
 
     }
   };
@@ -99,9 +67,7 @@ function ButtonSaveInfo({ casefetch }) {
     <>
       <button
         onClick={() => {
-          handleSaveLocally();
-          setIsSaving(true);
-          setExe2(true)
+          handleSend(casefetch);
         }}
       >
         <img

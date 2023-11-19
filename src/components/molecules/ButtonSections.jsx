@@ -2,18 +2,25 @@ import React, { useContext, useState } from 'react';
 import arrowselector from '../../assets/img/Icon/arrow.svg';
 import UserContext from '../../contexts/UserContext';
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
+import { useNavigate } from 'react-router-dom';
 
 function ButtonSections({ caseValue }) {
   const { isUser, setIsUser } = useContext(UserContext);
   const [isSaving, setIsSaving] = useState(false);
+  const navigate = useNavigate();
 
+  
   const handleSectionChange = (newPage) => {
     if (newPage >= 1 && newPage <= 15) {
-      setIsUser((prevState) => ({ ...prevState, page: newPage, fetchCase: caseValue||null }));
+      setIsUser((prevState) => ({ ...prevState, page: newPage, fetchCase: caseValue || null }));
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setIsSaving(true);
+    } else if (newPage === 16 && Current.link_drive === '') {
+      // Si newPage es 16 y Current.link_drive está vacío, ejecuta navigate("/")
+      navigate("/");
     }
   };
+  
 
   return (
     <>

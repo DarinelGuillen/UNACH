@@ -5,20 +5,23 @@ import Committe from "../pages/Committee.jsx";
 import Evaluator from "../pages/Evaluator.jsx";
 import Sections from "../pages/Sections.jsx";
 
-
+import ProtectRoute from "./ProtectRoute.jsx";
+// import { getItem, setItem } from "../utils/storage.js"
 //Contexts 
 import SharedDataContext from '../contexts/SharedDataContext.js';
 import UserContext from "../contexts/UserContext.js";
 function App() {
   // const [isShareData, setIsShareData] = useState({})
   //!Student = 1   Commite = 2  Evaluators = 3
+  // const Current = getItem('currentProyect') || {};
+
    const [isUser, setIsUser] = useState(
     {
        page: 1,
     }
    )
-  const [isShareData, setIsShareData] = useState(
-    []);
+  const [isShareData, setIsShareData] = useState([
+  ]);
 
 
   return (
@@ -29,8 +32,9 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/Committe" element={<Committe/>}/>
         <Route path="/Evaluator" element={<Evaluator/>}/>
+            {/* <Route element={<ProtectRoute hasInfo={Current== 0} />}> */}
         <Route path="/Sections" element={<Sections/>}/>
-        
+            {/* </Route> */}
       </Routes>
     </UserContext.Provider>
     </SharedDataContext.Provider>

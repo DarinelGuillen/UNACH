@@ -9,9 +9,9 @@ function Home() {
   useEffect(() => {
     // Obtén los parámetros de la URL
     const searchParams = new URLSearchParams(location.search);
-    const id = searchParams.get('id');
-    const idUnach = searchParams.get('id_unach');
-    const userType = searchParams.get('userType');
+    const id = searchParams.get('id')||1;
+    const idUnach = searchParams.get('id_unach')||"A";
+    const userType = searchParams.get('userType')||2;
     
     // Guarda los datos en el localStorage
     setItem('userData', { id, idUnach, userType });

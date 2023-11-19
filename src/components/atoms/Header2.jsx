@@ -8,7 +8,6 @@ import { getItem, setItem } from '../../utils/storage';
 
 const Header2 = () => {
     const { isUser, setIsUser } = useContext(UserContext);
-    const { isShareData, setIsShareData } = useContext(SharedDataContext);
     const storedData = getItem('userData');
     const { idUnach } = storedData;
     const navigate = useNavigate();
@@ -26,7 +25,7 @@ const Header2 = () => {
             });
 
             if (responseNewProject.ok) {
-                // TODO: Get data from the response and add it to the context isShareData
+                // TODO: Get data from the response and add it to the SetItme
                 const newData = await responseNewProject.json();
                 console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ responseNewProject:", responseNewProject);
                 console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ newData.data:", newData.data.id); 
@@ -42,14 +41,15 @@ const Header2 = () => {
                 });
 
                 if (responseNestedProject.ok) {
-                    // TODO: Get data from the response and add it to the context isShareData
+                    // TODO: Get data from the response and add it to the  SetItme
                     const nestedData = await responseNestedProject.json();
                     console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ responseNestedProject:", responseNestedProject);
                     console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ nestedData:", nestedData.data);
 
                     //* Merge the new data with the existing state
-                    // setIsShareData(prevData => [...prevData, { ...newData.data, ...nestedData.data }]);
-                    setIsShareData({ ...newData.data, ...nestedData.data });
+                    setItem('currentProyect', { ...newData.data, ...nestedData.data
+                        // ,work_group: {},
+                    });
                     console.log("🚀 ~ file: header2.jsx:50 ~ handlerNewProject ~ { ...newData.data, ...nestedData.data }:", { ...newData.data, ...nestedData.data })
                     // TODO: Navigate to '/PAGEx'
                     navigate('/Sections');
@@ -64,9 +64,9 @@ const Header2 = () => {
         }
     };
     useEffect(() => {
-       console.log("🚀 ~ file: header2.jsx:65 ~ useEffect ~ useEffect:", isShareData)
                     
-    }, [isShareData])
+       console.log("🚀 ~ file: header2.jsx:71 ~ Header2 ~ getItem:", getItem)
+    }, [getItem])
     
 
     return (

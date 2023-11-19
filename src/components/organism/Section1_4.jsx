@@ -10,18 +10,20 @@ import SharedDataContext from '../../contexts/SharedDataContext';
 import arrowselector from '../../assets/img/Icon/arrow.svg';
 import Table from '../atoms/Table';
 import ButtonSections from '../molecules/ButtonSections';
+import { getItem, setItem } from '../../utils/storage';
+
 
 function Section1_4() {
-    const { isShareData } = useContext(SharedDataContext);
+  const Current = getItem('currentProyect') || {};
+    // const { Current } = useContext(SharedDataContext);
 
     const ColumnsTable = [
-      { id: "id", title: "No°" },
-      { id: "degree", title: "Grado" },
-      { id: "full_name", title: "Nombre completo" },
-      { id: "affiliation", title: "Adscripción" },
-      { id: "specialization_area", title: "Área de especialización" },
-      { id: "specific_tasks", title: "Tareas específicas" },
-      { id: "participation_level", title: "Nivel de participación" },
+      { id: "degree", title: "Grado", hover:"Estas son la unicas opciones que puede agregar, Lic,Ing,Mtro, Mtra,Dra, Dr" },
+      { id: "full_name", title: "Nombre completo", hover:"Nombre completo de participante de grupo de trabajo" },
+      { id: "affiliation", title: "Adscripción" ,hover:"" },
+      { id: "specialization_area", title: "Área de especialización" ,hover:null },
+      { id: "specific_tasks", title: "Tareas específicas" ,hover:null},
+      { id: "participation_level", title: "Nivel de participación" ,hover:"Estas son la unicas opciones que puede agregar, Esporádica u ocasional, Recurrente Permanente"},
       
     ];
   
@@ -52,11 +54,63 @@ function Section1_4() {
   
             <div className='flex flex-col w-full items-center'>
               {/*TODO CheckBOX */}
-              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_perspective || ''} height="30px" placeholder="Elija un elemento" id="rt_perspective"></simple-input> {/*checkboxito*/}
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={Current.rt_perspective || ''}
+                height="40px"
+                type="combo-box"
+                options="Cualitativa,
+              Cuantitativa,
+              Mixta 
+              "
+                placeholder="Perspectiva" id="rt_perspective"></simple-input>
+
               {/*TODO CheckBOX */}
-              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_scope || ''} height="30px" placeholder="Elija un elemento" id="rt_scope"></simple-input> {/*checkboxito*/}
-  
-              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={isShareData.rt_specify || ''} height="30px" type="text" placeholder="Alcance" id="rt_specify"></simple-input>
+              <simple-input
+                class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                value={Current.rt_scope || ''}
+                height="40px"
+                type="combo-box"
+                options='options="Explorativa,  
+                Descriptiva,
+                Correlacional,
+                Explicativa,
+                Predictiva,
+                Interpretativa,
+                Comprensiva,
+                Transformadora,
+                OtraIndicar
+                '
+                placeholder="Alcance"
+                id="rt_scope"
+              >
+              </simple-input>
+                {/* Agrega un campo de entrada adicional para "Otra indicar" */}
+                {Current.rt_scope === 'OtraIndicar' && (
+                  <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    value={Current.Otro_rt_scope || ''}
+                    height="30px"
+                    type="text"
+                    placeholder="Escriba su Alcanse"
+                    id="Otro_rt_scope"></simple-input>
+
+                )}
+
+
+              {/* <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={Current.rt_scope || ''}
+                height="40px"
+                type="combo-box"
+                options="Explorativa,  
+              Descriptiva,
+              Correlacional,
+              Explicativa,
+              Predictiva,
+              Interpretativa,
+              Comprensiva,
+              Transformadora,
+              Otra indicar
+              "
+                placeholder="Alcance" id="rt_scope"></simple-input> */}
+
+              <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" value={Current.rt_specify || ''} height="30px" type="text" placeholder="Especifique" id="rt_specify"></simple-input>
             </div>
   
             <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
@@ -78,7 +132,7 @@ function Section1_4() {
               </div>
             </div>
   
-            <Table columns={ColumnsTable} savedInfo={isShareData.work_group || ''} keyIsShareData={"work_group"} />
+            <Table columns={ColumnsTable} savedInfo={Current.work_group || ''} keyCurrent={"work_group"} />
   
             <ButtonSections caseValue={2}/>
           </div>
