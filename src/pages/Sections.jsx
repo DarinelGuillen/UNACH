@@ -17,6 +17,7 @@ import Section2_9 from '../components/organism/Section2_9';
 import Section2_10 from '../components/organism/Section2_10';
 import UserContext from '../contexts/UserContext';
 
+
 function Sections() {
     const { isUser, setIsUser }   = useContext(UserContext)
     switch (isUser.page) {

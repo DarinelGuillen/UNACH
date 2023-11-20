@@ -47,10 +47,10 @@ const RegistroProyectosStudent = () => {
 
     return (
         <>
-            <div className='bg-white font-sans h-screen'>
+            <div className='bg-white font-sans w-full '>
                 <Header2 />
                 {cardXlData && cardXlData.length === 0 ? (
-                    <div className="pb-5 mt-5 h-[70%]">
+                    <div className=" h-[70%]">
                         <div className='h-[50%] flex flex-col justify-center items-center w-full '>
                             <h1 className="text-5xl  text-sky-400/100 text-center">
                                 No tienes ningún proyecto aún. ¡Crea uno para verlo aquí!
@@ -59,8 +59,9 @@ const RegistroProyectosStudent = () => {
                     </div>
                 ) : (
                     <>
-                            <div className="pb-5 mt-5 h-auto">
-                                <div className="grid auto-rows-fr  gap-10 bg-white xl:grid-cols-3 xl:grid-rows-2 xl:ml-[3%] xl:mt-10 xl:mb-10">
+
+                            <div className="grid   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
+                                {/* <div className="flex flex-col justify-around  bg-white "> */}
                                     {cardXlData && cardXlData.slice(currentPage * 6, (currentPage + 1) * 6).map((cardData, index) => (
                                         <CardXl
                                             key={index}
@@ -75,7 +76,7 @@ const RegistroProyectosStudent = () => {
                                   ))}
                                 </div>
 
-                                <div className="flex justify-center pb-10  w-full">
+                            <div className="flex justify-center  w-full py-20">
                                     <div className='flex justify-between  w-1/6'>
                                         <button onClick={handlePrevClick}>
                                             <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
@@ -89,7 +90,7 @@ const RegistroProyectosStudent = () => {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+
                     </>
                 )}
                 <Footer />

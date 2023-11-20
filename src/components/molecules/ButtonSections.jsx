@@ -11,16 +11,19 @@ function ButtonSections({ caseValue }) {
 
   
   const handleSectionChange = (newPage) => {
-    if (newPage >= 1 && newPage <= 15) {
-      setIsUser((prevState) => ({ ...prevState, page: newPage, fetchCase: caseValue || null }));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setIsSaving(true);
+    if (newPage === 0) {
+        // Si newPage es 0, ejecuta navigate("/")
+        navigate("/");
+    } else if (newPage >= 1 && newPage <= 15) {
+        setIsUser((prevState) => ({ ...prevState, page: newPage, fetchCase: caseValue || null }));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setIsSaving(true);
     } else if (newPage === 16 && Current.link_drive === '') {
-      // Si newPage es 16 y Current.link_drive está vacío, ejecuta navigate("/")
-      navigate("/");
+        // Si newPage es 16 y Current.link_drive está vacío, ejecuta navigate("/")
+        navigate("/");
     }
-  };
-  
+};
+
 
   return (
     <>

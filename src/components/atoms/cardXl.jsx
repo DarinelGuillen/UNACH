@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+
 import logoUnach from '../../assets/img/Icon/LOGO-UNACH.png';
 import arrowBlack from '../../assets/img/Icon/arrowBlack.png';
+import { useNavigate } from 'react-router-dom';
 
+import { getItem, setItem } from '../../utils/storage';
+import UserContext from '../../contexts/UserContext';
 const CardXl = ({ id, start_date, end_date, title_project, status, student_name, created_at }) => {
+    const { isUser, setIsUser } = useContext(UserContext)
+
+    const navigate = useNavigate();
+
     const truncatedTitle = title_project.length > 20 ? title_project.substring(0, 15) + '...' : title_project;
 
     const handlerSections = async (id) => {
             console.log("🚀 ~ file: cardXl.jsx:9 ~ handlerSections ~ id:", id)
+        setIsUser((prevState) => ({ ...prevState, page: 1 }));
+
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/DataProject/${id}`);
+
+                const response = await fetch(`http://127.0.0.1:8000/api/projects/PDF/${id}`);
 
                 if (response.ok) {
                     const data = await response.json();
+                    setItem('currentProyect', data.ALL)
+                    setItem('currentProyectID', id)
+                    navigate('/Sections');
                     console.log("🚀 ~ file: cardXl.jsx:14 ~ handlerSections ~ response:", response)
                     console.log("🚀 ~ file: cardXl.jsx:15 ~ handlerSections ~ data:", JSON.stringify(data))
                 } else {
@@ -26,12 +40,15 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
 
     const handlerPDF = async (id) => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/DataProject/${id}`);
+            const response = await fetch(`http://127.0.0.1:8000/api/projects/PDF/${id}`);
 
                 if (response.ok) {
                     const data = await response.json();
                     console.log("🚀 ~ file: cardXl.jsx:14 ~ handlerSections ~ response:", response)
                     console.log("🚀 ~ file: cardXl.jsx:15 ~ handlerSections ~ data:", JSON.stringify(data))
+                    setItem('currentProyect', data.ALL)
+                    setItem('currentProyectID', id)
+                    navigate('/PreviewPDF');
                 } else {
                     console.error('Failed to fetch data');
                 }
@@ -41,12 +58,44 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
         }
     };
 
+    const handlerSend = async (id) => {
+        console.log("🚀 ~ file: cardXl.jsx:58 ~ handlerSend ~ id:", id);
+
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/projects`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    status: '1400',
+                    id: id,
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);
+                window.location.reload();
+            } else {
+                console.error('Failed to update project status');
+                alert('Failed to update project status');
+            }
+        } catch (error) {
+            console.error('Error updating project status:', error);
+            alert('Error updating project status');
+        }
+    };
+
+
+
+
     return (
-        <div className='font-sans'>
-            <div className='flex flex-col w-full max-w-3xl h-[150px] bg-white rounded-[12px] border-[1px] border-black mx-auto md:h-[208px] xl:w-[90%] xl:mx-[5%]'>
+            <div className='flex flex-col   max-w-3xl  bg-white rounded-[12px] border-[1px] border-black   '>
 
                 <div className='flex items-center justify-between p-4 md:p-6'>
                     <div className="flex flex-col w-full md:w-2/3">
+                        <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>ID: {id}</p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Empieza: {start_date}</p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Termina: {end_date}</p>
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
@@ -60,20 +109,23 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
                 </div>
 
                 {status !== 1400 ? (
-                    <div className="flex justify-end grow items-center ">
+                    <div className="  flex  justify-end grow items-center ">
+
                         <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <img src={arrowBlack} className='h-5' alt="next" />
+                            <p>Editar</p>
+                        </button>
+                        <button onClick={() => handlerSend(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
+                            <p>Enviar</p>
                         </button>
                     </div>
                 ) : (
-                    <div className="flex justify-end grow items-center">
+                    <div className=" flex justify-end grow items-center">
                         <button onClick={() => handlerPDF(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
                             <span className="text">PDF</span>
                         </button>
                     </div>
                 )}
             </div>
-        </div>
     );
 };
 

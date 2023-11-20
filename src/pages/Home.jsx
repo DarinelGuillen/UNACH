@@ -2,18 +2,17 @@ import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getItem, setItem } from '../utils/storage';
 import RegistroProyectosStudent from '../components/organism/RegistroProyectosStudent';
-
+import UserContext from '../contexts/UserContext';
 function Home() {
+
   const location = useLocation();
   
   useEffect(() => {
-    // Obtén los parámetros de la URL
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id')||1;
     const idUnach = searchParams.get('id_unach')||"A";
     const userType = searchParams.get('userType')||2;
-    
-    // Guarda los datos en el localStorage
+
     setItem('userData', { id, idUnach, userType });
   }, [location.search]);
 
@@ -25,7 +24,10 @@ function Home() {
 
   return (
     <>
+      {/* <div className=' '> */}
+
       <RegistroProyectosStudent />
+      {/* </div> */}
     </>
   );
 }

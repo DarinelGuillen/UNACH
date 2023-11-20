@@ -70,7 +70,7 @@ const Header2 = () => {
     
 
     return (
-        <div className="flex w-full bg-[#25313A] mb-5 rounded-b-3xl">
+        <div className="flex w-full mb-20 bg-[#25313A]  rounded-b-3xl">
             <img src={componenteUnachLogo} className="h-[60px] mt-[1%] mb-[1%] ml-[3%]" alt="Componentito UNACH Logo" />
             <div className="flex w-full justify-end h-auto">
                 <button className="" onClick={handlerNewProject}>

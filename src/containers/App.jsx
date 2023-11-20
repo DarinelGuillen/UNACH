@@ -17,7 +17,7 @@ function App() {
 
    const [isUser, setIsUser] = useState(
     {
-       page: 16,
+       page: 1,
     }
    )
   const [isShareData, setIsShareData] = useState([
