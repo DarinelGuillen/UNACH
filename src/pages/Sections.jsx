@@ -18,40 +18,40 @@ import Section2_10 from '../components/organism/Section2_10';
 import UserContext from '../contexts/UserContext';
 
 function Sections() {
-    const { isUser, setIsUser } = useContext(UserContext)
+    const { isUser, setIsUser }   = useContext(UserContext)
     switch (isUser.page) {
-        case 2:
+        case 2                    : 
             return <Section1_2 />;
-        case 3:
+        case 3                    : 
             return <Section1_3 />;
-        case 4:
+        case 4                    : 
             return <Section1_4 />;
-        case 5:
+        case 5                    : 
             return <Section1_5 />;
-        case 6:
+        case 6                    : 
             return <Section2_0 />;
-        case 7:
+        case 7                    : 
             return <Section2_1 />;
-        case 8:
+        case 8                    : 
             return <Section2_2 />;
-        case 9:
+        case 9                    : 
             return <Section2_3 />;
-        case 10:
+        case 10                   : 
             return <Section2_4 />;
-        case 11:
+        case 11                   : 
             return <Section2_5 />;
-        case 12:
+        case 12                   : 
             return <Section2_6 />;
-        case 13:
+        case 13                   : 
             return <Section2_7 />;
-        case 14:
+        case 14                   : 
             return <Section2_8 />;
-        case 15:
+        case 15                   : 
             return <Section2_9 />;
-        case 16:
+        case 16                   : 
             return <Section2_10 />;
 
-        default:
+        default                   : 
             return <Section1_1 />;
     }
 }

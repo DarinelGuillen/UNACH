@@ -1,47 +1,48 @@
 .estiloBoton {
-    background-color: #BCB785;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 3px;
+    background-color    : #BCB785;
+    width               : 3rem;
+    height              : 3rem;
+    border-radius       : 3px;
 }
+
 .estiloBotonCierre {
-    background-color: gray;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 3px;
+    background-color    : gray;
+    width               : 3rem;
+    height              : 3rem;
+    border-radius       : 3px;
 }
 
 .estiloBotonSiguiente {
-    background-color: #BCB785;
-    width: 8rem;
-    height: 3rem;
-    border-radius: 3px;
-    color: #ffffff;
+    background-color    : #BCB785;
+    width               : 8rem;
+    height              : 3rem;
+    border-radius       : 3px;
+    color               : #ffffff;
 }
 
 .estiloTextoRegistro {
-    color: #BCB785;
-    font-family: 'Open Sans', sans-serif;
+    color               : #BCB785;
+    font-family         : 'Open Sans', sans-serif;
 }
 
 .estiloBotonSecciones {
-    background-color: #BCB785;
-    width: 6rem;
-    height: 4rem;
-    border-radius: 3px;
+    background-color    : #BCB785;
+    width               : 6rem;
+    height              : 4rem;
+    border-radius       : 3px;
 }
 
 .estiloBotonSiguienteSecciones {
-    background-color: #BCB785;
-    width: 16rem;
-    height: 4rem;
-    border-radius: 3px;
-    color: #ffffff;
+    background-color    : #BCB785;
+    width               : 16rem;
+    height              : 4rem;
+    border-radius       : 3px;
+    color               : #ffffff;
 }
 
 .pieDePagina {
-    background-color: #BCB785;
-    width: 6rem;
-    height: 4rem;
-    border-radius: 3px;
+    background-color    : #BCB785;
+    width               : 6rem;
+    height              : 4rem;
+    border-radius       : 3px;
 }
