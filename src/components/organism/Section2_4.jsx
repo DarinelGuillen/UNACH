@@ -10,10 +10,12 @@ import "../../assets/css/botoncito.css";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import ButtonSections from '../molecules/ButtonSections';
+import { getItem, setItem } from '../../utils/storage';
 
 
 function Section2_4() {
-  const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+//   const { Current } = useContext(SharedDataContext);
   return (
       <>
           <Header />
@@ -35,7 +37,7 @@ function Section2_4() {
                       </div>
 
                       {/* NINGUN BOTÓN SALVA DATOS */}
-                      <ButtonSaveInfo />
+                      <ButtonSaveInfo casefetch={3} />
                   </div>
 
                   <div className='text-center'>
@@ -47,7 +49,7 @@ function Section2_4() {
                   </div>
 
                   <div className='flex flex-col w-full items-center'>
-                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_question" value={isShareData.research_question || ''}></simple-textarea>
+                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_question" value={Current.research_question || ''}></simple-textarea>
                       
 
                   </div>
@@ -60,7 +62,7 @@ function Section2_4() {
                       </div>
                       
                       {/* NINGUN BOTÓN SALVA DATOS */}
-                      <ButtonSaveInfo />
+                      <ButtonSaveInfo casefetch={3} />
                   </div>
 
                   <div className='text-center'>
@@ -72,10 +74,10 @@ function Section2_4() {
                   </div>
 
                   <div className='flex flex-col w-full items-center'>
-                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="general_objective" value={isShareData.general_objective || ''}></simple-textarea>
+                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="general_objective" value={Current.general_objective || ''}></simple-textarea>
                   </div>
 
-                  <ButtonSections/>
+                  <ButtonSections caseValue={3}/>
               </div>
           </div>
           <Footer />

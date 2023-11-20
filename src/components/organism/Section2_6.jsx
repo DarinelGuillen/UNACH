@@ -13,9 +13,11 @@ import SharedDataContext from '../../contexts/SharedDataContext';
 import ButtonSections from '../molecules/ButtonSections';
 
 import "../../assets/css/botoncito.css";
+import { getItem, setItem } from '../../utils/storage';
 
 function Section2_6() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+    // const { Current } = useContext(SharedDataContext);
     return (
         <>
             <Header />
@@ -36,22 +38,22 @@ function Section2_6() {
                         </div>
 
                         {/* TIENES QUE DARLE 2 VECES PARA QUE SE GUARDEN LOS DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={3}/>
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type" value={isShareData.funding_type || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution" value={isShareData.funding_source_institution || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program" value={isShareData.program || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link" value={isShareData.program_link || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Año de la convocatoria" id="year" value={isShareData.year || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance" value={isShareData.evaluating_instance || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type" value={Current.funding_type || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution" value={Current.funding_source_institution || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program" value={Current.program || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link" value={Current.program_link || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" type="number" height="30px" placeholder="Año de la convocatoria" id="year" value={Current.year || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance" value={Current.evaluating_instance || ''}></simple-input>
 
 
                         <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                             <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Consentimiento informado -Describir la forma en la que los participantes aceptan participar libremente en el desarrollo de la propuesta</p>
                         </div>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="informed_consent" value={isShareData.informed_consent || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="informed_consent" value={Current.informed_consent || ''}></simple-input>
 
 
 
@@ -59,11 +61,11 @@ function Section2_6() {
                             <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Comités éticos, bioéticas y/o debioseguridad Indicar si algún Comité ha avalado la propuesta *indispensable para investigaciones en ciencias de la salud</p>
                         </div>
 
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="committees" value={isShareData.committees || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="committees" value={Current.committees || ''}></simple-input>
 
                     </div>
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={3}/>
                 </div>
             </div>
             <Footer />

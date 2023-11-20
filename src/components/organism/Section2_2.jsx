@@ -11,10 +11,12 @@ import logoSave from "../../assets/img/Icon/Save.svg";
 import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import ButtonSections from '../molecules/ButtonSections';
 import "../../assets/css/botoncito.css";
+import { getItem, setItem } from '../../utils/storage';
 
 
 function Section2_2() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+    // const { Current } = useContext(SharedDataContext);
     return (
         <>
             <Header />
@@ -36,7 +38,7 @@ function Section2_2() {
                         </div>
 
                         {/* NINGUN BOTÓN SALVA DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={3} />
                     </div>
 
                     <div className='text-center'>
@@ -50,7 +52,7 @@ function Section2_2() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={isShareData.main_contribution || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={Current.main_contribution || ''}></simple-textarea>
 
                     </div>
 
@@ -61,7 +63,7 @@ function Section2_2() {
                             <p className='text-xl lg:text-3xl'>2.4 Articulación de la propuesta con una o varias funciones sustantivas: docencia (pregrado, posgrado), gestión o vinculación</p>
                         </div>
 
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={3} />
                     </div>
 
                     <div className='text-center'>
@@ -76,9 +78,9 @@ function Section2_2() {
 
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={isShareData.proposal_alignment || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={Current.proposal_alignment || ''}></simple-textarea>
                     </div>
-                    <ButtonSections/>
+                    <ButtonSections caseValue={3}/>
                     
                 </div>
             </div>

@@ -13,19 +13,17 @@ import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import ButtonSections from '../molecules/ButtonSections';
 import Table from '../atoms/Table';
+import { getItem, setItem } from '../../utils/storage';
+
 
 function Section2_9() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
 
     const ColumnsTable = [
         { id: "type_id", title: "Tipo del producto" },
         { id: "description", title: "Descripcion" },
     ];
 
-    const HandlerClickFetch = () => {
-        alert("Datos guardados: " + JSON.stringify(rowData));
-        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-    };
     return (
         <>
             <Header />
@@ -44,7 +42,7 @@ function Section2_9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.15 Desglose Financiero (Opcional)</p>
                         </div>
-                        <ButtonSaveInfo  onClick={HandlerClickFetch}/>
+                        <ButtonSaveInfo casefetch={3} />
                     </div>
 
                     <div className="flex justify-center">
@@ -123,20 +121,20 @@ function Section2_9() {
                         <div className="bg-[#BCB785] w-5/6 text-white p-3 rounded-md">
                             <p className='text-xl lg:text-3xl'>2.16 Productos de la investigación comprometidos </p>
                         </div>
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={3}/>
                     </div>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.test || ''} />
+                    <Table columns={ColumnsTable} savedInfo={Current.test || ''} />
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>
                     </div>
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={3}/>
                 </div>
             </div>
             <Footer />

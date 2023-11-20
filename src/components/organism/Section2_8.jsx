@@ -10,15 +10,12 @@ import ButtonSaveInfo from '../atoms/ButtonSaveInfo';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import ButtonSections from '../molecules/ButtonSections';
 import { useContext } from 'react';
+import { getItem, setItem } from '../../utils/storage';
 
 
 function Section2_8() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
 
-    const HandlerClickFetch = () => {
-        alert("Datos guardados: " + JSON.stringify(rowData));
-        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-    };
     
     return (
         <>
@@ -41,7 +38,7 @@ function Section2_8() {
                         </div>
 
                         {/* TIENES QUE DARLE 2 VECES PARA QUE SE GUARDEN LOS DATOS */}
-                        <ButtonSaveInfo />
+                        <ButtonSaveInfo casefetch={3} />
                     </div>
 
                     <div className="flex justify-center">
@@ -51,8 +48,8 @@ function Section2_8() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Infraestructura" id="infrastructure" value={isShareData.infrastructure || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Recursos" id="resources" value={isShareData.resources || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Infraestructura" id="infrastructure" value={Current.infrastructure || ''}></simple-input>
+                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Recursos" id="resources" value={Current.resources || ''}></simple-input>
                     </div>
 
                     <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
@@ -62,7 +59,7 @@ function Section2_8() {
                             <p className='text-xl lg:text-3xl'>2.14 Consideraciones éticas</p>
                         </div>
 
-                        <ButtonSaveInfo onClick={HandlerClickFetch}/>
+                        <ButtonSaveInfo casefetch={3}/>
                     </div>
 
                     <div className='text-center'>
@@ -76,10 +73,10 @@ function Section2_8() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="100px" type="text" placeholder="Especifique" id="ethical_considerations" value={isShareData.ethical_considerations || ''}></simple-textarea>
+                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="100px" type="text" placeholder="Especifique" id="ethical_considerations" value={Current.ethical_considerations || ''}></simple-textarea>
                     </div>
 
-                    <ButtonSections/>
+                    <ButtonSections caseValue={3} />
                 </div>
             </div>
             <Footer />

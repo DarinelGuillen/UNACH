@@ -12,11 +12,14 @@ import Table from '../atoms/Table';
 import ButtonSections from '../molecules/ButtonSections';
 
 import "../../assets/css/botoncito.css";
+import { getItem, setItem } from '../../utils/storage';
+
 
 
 
 function Section2_7() {
-    const { isShareData } = useContext(SharedDataContext);
+    const Current = getItem('currentProyect') || {};
+
 
     const ColumnsTable = [
         { id: "activity", title: "Actividades a desarrollar" },
@@ -28,10 +31,6 @@ function Section2_7() {
         { id: "expected_product", title: "Producto esperado" },
     ];
 
-    const HandlerClickFetch = () => {
-        alert("Datos guardados: " + JSON.stringify(rowData));
-        console.log("JSON.stringify(rowData):", JSON.stringify(rowData));
-    };
     
     return (
         <>
@@ -53,7 +52,7 @@ function Section2_7() {
                             <p className='text-xl lg:text-3xl'>2.12 Etapa y actividades</p>
                         </div>
 
-                        <ButtonSaveInfo onClick={HandlerClickFetch} />
+                        <ButtonSaveInfo casefetch={3} />
                     </div>
 
                     <div className='text-center'>
@@ -80,20 +79,20 @@ function Section2_7() {
                                 height="30px" 
                                 placeholder="Inicio(Fecha)" 
                                 id="start_date" 
-                                value={isShareData.startDate || ''}  keyIsShareData={"date_start"}
+                                value={Current.startDate || ''}  keyCurrent={"date_start"}
                                 ></simple-input>
 
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Fin(Fecha)"
                                 id="end_date" 
-                                value={isShareData.endDate || ''}  keyIsShareData={"date_end"}
+                                value={Current.endDate || ''}  keyCurrent={"date_end"}
                                 ></simple-input>
                             </div>
                         </tr>
                     </table>
 
-                    <Table columns={ColumnsTable} savedInfo={isShareData.test||''}  keyIsShareData={"first_semester"}/>
+                    <Table columns={ColumnsTable} savedInfo={Current.test||''}  keyCurrent={"first_semester"}/>
 
                     <div className='text-center mt-10'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5'>Etapa 2</p>
@@ -112,22 +111,22 @@ function Section2_7() {
                                 height="30px" 
                                 placeholder="Inicio(Fecha)"
                                 id="start_date" 
-                                value={isShareData.start_date || ''} keyIsShareData={"date_start2"}
+                                value={Current.start_date || ''} keyCurrent={"date_start2"}
                                 ></simple-input>
 
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px"
                                 placeholder="Fin(Fecha)" 
                                 id="end_date" 
-                                value={isShareData.end_date|| ''} keyIsShareData={"date_end2"}
+                                value={Current.end_date|| ''} keyCurrent={"date_end2"}
                                 ></simple-input>
                             </div>
                         </tr>
                     </table >
 
-                    <Table columns={ColumnsTable2} savedInfo={isShareData.test||''}  keyIsShareData={"second_semester"}/>
+                    <Table columns={ColumnsTable2} savedInfo={Current.test||''}  keyCurrent={"second_semester"}/>
                                         
-                    <ButtonSections/>
+                    <ButtonSections caseValue={3} />
                 </div >
             </div >
             <Footer />

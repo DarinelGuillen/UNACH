@@ -1,4 +1,7 @@
-export let dataDictionaryTextArea = {};
+import { getItem, setItem } from '../utils/storage';
+
+// Obtener el valor actual de currentProyect del almacenamiento local
+export let dataDictionaryTextArea =  {};
 
 class SimpleTextArea extends HTMLElement {
   constructor() {
@@ -15,8 +18,8 @@ class SimpleTextArea extends HTMLElement {
           border-radius: 5px;
           font-family: 'Open Sans', sans-serif;
           color: linear-gradient(40deg, black 40%, transparent 40%);
-          resize: vertical; /* Allow vertical resizing */
-          overflow-y: auto; /* Enable vertical scrollbar when content exceeds height */
+          resize: vertical;
+          overflow-y: auto;
           background-color:#D9D9D9;
           margin-top: 0.8rem;
         }
@@ -34,15 +37,19 @@ class SimpleTextArea extends HTMLElement {
     this.textAreaElement.addEventListener('input', (e) => {
       const newKey = e.target.id;
       const newValue = e.target.value;
+      const dataDictionaryTextArea = getItem('currentProyect') || {};
+      // Combinar el valor actual de currentProyect con el dataDictionaryTextArea
+      // const mergedData = { ...dataDictionaryTextArea, [newKey]: newValue };
+    dataDictionaryTextArea[newKey] = newValue;
 
-      // Update the value for the id in dataDictionaryTextArea
-      dataDictionaryTextArea[newKey] = newValue;
-      // // // console.log(
-      // // // "🚀 ~ file: textArea.js:40 ~ SimpleInput ~ this.inputElement.addEventListener ~ dataDictionaryTextArea:",
-      // // // dataDictionaryTextArea
-      // // // );
 
-      // Create a custom event to notify the change
+      // Guardar el objeto actualizado en el almacenamiento local
+      setItem('currentProyect', dataDictionaryTextArea);
+
+      // Actualizar dataDictionaryTextArea con el objeto combinado
+      // dataDictionaryTextArea = mergedData;
+
+      // Crear un evento personalizado para notificar el cambio
       const event = new CustomEvent('textAreaChange', { detail: dataDictionaryTextArea });
       this.dispatchEvent(event);
     });
@@ -59,13 +66,11 @@ class SimpleTextArea extends HTMLElement {
     this.textAreaElement.style.setProperty('width', width);
     this.textAreaElement.style.setProperty('height', height);
 
-    // Check if a value attribute is provided and set the textarea value accordingly
+    // Comprobar si se proporciona un atributo de valor y establecer el valor del textarea en consecuencia
     const valueAttribute = this.getAttribute('value');
     if (valueAttribute !== null) {
       this.textAreaElement.value = valueAttribute;
     }
-
-    // console.log(` ${id}`);
   }
 }
 
