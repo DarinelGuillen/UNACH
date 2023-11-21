@@ -48,7 +48,8 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
                     console.log("🚀 ~ file: cardXl.jsx:15 ~ handlerSections ~ data:", JSON.stringify(data))
                     setItem('currentProyect', data.ALL)
                     setItem('currentProyectID', id)
-                    navigate('/PreviewPDF');
+                    PDF();
+                    // here send to the pdf route or prin the pdf od the route C:\Users\darin\Documents\UNACH\UNACH\src\pages\react-pdf.jsx
                 } else {
                     console.error('Failed to fetch data');
                 }
@@ -57,6 +58,14 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
             // Handle the error
         }
     };
+
+const PDF=()=>{
+
+    if (getItem('currentProyect') && getItem('currentProyectID')) {
+        navigate('/PreviewPDF');
+        console.log("🚀 ~ file: cardXl.jsx:66 ~ PDF ~ PreviewPDF:")
+    }
+}
 
     const handlerSend = async (id) => {
         console.log("🚀 ~ file: cardXl.jsx:58 ~ handlerSend ~ id:", id);
@@ -108,8 +117,8 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
                     <img src={logoUnach} alt="" className='w-20 h-16 md:w-24 md:h-20 lg:w-32 lg:h-28' />
                 </div>
 
-                {status !== 1400 ? (
-                    <div className="  flex  justify-end grow items-center ">
+                {status !== 1400 && status !==1140 ? (
+                    <div className=" flex justify-end grow items-center ">
 
                         <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
                             <p>Editar</p>
