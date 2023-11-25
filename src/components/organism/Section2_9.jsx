@@ -18,7 +18,7 @@ import { getItem, setItem } from '../../utils/storage';
 
 function Section2_9() {
     const Current = getItem('currentProyect') || {};
-
+    const [FillOut, SetFillAout] = useState(false);
     const ColumnsTable = [
         { id: "type_id", title: "Tipo del producto" },
         { id: "description", title: "Descripcion" },
@@ -54,67 +54,28 @@ function Section2_9() {
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
+                    {!Current.financial_breakdown && !Current.financial_breakdown === '' || FillOut ? (
+                        <>
+                            <Table
+                                columns={ColumnsTable}
+                                savedInfo={Current.financial_breakdown || ''}
+                                keyCurrent={"financial_breakdown"}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            <div className='w-full flex items-center justify-center'>
 
-                    {/* <div className="flex">
-                        <div className='flex flex-col items-center w-full'>
-                            <table className="table-auto text-center ml-5 w-[95%] sm:ml-10 sm:w-[90%] lg:ml-14 lg:w-[85%] xl:ml-[60px]">
-                                <thead className='bg-[#25313A] h-12 rounded text-white'>
-                                    <tr>
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Rubros</th> id="¿?"
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Tipo de gasto</th> id="expense_type"
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto</th> id="amount"
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Etapa</th> id="phase_id"
-                                        <th className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Justificación</th> id="justification"
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {rowData.map((row, rowIndex) => (
-                                        <tr key={rowIndex}>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`no${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `no${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                            <td>
-                                                <input type="text" className='text-center w-[95%]' placeholder="..." id={`grade${rowIndex}`} onInput={(e) => handleInputC(rowIndex, `grade${rowIndex}`, e.target.value)} />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    <tr className='bg-[#25313A] h-12 rounded text-white'>
-                                        <td></td>
-                                        <td className='font-normal text-sm w-[80px] sm:text-base sm:font-medium lg:text-base'>Monto total en pesos</td>
-                                        <td>$
-                                            <input type="text" className='text-center bg-[#25313A]' placeholder="..." />
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div className='grid place-content-center ml-5 mr-5'>
-                            <button onClick={handleAddRow}>
-                                <img src={masIcono} className='h-14' alt="Agregar fila"></img>
-                            </button>
-                            <button onClick={handleRemoveRow}>
-                                <img src={menosIcono} className='h-14' alt="Eliminar última fila"></img>
+                                    <button onClick={() => SetFillAout(true)}>
+                                        <div className='flex'>
+                                            <div className='grid place-content-center bg-[#BCB785] text-white w-[10rem] h-[3rem] rounded-md lg:h-[4rem] lg:w-[16rem]'>
+                                                <p className='text-2xl lg:text-3xl'>Rellenar</p>
+                                            </div>
+                                        </div>
                             </button>
                         </div>
-                    </div>
-
-                    <div className='flex justify-center mt-9'>
-                        NO GUARDA DATOS DE LAS TABLAS 
-                        <button onClick={(e) => HandlerClickFetch(e)}><img src={logoSave} className=''></img></button> ********ESTO DEBERIA DE ESTAR COMENTADO*********
-                        <ButtonSaveInfo />
-                    </div> */}
+                        </>
+                    )}
 
                     <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-20">
                         <img src={logoSinNadita} className='h-10 lg:h-20'></img>
@@ -128,7 +89,7 @@ function Section2_9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={Current.test || ''} />
+                    <Table columns={ColumnsTable} savedInfo={Current.stages_and_activities || ''} keyCurrent={"stages_and_activities"}/>
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>

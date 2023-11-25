@@ -52,8 +52,15 @@ function Section2_2() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="main_contribution" value={Current.main_contribution || ''}></simple-textarea>
-
+                        <simple-textarea
+                            class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                            height="150px"
+                            type="text"
+                            placeholder="Especifique"
+                            id="main_contribution"
+                            value={Current.main_contribution
+                                ||
+                                ''}></simple-textarea>
                     </div>
 
                     <div className="flex items-center place-content-around text-center w-full mt-5 lg:mt-[35px]">
@@ -78,8 +85,16 @@ function Section2_2() {
 
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="proposal_alignment" value={Current.proposal_alignment || ''}></simple-textarea>
-                    </div>
+                        <simple-textarea
+                      class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                      height="150px"
+                      type="text"
+                      placeholder="Especifique"
+                      id="articulation_with_substantive_functions"
+                      value={Current.articulation_with_substantive_functions
+                      ||
+                      ''}></simple-textarea>
+                      </div>
                     <ButtonSections caseValue={3}/>
                     
                 </div>

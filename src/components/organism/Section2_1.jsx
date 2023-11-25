@@ -44,7 +44,7 @@ function Section2_1() {
 
                         <div className='flex flex-col w-full items-center'>
                             <simple-input class="w-[80%] lg:w-[90%] xl:w-[90%] md:w-[87%] sm:w-[90%] mr-[30px]" 
-                            height="30px" value={Current.title || ''} placeholder="Título del proyecto" id="title"></simple-input>
+                                height="30px" value={Current.title_project || ''} placeholder="Título del proyecto" id="title_project"></simple-input>
                         </div>
 
                         {/* NINGUN BOTÓN SALVA DATOS DE LOS INPUTS */}
@@ -66,8 +66,15 @@ function Section2_1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="executive_summary" value={Current.executive_summary || ''}></simple-textarea>
-
+                        <simple-textarea
+                            class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]"
+                            height="150px"
+                            type="text"
+                            placeholder="Especifique"
+                            id="executive_summary"
+                            value={Current.executive_summary
+                                ||
+                                ''}></simple-textarea>
                     </div>
 
                     <div className="flex items-center place-content-around text-center w-full mt-7 lg:mt-[35px]">
@@ -85,8 +92,15 @@ function Section2_1() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="introduction" value={Current.introduction || ''}></simple-textarea>
-
+                        <simple-textarea
+                            class="w-[80%] mr-[2%] lg:w-[80%] lg:mr-[2%] xl:w-[81%] md:w-[85%] md:mr-[3%] sm:ml-[1%] sm:w-[84%]"
+                            height="150px"
+                            type="text"
+                            placeholder="Especifique"
+                            id="introduction"
+                            value={Current.introduction
+                                ||
+                                ''}></simple-textarea>
                     </div>
 
                     <ButtonSections caseValue={3}/>

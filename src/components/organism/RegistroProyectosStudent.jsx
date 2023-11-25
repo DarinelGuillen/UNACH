@@ -14,11 +14,12 @@ const RegistroProyectosStudent = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/projects/${idUnach}`);
+                const response = await fetch(`http://127.0.0.1:8000/api/projects/idUnach/${idUnach}`);
 
                 console.log("🚀 ~ file: RegistroProyectosStudent.jsx:19 ~ fetchData ~ response:", response)
                 if (response.ok) {
                     const data = await response.json();
+                    console.log("🚀 ~ file: RegistroProyectosStudent.jsx:22 ~ fetchData ~ data:", data)
                     if (data.projects && data.projects.length === 0) {
                   // Si no hay proyectos, muestra el mensaje
                   setCardXlData(data.projects);
@@ -69,7 +70,7 @@ const RegistroProyectosStudent = () => {
                                           start_date={cardData.start_date || ""}
                                           end_date={cardData.end_date || ""}
                                           title_project={cardData.title_project || ""}
-                                          status={cardData.status || ""}
+                                          status={cardData.status || 0}
                                           student_name={cardData.student_name || ""}
                                           created_at={cardData.created_at || ""}
                                       />

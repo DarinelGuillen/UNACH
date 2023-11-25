@@ -42,27 +42,105 @@ function Section2_6() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Tipo de financiamiento" id="funding_type" value={Current.funding_type || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Institución/fuente" id="funding_source_institution" value={Current.funding_source_institution || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Convocatoria/programa" id="program" value={Current.program || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Enlace de la convocatoria" id="program_link" value={Current.program_link || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" type="number" height="30px" placeholder="Año de la convocatoria" id="year" value={Current.year || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Instancia dictaminadora" id="evaluating_instance" value={Current.evaluating_instance || ''}></simple-input>
-
-
-                        <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                            <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Consentimiento informado -Describir la forma en la que los participantes aceptan participar libremente en el desarrollo de la propuesta</p>
-                        </div>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="informed_consent" value={Current.informed_consent || ''}></simple-input>
-
-
-
-                        <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
-                            <p className='font-bold text-gray-500  text-base lg:text-xl mt-5 mb-5'>Comités éticos, bioéticas y/o debioseguridad Indicar si algún Comité ha avalado la propuesta *indispensable para investigaciones en ciencias de la salud</p>
-                        </div>
-
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="30px" placeholder="Escribir aquí" id="committees" value={Current.committees || ''}></simple-input>
-
+                        <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Diseño metodológico"
+                          id="methodological_design"
+                          value={Current.methodological_design
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="40px"
+                          type="text"
+                          placeholder="Participantes/muestra
+                          Indicar cantidad de participantes, la muestra y el tipo de
+                          muestreo/selección de participantes"
+                          id="participants_sample"
+                          value={Current.participants_sample
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Técnicas e instrumentos"
+                          id="techniques_instruments"
+                          value={Current.techniques_instruments
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Materiales"
+                          id="materials"
+                          value={Current.materials
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Procedimiento para la recolección de datos"
+                          id="data_collection_procedure"
+                          value={Current.data_collection_procedure
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Procedimiento para el análisis"
+                          id="procedure_for_analysis"
+                          value={Current.procedure_for_analysis
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Riesgos o amenazas posibles"
+                          id="risks_or_threats"
+                          value={Current.risks_or_threats
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          type="text"
+                          placeholder="Formas de afrontar los riesgos y amenazas"
+                          id="ways_to_face_risks_and_threats"
+                          value={Current.ways_to_face_risks_and_threats
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="70px"
+                          type="text"
+                          placeholder="Consentimiento informado
+                          Describir la forma en la que los participantes aceptan
+                          participar libremente en el desarrollo de la propuesta"
+                          id="informed_consent"
+                          value={Current.informed_consent
+                          ||
+                          ''}></simple-textarea>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="70px"
+                          type="text"
+                          placeholder="
+                          Comités éticos, bioéticas y/o de bioseguridad
+                          Indicar si algún Comité ha avalado la propuesta
+                          *Indispensable para investigaciones en ciencias de la
+                          salud"
+                          id="ethical_committees_bioethics_biosafety"
+                          value={Current.ethical_committees_bioethics_biosafety
+                          ||
+                          ''}></simple-textarea>
+                          
                     </div>
 
                     <ButtonSections caseValue={3}/>

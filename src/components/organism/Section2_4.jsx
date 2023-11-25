@@ -49,8 +49,15 @@ function Section2_4() {
                   </div>
 
                   <div className='flex flex-col w-full items-center'>
-                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="research_question" value={Current.research_question || ''}></simple-textarea>
-                      
+                      <simple-textarea
+                        class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                        height="150px"
+                        type="text"
+                        placeholder="Especifique"
+                        id="research_question"
+                        value={Current.research_question
+                        ||
+                        ''}></simple-textarea>
 
                   </div>
 
@@ -74,8 +81,16 @@ function Section2_4() {
                   </div>
 
                   <div className='flex flex-col w-full items-center'>
-                      <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="150px" type="text" placeholder="Especifique" id="general_objective" value={Current.general_objective || ''}></simple-textarea>
-                  </div>
+                      <simple-textarea
+                    class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                    height="150px"
+                    type="text"
+                    placeholder="Especifique"
+                    id="general_objective"
+                    value={Current.general_objective
+                    ||
+                    ''}></simple-textarea>
+                    </div>
 
                   <ButtonSections caseValue={3}/>
               </div>

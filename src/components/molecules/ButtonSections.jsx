@@ -14,7 +14,7 @@ function ButtonSections({ caseValue }) {
     if (newPage === 0) {
         // Si newPage es 0, ejecuta navigate("/")
         navigate("/");
-    } else if (newPage >= 1 && newPage <= 15) {
+    } else if (newPage >= 1 && newPage <= 16) {
         setIsUser((prevState) => ({ ...prevState, page: newPage, fetchCase: caseValue || null }));
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setIsSaving(true);

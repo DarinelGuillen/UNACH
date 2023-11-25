@@ -92,7 +92,7 @@ function Section2_7() {
                         </tr>
                     </table>
 
-                    <Table columns={ColumnsTable} savedInfo={Current.test||''}  keyCurrent={"first_semester"}/>
+                    <Table columns={ColumnsTable} savedInfo={Current.stages_and_activities||''}  keyCurrent={"stages_and_activities"}/>
 
                     <div className='text-center mt-10'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5'>Etapa 2</p>

@@ -14,7 +14,6 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
     const truncatedTitle = title_project.length > 20 ? title_project.substring(0, 15) + '...' : title_project;
 
     const handlerSections = async (id) => {
-            console.log("🚀 ~ file: cardXl.jsx:9 ~ handlerSections ~ id:", id)
         setIsUser((prevState) => ({ ...prevState, page: 1 }));
 
             try {
@@ -26,8 +25,6 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
                     setItem('currentProyect', data.ALL)
                     setItem('currentProyectID', id)
                     navigate('/Sections');
-                    console.log("🚀 ~ file: cardXl.jsx:14 ~ handlerSections ~ response:", response)
-                    console.log("🚀 ~ file: cardXl.jsx:15 ~ handlerSections ~ data:", JSON.stringify(data))
                 } else {
                     console.error('Failed to fetch data');
                 }
@@ -44,8 +41,6 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log("🚀 ~ file: cardXl.jsx:14 ~ handlerSections ~ response:", response)
-                    console.log("🚀 ~ file: cardXl.jsx:15 ~ handlerSections ~ data:", JSON.stringify(data))
                     setItem('currentProyect', data.ALL)
                     setItem('currentProyectID', id)
                     PDF();
@@ -63,13 +58,10 @@ const PDF=()=>{
 
     if (getItem('currentProyect') && getItem('currentProyectID')) {
         navigate('/PreviewPDF');
-        console.log("🚀 ~ file: cardXl.jsx:66 ~ PDF ~ PreviewPDF:")
     }
 }
 
     const handlerSend = async (id) => {
-        console.log("🚀 ~ file: cardXl.jsx:58 ~ handlerSend ~ id:", id);
-
         try {
             const response = await fetch(`http://127.0.0.1:8000/api/projects`, {
                 method: 'PUT',
@@ -108,7 +100,7 @@ const PDF=()=>{
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Empieza: {start_date}</p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Termina: {end_date}</p>
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
-                            {truncatedTitle}
+                        {truncatedTitle} {status}
                         </p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl mt-1'>{status}</p>
                         <p className='text-blue-600 text-xs font-semibold mt-3 md:text-lg lg:text-xl'>{student_name}</p>
@@ -117,7 +109,14 @@ const PDF=()=>{
                     <img src={logoUnach} alt="" className='w-20 h-16 md:w-24 md:h-20 lg:w-32 lg:h-28' />
                 </div>
 
-                {status !== 1400 && status !==1140 ? (
+                {status === 1400  ? (
+                    <div className=" flex justify-end grow items-center">
+                    <button onClick={() => handlerPDF(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
+                        <span className="text">PDF</span>
+                    </button>
+                </div>
+                    
+                ) : (
                     <div className=" flex justify-end grow items-center ">
 
                         <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
@@ -125,12 +124,6 @@ const PDF=()=>{
                         </button>
                         <button onClick={() => handlerSend(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
                             <p>Enviar</p>
-                        </button>
-                    </div>
-                ) : (
-                    <div className=" flex justify-end grow items-center">
-                        <button onClick={() => handlerPDF(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <span className="text">PDF</span>
                         </button>
                     </div>
                 )}

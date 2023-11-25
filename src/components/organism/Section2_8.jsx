@@ -48,9 +48,25 @@ function Section2_8() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Infraestructura" id="infrastructure" value={Current.infrastructure || ''}></simple-input>
-                        <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="60px" placeholder="Recursos" id="resources" value={Current.resources || ''}></simple-input>
-                    </div>
+                        <simple-input
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="30px"
+                          placeholder="Infraestructura"
+                          id="infrastructure"
+                          value={Current.infrastructure
+                          ||
+                          ''}></simple-input>
+                          <simple-textarea
+                          class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                          height="70px"
+                          type="text"
+                          placeholder="Recursos"
+                          id="resources"
+                          value={Current.resources
+                          ||
+                          ''}></simple-textarea>
+                          
+                          </div>
 
                     <div className="flex items-center place-content-around text-center w-full mt-10 lg:mt-[35px]">
                         <img src={logoSinNadita} className='h-[40px] lg:h-[50px] md:h-[40px] sm:h-[40px] xl:h-[40px]'></img>
@@ -73,8 +89,16 @@ function Section2_8() {
                     </div>
 
                     <div className='flex flex-col w-full items-center'>
-                        <simple-textarea class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" height="100px" type="text" placeholder="Especifique" id="ethical_considerations" value={Current.ethical_considerations || ''}></simple-textarea>
-                    </div>
+                       <simple-textarea
+                      class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]"
+                      height="100px"
+                      type="text"
+                      placeholder="Consideraciones éticas"
+                      id="ethical_considerations"
+                      value={Current.ethical_considerations
+                      ||
+                      ''}></simple-textarea>
+                      </div>
 
                     <ButtonSections caseValue={3} />
                 </div>

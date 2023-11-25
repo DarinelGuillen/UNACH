@@ -14,6 +14,7 @@ function Home() {
     const userType = searchParams.get('userType')||2;
 
     setItem('userData', { id, idUnach, userType });
+    console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach, userType :", id, idUnach, userType )
   }, [location.search]);
 
   // useEffect(() => {
