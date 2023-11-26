@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { getItem, setItem } from '../../utils/storage';
 import UserContext from '../../contexts/UserContext';
-const CardXl = ({ id, start_date, end_date, title_project, status, student_name, created_at, }) => {
+const CardCommitte = ({ id, start_date, end_date, title_project, status, student_name, created_at, }) => {
     const { isUser, setIsUser } = useContext(UserContext)
 
     const navigate = useNavigate();
@@ -110,25 +110,23 @@ const PDF=()=>{
                 </div>
 
                 {status === 1400  ? (
-                    <div className=" flex justify-end grow items-center">
+                    <>
+                    <div className=" flex justify-end grow gap-2 items-center">
                     <button onClick={() => handlerPDF(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
                         <span className="text">PDF</span>
                     </button>
+                    <button onClick={console.log("Hola")} className='flex w-auto items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
+                        <span className="text">Calificar</span>
+                    </button>
                 </div>
+                    </>
                     
                 ) : (
-                    <div className=" flex justify-end grow items-center ">
-
-                        <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <p>Editar</p>
-                        </button>
-                        <button onClick={() => handlerSend(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <p>Enviar</p>
-                        </button>
-                    </div>
+                    <>
+                    </>
                 )}
             </div>
     );
 };
 
-export default CardXl;
+export default CardCommitte;

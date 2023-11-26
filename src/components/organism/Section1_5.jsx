@@ -59,7 +59,7 @@ function Section1_5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.9 Formación de personas en investigación</p>
                         </div>
-                        <ButtonSaveInfo caseValue={2}/>
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='text-center mt-3'>
@@ -79,7 +79,7 @@ function Section1_5() {
                         <div className="bg-[#BCB785] w-[86%] sm:w-[87%] lg:w-[85%] md:w-[89%] xl:w-[83%] text-white p-3 rounded-md items-center">
                             <p className='text-xl lg:text-3xl'>1.10 Entidades (instrucciones, organizaciones, grupos, etc.) participantes o beneficiarias</p>
                         </div>
-                        <ButtonSaveInfo caseValue={2}/>
+                        <ButtonSaveInfo casefetch={2}/>
                     </div>
 
                     <div className='text-center mt-3 mb-3'>

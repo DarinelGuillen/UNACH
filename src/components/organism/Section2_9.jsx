@@ -20,9 +20,17 @@ function Section2_9() {
     const Current = getItem('currentProyect') || {};
     const [FillOut, SetFillAout] = useState(false);
     const ColumnsTable = [
+        { id: "Categories", title: "Categorías" },
+        { id: "expense_type", title: "Tipo de Gasto" },
+        { id: "amount", title: "Monto" },
+        { id: "Stage", title: "Etapa" },
+        { id: "Justification", title: "Justificación" },
+    ];
+    const ColumnsTable2 = [
         { id: "type_id", title: "Tipo del producto" },
         { id: "description", title: "Descripcion" },
     ];
+
 
     return (
         <>
@@ -54,7 +62,7 @@ function Section2_9() {
                     <div className='text-center w-5/6 ml-10 lg:ml-[85px]'>
                         <p className='text-gray-700 text-base mt-1 lg:text-xl lg:mb-5 mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
-                    {!Current.financial_breakdown && !Current.financial_breakdown === '' || FillOut ? (
+                    {Current.financial_breakdown && Current.financial_breakdown !==null || FillOut ? (
                         <>
                             <Table
                                 columns={ColumnsTable}
@@ -89,7 +97,7 @@ function Section2_9() {
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5 mb-5'>*Inserte o borre cuantas filas necesite*</p>
                     </div>
 
-                    <Table columns={ColumnsTable} savedInfo={Current.stages_and_activities || ''} keyCurrent={"stages_and_activities"}/>
+                    <Table columns={ColumnsTable2} savedInfo={Current.committed_research_products || ''} keyCurrent={"committed_research_products"} />
 
                     <div className='text-center'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-10 mb-5'>Nota: para emitir la constancia de conclusión estos productos deben ser entregados y cubiertos satisfactoriamente, y dictaminados favorablemente.</p>

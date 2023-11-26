@@ -6,7 +6,8 @@ import UserContext from '../../contexts/UserContext';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import { getItem, setItem } from '../../utils/storage';
 
-const Header2 = () => {
+const Header2 = ({ShowMore}) => {
+    // console.log("🚀 ~ file: header2.jsx:10 ~ Header2 ~ ShowMore:", ShowMore)
     const { isUser, setIsUser } = useContext(UserContext);
     const storedData = getItem('userData');
     const { idUnach } = storedData;
@@ -27,8 +28,8 @@ const Header2 = () => {
             if (responseNewProject.ok) {
                 // TODO: Get data from the response and add it to the SetItme
                 const newData = await responseNewProject.json();
-                console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ responseNewProject:", responseNewProject);
-                console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ newData.data:", newData.data.id); 
+                // console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ responseNewProject:", responseNewProject);
+                // console.log("🚀 ~ file: header2.jsx:34 ~ handlerNewProject ~ newData.data:", newData.data.id);
                 setItem('currentProyectID', newData.data.id);
                 // TODO: Nested fetch POST to the route 'localhost:8080/api/Project'
                 const responseNestedProject = await fetch('http://127.0.0.1:8000/api/DataProject', {
@@ -43,14 +44,14 @@ const Header2 = () => {
                 if (responseNestedProject.ok) {
                     // TODO: Get data from the response and add it to the  SetItme
                     const nestedData = await responseNestedProject.json();
-                    console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ responseNestedProject:", responseNestedProject);
-                    console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ nestedData:", nestedData.data);
+                    // console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ responseNestedProject:", responseNestedProject);
+                    // console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ nestedData:", nestedData.data);
 
                     //* Merge the new data with the existing state
                     setItem('currentProyect', { ...newData.data, ...nestedData.data
                         // ,work_group: {},
                     });
-                    console.log("🚀 ~ file: header2.jsx:50 ~ handlerNewProject ~ { ...newData.data, ...nestedData.data }:", { ...newData.data, ...nestedData.data })
+                    // console.log("🚀 ~ file: header2.jsx:50 ~ handlerNewProject ~ { ...newData.data, ...nestedData.data }:", { ...newData.data, ...nestedData.data })
                     // TODO: Navigate to '/PAGEx'
                     navigate('/Sections');
                 } else {
@@ -63,23 +64,34 @@ const Header2 = () => {
             console.error('Error in handlerNewProject:', error);
         }
     };
-    useEffect(() => {
+    // useEffect(() => {
                     
-       console.log("🚀 ~ file: header2.jsx:71 ~ Header2 ~ getItem:", getItem)
-    }, [getItem])
+    //    // console.log("🚀 ~ file: header2.jsx:71 ~ Header2 ~ getItem:", getItem)
+    // }, [getItem])
     
 
     return (
-        <div className="flex w-full mb-20 bg-[#25313A]  rounded-b-3xl">
+        <>
+              <div className="flex w-full mb-20 bg-[#25313A]  rounded-b-3xl">
             <img src={componenteUnachLogo} className="h-[60px] mt-[1%] mb-[1%] ml-[3%]" alt="Componentito UNACH Logo" />
             <div className="flex w-full justify-end h-auto">
+        {ShowMore !== undefined && ShowMore ? (
+            <>
                 <button className="" onClick={handlerNewProject}>
                     <div className="mr-[6%] mt-[2.5%]">
                         <img src={more} className="h-[35px] " alt="" />
                     </div>
                 </button>
-            </div>
-        </div>
+            </>
+          ) : (
+              <>
+            </>
+          )}
+          
+          </div>
+      </div>
+        
+            </>
     );
 };
 

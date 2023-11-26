@@ -49,7 +49,7 @@ const RegistroProyectosStudent = () => {
     return (
         <>
             <div className='bg-white font-sans w-full '>
-                <Header2 />
+                <Header2 ShowMore={true} />
                 {cardXlData && cardXlData.length === 0 ? (
                     <div className=" h-[70%]">
                         <div className='h-[50%] flex flex-col justify-center items-center w-full '>

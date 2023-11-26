@@ -22,7 +22,7 @@ function Section2_7() {
 
 
     const ColumnsTable = [
-        { id: "activity", title: "Actividades a desarrollar" },
+        { id: "activity", title: "Actividades a desarrollar", hover: '' },
         { id: "expected_product", title: "Producto esperado" },
     ];
 
@@ -77,22 +77,24 @@ function Section2_7() {
                             <div className='flex flex-col w-full items-center'>
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
+                                    type='date'
                                 placeholder="Inicio(Fecha)" 
-                                id="start_date" 
-                                value={Current.startDate || ''}  keyCurrent={"date_start"}
+                                    id="S1StarDate"
+                                    value={Current.S1StarDate || ''}  
                                 ></simple-input>
 
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
                                 placeholder="Fin(Fecha)"
-                                id="end_date" 
-                                value={Current.endDate || ''}  keyCurrent={"date_end"}
+                                    type='date'
+                                    id="S1SEndDate"
+                                    value={Current.S1SEndDate || ''}  
                                 ></simple-input>
                             </div>
                         </tr>
                     </table>
 
-                    <Table columns={ColumnsTable} savedInfo={Current.stages_and_activities||''}  keyCurrent={"stages_and_activities"}/>
+                    <Table columns={ColumnsTable} savedInfo={Current.SA_1 || ''} keyCurrent={"SA_1"} />
 
                     <div className='text-center mt-10'>
                         <p className='font-bold text-gray-500 text-base lg:text-xl mt-5'>Etapa 2</p>
@@ -109,22 +111,25 @@ function Section2_7() {
                             <div className='flex flex-col w-full items-center'>
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px" 
+                                    type='date'
                                 placeholder="Inicio(Fecha)"
-                                id="start_date" 
-                                value={Current.start_date || ''} keyCurrent={"date_start2"}
+                                    id="S2StarDate"
+                                    value={Current.S2StarDate || ''}
                                 ></simple-input>
 
                                 <simple-input class="w-[80%] mr-[2%] lg:w-[81%] xl:w-[81%] md:w-[87%] sm:w-[84%]" 
                                 height="30px"
+                                    type='date'
+
                                 placeholder="Fin(Fecha)" 
-                                id="end_date" 
-                                value={Current.end_date|| ''} keyCurrent={"date_end2"}
+                                    id="S2SEndDate"
+                                    value={Current.S2SEndDate || ''} 
                                 ></simple-input>
                             </div>
                         </tr>
                     </table >
 
-                    <Table columns={ColumnsTable2} savedInfo={Current.test||''}  keyCurrent={"second_semester"}/>
+                    <Table columns={ColumnsTable2} savedInfo={Current.SA_1 || ''} keyCurrent={"SA_2"} />
                                         
                     <ButtonSections caseValue={3} />
                 </div >
