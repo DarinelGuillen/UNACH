@@ -1,6 +1,6 @@
     import React, { useState, useEffect } from 'react';
     import Footer from '../atoms/Footer';
-    import CardCommitte from '../atoms/CardCommitte';
+    import CardCommitte from '../molecules/CardCommitte';
     import Header2 from '../atoms/header2';
     import { getItem } from '../../utils/storage';
     

@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { getItem, setItem } from '../../utils/storage';
 import UserContext from '../../contexts/UserContext';
+import ProgressBar from './ProgressBar';
+import ButtonPDF from './ButtonPDF';
 const CardXl = ({ id, start_date, end_date, title_project, status, student_name, created_at, }) => {
     const { isUser, setIsUser } = useContext(UserContext)
 
@@ -35,31 +37,7 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
             
     };
 
-    const handlerPDF = async (id) => {
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/api/projects/PDF/${id}`);
-
-                if (response.ok) {
-                    const data = await response.json();
-                    setItem('currentProyect', data.ALL)
-                    setItem('currentProyectID', id)
-                    PDF();
-                    // here send to the pdf route or prin the pdf od the route C:\Users\darin\Documents\UNACH\UNACH\src\pages\react-pdf.jsx
-                } else {
-                    console.error('Failed to fetch data');
-                }
-        } catch (error) {
-            console.error('Error handling PDF:', error);
-            // Handle the error
-        }
-    };
-
-const PDF=()=>{
-
-    if (getItem('currentProyect') && getItem('currentProyectID')) {
-        navigate('/PreviewPDF');
-    }
-}
+    
 
     const handlerSend = async (id) => {
         try {
@@ -102,7 +80,7 @@ const PDF=()=>{
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
                         {truncatedTitle} 
                         </p>
-                        <p className='text-sm text-gray-600 md:text-lg lg:text-xl mt-1'>{status}</p>
+                    <ProgressBar StatusBar={status} />
                         <p className='text-blue-600 text-xs font-semibold mt-3 md:text-lg lg:text-xl'>{student_name}</p>
                     </div>
 
@@ -111,14 +89,12 @@ const PDF=()=>{
 
                 {status === 1400  ? (
                     <div className=" flex justify-end grow items-center">
-                    <button onClick={() => handlerPDF(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                        <span className="text">PDF</span>
-                    </button>
+                        <ButtonPDF idP={id}/>
+
                 </div>
                     
                 ) : (
                     <div className=" flex justify-end grow items-center ">
-
                         <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
                             <p>Editar</p>
                         </button>

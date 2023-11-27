@@ -7,7 +7,8 @@ import SharedDataContext from '../../contexts/SharedDataContext';
 import { getItem, setItem } from '../../utils/storage';
 
 const Header2 = ({ShowMore}) => {
-    // console.log("🚀 ~ file: header2.jsx:10 ~ Header2 ~ ShowMore:", ShowMore)
+    const ID = getItem('currentProyectID');
+
     const { isUser, setIsUser } = useContext(UserContext);
     const storedData = getItem('userData');
     const { idUnach } = storedData;
@@ -72,7 +73,7 @@ const Header2 = ({ShowMore}) => {
 
     return (
         <>
-              <div className="flex w-full mb-20 bg-[#25313A]  rounded-b-3xl">
+              <div className="flex w-full bg-[#25313A] max-h-1/2  rounded-b-3xl">
             <img src={componenteUnachLogo} className="h-[60px] mt-[1%] mb-[1%] ml-[3%]" alt="Componentito UNACH Logo" />
             <div className="flex w-full justify-end h-auto">
         {ShowMore !== undefined && ShowMore ? (
@@ -84,8 +85,15 @@ const Header2 = ({ShowMore}) => {
                 </button>
             </>
           ) : (
-              <>
-            </>
+            <>
+            <div className='flex-col w-auto text-white  pt-4 h-auto items-center justify-center text-center mx-20 sm:w-1/2 md:w-1/4'>
+              <p>
+                XXXXX-00{ID}-{ID}0-{ID}  Revisión: {ID}
+              </p>
+              <p>Registro de Proyecto de Investigación</p>
+            </div>
+          </>
+          
           )}
           
           </div>

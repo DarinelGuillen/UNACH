@@ -61,7 +61,7 @@ const RegistroProyectosStudent = () => {
                 ) : (
                     <>
 
-                            <div className="grid   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
+                            <div className="grid my-9 px-9   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
                                 {/* <div className="flex flex-col justify-around  bg-white "> */}
                                     {cardXlData && cardXlData.slice(currentPage * 6, (currentPage + 1) * 6).map((cardData, index) => (
                                         <CardXl
