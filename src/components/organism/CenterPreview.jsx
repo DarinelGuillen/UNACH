@@ -10,14 +10,20 @@ import Table1_8 from '../molecules/Table1_8';
 import Table1_9 from '../molecules/Table1_9';
 import Table1_10 from '../molecules/Table1_10';
 import PTable_Drive from '../molecules/PTable_Drive';
-import P2_1To2_10 from './P2_1To2_10';
-import ButtonProtocolData from '../molecules/ButtonProtocolData';
+import P2_1To2_10 from '../molecules/P2_1To2_10';
+import PTable2_11 from '../molecules/PTable2_11';
+import PTable2_12 from '../molecules/PTable2_12';
+import PTable2_13 from '../molecules/PTable2_13';
+import PTable2_14 from '../molecules/PTable2_14';
+import PTable2_15 from '../molecules/PTable2_15';
+import PTable2_16 from '../molecules/PTable2_16';
+import PTable2_17 from '../molecules/PTable2_17';
 import Printer from '../../assets/img/Icon/printer.png';
 import { getItem, setItem } from '../../utils/storage';
 
 function CenterPreview() {
     const CP = getItem('currentProyect') || {};//!Current Project
-    const [viewType, setViewType] = useState(2);
+    const [viewType, setViewType] = useState(1);
 
     const handlerChangeView = (type) => {
         setViewType(type);
@@ -117,6 +123,15 @@ function CenterPreview() {
                     <PTable_Drive/>
                     </>) : (<>
                     <P2_1To2_10/>
+                    <PTable2_11/>
+                    <PTable2_12/>
+                    <PTable2_13/>
+                    <PTable2_14/>
+                    <PTable2_15/>
+                    <PTable2_16/>
+                    <PTable2_17/>
+
+
                     </>)}
                     
 

@@ -8,7 +8,7 @@ function P2_1To2_10() {
         <>
             <div className="h-auto w-full flex-col items-center justify-center ">
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.1 Resumen ejecutivo</td>
@@ -22,7 +22,7 @@ function P2_1To2_10() {
                 </div>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.2 Introducción</td>
@@ -37,7 +37,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.3 Principal contribución del proyecto al campo de estudio</td>
@@ -52,7 +52,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.4 Articulación de la propuesta con una o varias funciones sustantivas: docencia (pregrado, posgrado), gestión o vinculación</td>
@@ -67,7 +67,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.5 Marco teórico/conceptual</td>
@@ -82,7 +82,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.6 Justificación de la investigación</td>
@@ -97,7 +97,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.7 Pregunta de investigación</td>
@@ -112,7 +112,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.8 Objetivo general</td>
@@ -127,7 +127,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.9 Objetivos específicos</td>
@@ -142,7 +142,7 @@ function P2_1To2_10() {
             </>
             <>
                 <div className="flex w-full p-6">
-                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-14 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
+                    <table className="transition ease-in-out delay-150 hover:-translate-y-10 hover:overflow hover:scale-110 duration-500 mt-1 border-separate border-spacing-2 border border-slate-900 border-b-blue-900 w-full table-auto border-gray-300 bg-white drop-shadow-lg rounded-lg border-gray-300">
                         <tbody>
                             <tr>
                                 <td className="p-4 text-4xl border-r border-gray-300 font-semibold">2.10 Hipótesis o supuestos</td>
