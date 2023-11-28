@@ -9,6 +9,7 @@ import UserContext from '../../contexts/UserContext';
 import ProgressBar from './ProgressBar';
 import ButtonPDF from './ButtonPDF';
 const CardXl = ({ id, start_date, end_date, title_project, status, student_name, created_at, }) => {
+    console.log("🚀 ~ file: cardXl.jsx:12 ~ CardXl ~ id:", id)
     const { isUser, setIsUser } = useContext(UserContext)
 
     const navigate = useNavigate();

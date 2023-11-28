@@ -61,7 +61,7 @@ export const updateCase2 = () => {
                 funding_type                              : Current.funding_type || null,
                 institution_source                        : Current.institution_source || null,
                 call_program                              : Current.call_program || null,
-                call_year                                 : Current.call_year || null,
+                call_year                                 : Current.call_year || 1,
                 call_link                                 : Current.call_link || null,
                 evaluating_instance                       : Current.evaluating_instance || null,
                 allocation_resources_agreement            : Current.allocation_resources_agreement || null,

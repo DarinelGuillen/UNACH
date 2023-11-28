@@ -12,7 +12,7 @@ import ProtectRoute from "./ProtectRoute.jsx";
 import SharedDataContext from '../contexts/SharedDataContext.js';
 import UserContext from "../contexts/UserContext.js";
 function App() {
-   const [isUser, setIsUser] = useState({ page: 6,})
+   const [isUser, setIsUser] = useState({ page: 1,})
   const [isShareData, setIsShareData] = useState([]);
 
 

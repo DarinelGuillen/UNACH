@@ -11,7 +11,7 @@ function Review() {
               <Header2 ShowMore={false} />
 
               {/* Your main content goes here */}
-              <div className="flex-grow overflow-y-auto w-[90%]  h-1/2 my-9 px-9 ">
+              <div className="flex-grow overflow-y-auto w-[96%]   my-9 px-9 ">
                   <CenterPreview/>
               </div>
 

@@ -69,7 +69,7 @@ function Section1_4() {
                 value={Current.rt_scope || ''}
                 height="40px"
                 type="combo-box"
-                options='options="Explorativa,  
+                options='Explorativa,  
                 Descriptiva,
                 Correlacional,
                 Explicativa,
