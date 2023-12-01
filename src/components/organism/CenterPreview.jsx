@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import BottonsRAP from '../molecules/ButtonsRAP';
 import Table1_1and2 from '../molecules/Table1_1and2';
 import Table1_3 from '../molecules/Table1_3';
 import Table1_4 from '../molecules/Table1_4';
@@ -18,12 +19,11 @@ import PTable2_14 from '../molecules/PTable2_14';
 import PTable2_15 from '../molecules/PTable2_15';
 import PTable2_16 from '../molecules/PTable2_16';
 import PTable2_17 from '../molecules/PTable2_17';
-import Printer from '../../assets/img/Icon/printer.png';
 import { getItem, setItem } from '../../utils/storage';
 
 function CenterPreview() {
     const CP = getItem('currentProyect') || {};//!Current Project
-    const [viewType, setViewType] = useState(1);
+    const [viewType, setViewType] = useState(2);
 
     const handlerChangeView = (type) => {
         setViewType(type);
@@ -31,20 +31,7 @@ function CenterPreview() {
 
     // TODO: Agregar los manejadores de eventos
     
-    const handleAccept = () => {
-        // Lógica para aceptar
-        console.log('Proyecto aceptado');
-    };
-
-    const handleReject = () => {
-        // Lógica para rechazar
-        console.log('Proyecto rechazado');
-    };
-
-    const handleGeneratePDF = () => {
-        // Lógica para generar PDF
-        console.log('Generando PDF');
-    };
+    
 
     return (
         <>
@@ -60,26 +47,7 @@ function CenterPreview() {
                         Vigencia:  Inicio en {CP.start_date}, Concluye {CP.end_date}
                     </p>
                 </div>
-                <div className="flex flex-row gap-4 items-center justify-center lg:w-auto drop-shadow-lg  p-3 bg-white rounded-full">
-                    <button
-                        className="bg-green-500 drop-shadow-lg  hover:bg-green-700 text-white rounded-full px-4 py-2 my-2   transition  hover:-translate-y-1 ease-in-out delay-120   hover:scale-110 duration-500"
-                        onClick={handleAccept}
-                    >
-                        Aceptar
-                    </button>
-                    <button
-                        className="bg-red-500 drop-shadow-lg shadow-current hover:bg-red-700 text-white rounded-full px-4 py-2 my-2   transition  hover:-translate-y-1 ease-in-out delay-120   hover:scale-110 duration-500"
-                        onClick={handleReject}
-                    >
-                        Rechazar
-                    </button>
-                    <button
-                        className="bg-blue-500 drop-shadow-lg shadow-current hover:bg-blue-700 text-white rounded-full px-4 py-2 my-2 transition  hover:-translate-y-1 ease-in-out delay-120   hover:scale-110 duration-500  "
-                        onClick={handleGeneratePDF}
-                    >
-                        <img src={Printer} alt="PDF" className="w-6 h-6" />
-                    </button>
-                </div>
+                <BottonsRAP/>
             </div>
             <div>
                 <>

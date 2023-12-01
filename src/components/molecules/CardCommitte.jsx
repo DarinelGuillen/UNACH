@@ -35,7 +35,6 @@ const CardCommitte = ({ id, start_date, end_date, title_project, status, student
                     <img src={logoUnach} alt="" className='w-20 h-16 md:w-24 md:h-20 lg:w-32 lg:h-28' />
                 </div>
 
-                {status === 1400  ? (
                     <>
                     <div className=" flex justify-end grow gap-2 items-center">
                     <ButtonPDF idP={id}/>
@@ -43,10 +42,7 @@ const CardCommitte = ({ id, start_date, end_date, title_project, status, student
                 </div>
                     </>
                     
-                ) : (
-                    <>
-                    </>
-                )}
+                
             </div>
     );
 };

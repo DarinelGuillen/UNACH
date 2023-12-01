@@ -4,7 +4,7 @@ import logoUnach from '../../assets/img/Icon/LOGO-UNACH.png';
 import arrowBlack from '../../assets/img/Icon/arrowBlack.png';
 import { useNavigate } from 'react-router-dom';
 
-import { getItem, setItem } from '../../utils/storage';
+import { setItem } from '../../utils/storage';
 import UserContext from '../../contexts/UserContext';
 import ProgressBar from './ProgressBar';
 import ButtonPDF from './ButtonPDF';
@@ -81,28 +81,29 @@ const CardXl = ({ id, start_date, end_date, title_project, status, student_name,
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
                         {truncatedTitle} 
                         </p>
-                    <ProgressBar StatusBar={status} />
+                    {/* <ProgressBar StatusBar={status} /> */}
                         <p className='text-blue-600 text-xs font-semibold mt-3 md:text-lg lg:text-xl'>{student_name}</p>
                     </div>
 
                     <img src={logoUnach} alt="" className='w-20 h-16 md:w-24 md:h-20 lg:w-32 lg:h-28' />
                 </div>
 
-                {status === 1400  ? (
+                {status === 0  ? (
+                    <div className=" flex justify-end grow items-center ">
+                    <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
+                        <p>Editar</p>
+                    </button>
+                    <button onClick={() => handlerSend(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
+                        <p>Enviar</p>
+                    </button>
+                </div>
+                    
+                    
+                ) : (
                     <div className=" flex justify-end grow items-center">
                         <ButtonPDF idP={id}/>
 
                 </div>
-                    
-                ) : (
-                    <div className=" flex justify-end grow items-center ">
-                        <button onClick={() => handlerSections(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <p>Editar</p>
-                        </button>
-                        <button onClick={() => handlerSend(id)} className='flex items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-                            <p>Enviar</p>
-                        </button>
-                    </div>
                 )}
             </div>
     );

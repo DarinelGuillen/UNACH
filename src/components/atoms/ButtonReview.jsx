@@ -1,10 +1,25 @@
-import { getItem, setItem } from '../../utils/storage';
+import { setItem } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom';
 function ButtonReview({idR}) {
+    
     const navigate = useNavigate();
-    const HandlerReview=(id) => {
-        console.log("🚀 ~ file: ButtonReview.jsx:6 ~ HandlerReview ~ id:", id)
-        navigate('/Review')
+    const HandlerReview= async  (id) => {
+        console.log("🚀 ~ file: ButtonReview.jsx:7 ~ HandlerReview ~ id:", id)
+        try {
+
+            const response = await fetch(`http://127.0.0.1:8000/api/projects/PDF/${id}`);
+
+            if (response.ok) {
+                const data = await response.json();
+                setItem('currentProyect', data.ALL)
+                setItem('currentProyectID', id)
+                navigate('/Review');
+            } else {
+                console.error('Failed to fetch data');
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }
     return (<>
 

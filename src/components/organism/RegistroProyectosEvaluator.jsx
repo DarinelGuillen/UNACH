@@ -1,7 +1,6 @@
-// Importa los módulos necesarios
 import React, { useState, useEffect } from 'react';
 import Footer from '../atoms/Footer';
-import CardXl from '../atoms/cardXl';
+import CardCommitte from '../molecules/CardCommitte';
 import Header2 from '../atoms/header2';
 import { getItem } from '../../utils/storage';
 
@@ -14,7 +13,7 @@ const RegistroProyectosEvaluator = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/projects/1400`, {
+                const response = await fetch(`http://127.0.0.1:8000/api/projects/1140`, {
                     method: 'GET',  
                     headers: {
                         'Content-Type': 'application/json',
@@ -22,10 +21,10 @@ const RegistroProyectosEvaluator = () => {
                     
                 });
 
-                console.log("🚀 ~ file: RegistroProyectosEvaluator.jsx:19 ~ fetchData ~ response:", response)
+                console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:19 ~ fetchData ~ response:", response)
                 if (response.ok) {
                     const data = await response.json();
-                    console.log("🚀 ~ file: RegistroProyectosEvaluator.jsx:31 ~ fetchData ~ data.projects:", data.projects)
+                    console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:31 ~ fetchData ~ data.projects:", data)
                     if (data.projects && data.projects.length === 0) {
                         // Si no hay proyectos, muestra el mensaje
                         setCardXlData(data.projects);
@@ -33,7 +32,7 @@ const RegistroProyectosEvaluator = () => {
                         setCardXlData(data.projects);
                     }
                 } else {
-                    console.error('Failed', "🚀 ~ file: RegistroProyectosEvaluator.jsx:17 ~ fetchData ~ response.ok:", response.ok);
+                    console.error('Failed', "🚀 ~ file: RegistroProyectosCommitte.jsx:17 ~ fetchData ~ response.ok:", response.ok);
                     setCardXlData([])
                 }
             } catch (error) {
@@ -55,7 +54,7 @@ const RegistroProyectosEvaluator = () => {
     return (
         <>
             <div className='bg-white font-sans w-full '>
-                <Header2  ShowMore={true}/>
+                <Header2 ShowMore={false} />
                 {cardXlData && cardXlData.length === 0 ? (
                     <div className=" h-[70%]">
                         <div className='h-[50%] flex flex-col justify-center items-center w-full '>
@@ -70,7 +69,7 @@ const RegistroProyectosEvaluator = () => {
                         <div className="grid   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
                             {/* <div className="flex flex-col justify-around  bg-white "> */}
                             {cardXlData && cardXlData.slice(currentPage * 6, (currentPage + 1) * 6).map((cardData, index) => (
-                                <CardXl
+                                <CardCommitte
                                     key={index}
                                             id={cardData.id}
                                             start_date={cardData.start_date || ""}
