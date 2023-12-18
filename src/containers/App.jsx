@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home.jsx';
-import Committe from "../pages/Committee.jsx";
+import Committe from "../pages/Committe.jsx";
+import Direccion from "../pages/Direccion.jsx";
 import Evaluator from "../pages/Evaluator.jsx";
 import Sections from "../pages/Sections.jsx";
 import PreviewPDF from "../pages/PreviewPDF.jsx";
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Committe" element={<Committe/>}/>
+        <Route path="/Direccion" element={<Direccion/>}/>
         <Route path="/Evaluator" element={<Evaluator/>}/>
             {/* <Route element={<ProtectRoute hasInfo={Current== 0} />}> */}
             <Route path="/Sections" element={<Sections/>}/>

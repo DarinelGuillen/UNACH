@@ -1,13 +1,16 @@
 import React, { useContext, useEffect } from 'react';
 import componenteUnachLogo from '../../assets/img/Icon/componenteUnachLogo.svg';
 import more from '../../assets/img/Icon/more.svg';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import SharedDataContext from '../../contexts/SharedDataContext';
 import { getItem, setItem } from '../../utils/storage';
 
-const Header2 = ({ShowMore}) => {
-    const ID = getItem('currentProyectID');
+const Header2 = ({ ShowMore }) => {
+    const storedValue = getItem('currentProyectID');
+    const ID = storedValue ? JSON.parse(storedValue) : 1;
+
+
 
     const { isUser, setIsUser } = useContext(UserContext);
     const storedData = getItem('userData');
@@ -49,7 +52,8 @@ const Header2 = ({ShowMore}) => {
                     // console.log("🚀 ~ file: header2.jsx:56 ~ handlerNewProject ~ nestedData:", nestedData.data);
 
                     //* Merge the new data with the existing state
-                    setItem('currentProyect', { ...newData.data, ...nestedData.data
+                    setItem('currentProyect', {
+                        ...newData.data, ...nestedData.data
                         // ,work_group: {},
                     });
                     // console.log("🚀 ~ file: header2.jsx:50 ~ handlerNewProject ~ { ...newData.data, ...nestedData.data }:", { ...newData.data, ...nestedData.data })
@@ -66,40 +70,40 @@ const Header2 = ({ShowMore}) => {
         }
     };
     // useEffect(() => {
-                    
+
     //    // console.log("🚀 ~ file: header2.jsx:71 ~ Header2 ~ getItem:", getItem)
     // }, [getItem])
-    
+
 
     return (
         <>
-              <div className="flex w-full bg-[#25313A] max-h-1/2  rounded-b-3xl">
-            <img src={componenteUnachLogo} className="h-[60px] mt-[1%] mb-[1%] ml-[3%]" alt="Componentito UNACH Logo" />
-            <div className="flex w-full justify-end h-auto">
-        {ShowMore !== undefined && ShowMore ? (
-            <>
-                <button className="" onClick={handlerNewProject}>
-                    <div className="mr-[6%] mt-[2.5%]">
-                        <img src={more} className="h-[35px] " alt="" />
-                    </div>
-                </button>
-            </>
-          ) : (
-            <>
-            <div className='flex-col w-auto text-white  pt-4 h-auto items-center justify-center text-center mx-20 sm:w-1/2 md:w-1/4'>
-              <p>
-                XXXXX-00{ID}-{ID}0-{ID}  Revisión: {ID}
-              </p>
-              <p>Registro de Proyecto de Investigación</p>
+            <div className="flex w-full bg-[#25313A] max-h-1/2  rounded-b-3xl">
+                <img src={componenteUnachLogo} className="h-[60px] mt-[1%] mb-[1%] ml-[3%]" alt="Componentito UNACH Logo" />
+                <div className="flex w-full justify-end h-auto">
+                    {ShowMore !== undefined && ShowMore ? (
+                        <>
+                            <button className="" onClick={handlerNewProject}>
+                                <div className="mr-[6%] mt-[2.5%]">
+                                    <img src={more} className="h-[35px] " alt="" />
+                                </div>
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <div className='flex-col w-auto text-white  pt-4 h-auto items-center justify-center text-center mx-20 sm:w-1/2 md:w-1/4'>
+                                <p>
+                                    XXXXX-00{ID || "09"}-{ID || "09"}0-{ID || "09"}  Revisión: {ID || "09"}
+                                </p>
+                                <p>Registro de Proyecto de Investigación</p>
+                            </div>
+                        </>
+
+                    )}
+
+                </div>
             </div>
-          </>
-          
-          )}
-          
-          </div>
-      </div>
-        
-            </>
+
+        </>
     );
 };
 

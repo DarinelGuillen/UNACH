@@ -24,13 +24,19 @@
                     console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:19 ~ fetchData ~ response:", response)
                     if (response.ok) {
                         const data = await response.json();
-                        console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:31 ~ fetchData ~ data.projects:", data)
-                        if (data.projects && data.projects.length === 0) {
+                        console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:27 ~ fetchData ~ data.projects:", data.projects)
+                        // Change this line
+                        if (data.projects && data.projects.length === 0 || data.projects === null) {
                             // Si no hay proyectos, muestra el mensaje
-                            setCardXlData(data.projects);
+                            setCardXlData([]);
+
+                            console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:39 ~ fetchData ~ // Si no hay proyectos, muestra el mensaje:");
                         } else {
+                            // Si existen proyectos muestra las card.map
+                            console.log("🚀 ~ file: RegistroProyectosCommitte.jsx:37 ~ fetchData ~ // Si existen proyectos muestra las card.map:")
                             setCardXlData(data.projects);
                         }
+
                     } else {
                         console.error('Failed', "🚀 ~ file: RegistroProyectosCommitte.jsx:17 ~ fetchData ~ response.ok:", response.ok);
                         setCardXlData([])
@@ -53,20 +59,20 @@
     
         return (
             <>
-                <div className='bg-white font-sans w-full '>
+                <div className='bg-white font-sans w-full  '>
                     <Header2 ShowMore={false} />
                     {cardXlData && cardXlData.length === 0 ? (
-                        <div className=" h-[70%]">
+                        <div className=" h-screen">
                             <div className='h-[50%] flex flex-col justify-center items-center w-full '>
                                 <h1 className="text-5xl  text-sky-400/100 text-center">
-                                    No tienes ningún proyecto aún. ¡Crea uno para verlo aquí!
+                                    No hay nada por aqui...
                                 </h1>
                             </div>
                         </div>
                     ) : (
                         <>
-    
-                            <div className="grid   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
+                                <div className='h-screen'>
+                                    <div className="grid   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 p-10 ">
                                 {/* <div className="flex flex-col justify-around  bg-white "> */}
                                 {cardXlData && cardXlData.slice(currentPage * 6, (currentPage + 1) * 6).map((cardData, index) => (
                                     <CardCommitte
@@ -81,8 +87,8 @@
                                             />
                                         ))}
                                 </div>
-    
-                                <div className="flex justify-center  w-full py-20">
+                                    {cardXlData && cardXlData.length > 6 ? (<>
+                                        <div className="flex justify-center  w-full mb-20">
                                     <div className='flex justify-between  w-1/6'>
                                         <button onClick={handlePrevClick}>
                                             <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
@@ -95,6 +101,13 @@
                                             </div>
                                         </button>
                                     </div>
+                                </div>
+                                    </>) : (<>
+
+                                    </>)
+
+                                    }
+
                                 </div>
     
                         </>

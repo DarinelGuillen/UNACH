@@ -36,62 +36,38 @@ const RegistroProyectosStudent = () => {
         };
 
         fetchData();
-    }, [idUnach]); // Agregamos idUnach como dependencia
+    }, [idUnach]); 
 
-    const handleNextClick = () => {
-        setCurrentPage(currentPage + 1);
-    };
 
-    const handlePrevClick = () => {
-        setCurrentPage(Math.max(currentPage - 1, 0));
-    };
 
     return (
         <>
-            <div className='bg-white font-sans w-full '>
+            <div className='bg-white font-sans h-screen w-full '>
                 <Header2 ShowMore={true} />
                 {cardXlData && cardXlData.length === 0 ? (
-                    <div className=" h-[70%]">
-                        <div className='h-[50%] flex flex-col justify-center items-center w-full '>
+                    <div className='h-52  flex flex-col justify-center items-center w-full '>
                             <h1 className="text-5xl  text-sky-400/100 text-center">
                                 No tienes ningún proyecto aún. ¡Crea uno para verlo aquí!
                             </h1>
-                        </div>
                     </div>
                 ) : (
                     <>
-
-                            <div className="grid my-9 px-9   w-full gap-x-8 gap-y-10 bg-white xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 ">
+                            <div className="flex flex-wrap justify-center  items-center  w-full h-auto p-9">
                                 {/* <div className="flex flex-col justify-around  bg-white "> */}
-                                    {cardXlData && cardXlData.slice(currentPage * 6, (currentPage + 1) * 6).map((cardData, index) => (
+                                {cardXlData && cardXlData.map((cardData, index) => (
                                         <CardXl
                                             key={index}
                                             id={cardData.id}
-                                          start_date={cardData.start_date || ""}
-                                          end_date={cardData.end_date || ""}
-                                          title_project={cardData.title_project || ""}
-                                          status={cardData.status || 0}
-                                          student_name={cardData.student_name || ""}
-                                          created_at={cardData.created_at || ""}
-                                      />
-                                  ))}
-                                </div>
-
-                            <div className="flex justify-center  w-full py-20">
-                                    <div className='flex justify-between  w-1/6'>
-                                        <button onClick={handlePrevClick}>
-                                            <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
-                                                <p className='text-base text-white w-full p-3 lg:text-xl'>Retroceder</p>
-                                            </div>
-                                        </button>
-                                        <button onClick={handleNextClick}>
-                                            <div className="flex w-[50px] h-[30px] w-full rounded-md justify-center items-center bg-[#BCB785] lg:w-[110px] h-[45px]">
-                                                <p className='text-base text-white w-full p-3 lg:text-xl'>Siguiente</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-
+                                            start_date={cardData.start_date || ""}
+                                            end_date={cardData.end_date || ""}
+                                            title_project={cardData.title_project || ""}
+                                            status={cardData.status || 0}
+                                            comments={cardData.comments || ""}
+                                            student_name={cardData.student_name || ""}
+                                            created_at={cardData.created_at || ""}
+                                        />
+                                    ))}
+                            </div>
                     </>
                 )}
                 <Footer />
