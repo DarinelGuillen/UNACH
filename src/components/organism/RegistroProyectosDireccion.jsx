@@ -13,7 +13,7 @@ const RegistroProyectosDireccion = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/projects/1140`, {
+                const response = await fetch(`http://127.0.0.1:8000/api/projects/ID/Status`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -82,6 +82,8 @@ const RegistroProyectosDireccion = () => {
                                     status={cardData.status || ""}
                                     student_name={cardData.student_name || ""}
                                     created_at={cardData.created_at || ""}
+                                    professor_ids={cardData.professor_ids || []}
+                                    
                                 />
                             ))}
                         </div>

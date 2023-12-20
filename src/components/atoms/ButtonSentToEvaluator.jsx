@@ -1,46 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { setItem } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom';
 
 function ButtonSentToEvaluator({ id, Evaluator }) {
     const users = [
         {
-            id: '1',
+            id: 1,
             name: 'John Doe',
             email: 'john.doe@example.com',
         },
         {
-            id: '2',
+            id: 2,
             name: 'Jane Smith',
             email: 'jane.smith@example.com',
         },
         {
-            id: '3',
+            id: 3,
             name: 'Alex Johnson',
             email: 'alex.johnson@example.com',
         },
         {
-            id: '4',
+            id: 4,
             name: 'Alice Williams',
             email: 'alice.williams@example.com',
         },
         {
-            id: '5',
+            id: 5,
             name: 'Bob Miller',
             email: 'bob.miller@example.com',
         },
         {
-            id: '6',
+            id: 6,
             name: 'Carlos',
             email: 'Carlos.davis@example.com',
         },
         {
-            id: '7',
+            id: 7,
             name: 'Darinel',
             email: 'Darinel.white@example.com',
         },
         {
-            id: '8',
+            id: 8,
             name: 'Ali',
             email: 'Ali.brown@example.com',
         },
@@ -49,41 +49,28 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
     const [selectedUsers, setSelectedUsers] = useState([]);
     const [showUserList, setShowUserList] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const [position, setPosition] = useState({ top: 0, left: 0 });
 
-    const [evaluators, setEvaluators] = useState([]);
+   
+    const containerRef = useRef(null);
 
     useEffect(() => {
-        console.log("🚀 ~ file: ButtonSentToEvaluator.jsx:60 ~ fetchEvaluators ~ id:", id)
-        const fetchEvaluators = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:8000/api/ProjectAssignments/get/${id}`);
-                const data = await response.json();
-
-                if (response.ok) {
-                    // BCM: Obtener los IDs de los profesores
-                    const professorIds = data.data.evaluators.map(evaluator => evaluator.professor_id);
-                    console.log("🚀 ~ file: ButtonSentToEvaluator.jsx:65 ~ fetchEvaluators ~ professorIds:", professorIds)
-
-                    // BCM: Actualizar el estado con los IDs de los profesores
-                    setEvaluators(professorIds);
-                } else {
-                    console.error(`Error en la solicitud: ${data.message}`);
-                }
-            } catch (error) {
-                console.error(`Error en la solicitud: ${error.message}`);
+        const handleClickOutside = (event) => {
+            if (containerRef.current && !containerRef.current.contains(event.target)) {
+                setShowUserList(false);
             }
         };
 
-        // BCM: Llamar a la función de fetch solo cuando showUserList cambie
-        if (showUserList) {
-            fetchEvaluators();
-        }
-    }, [showUserList]); // BCM: Asegurarse de que la solicitud se realice solo cuando showUserList cambie
+        document.addEventListener('click', handleClickOutside);
 
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [containerRef]);
 
 
     const handleButtonClick = () => {
-        setShowUserList(!showUserList);
+            setShowUserList(!showUserList);
         setSearchTerm("");
     };
 
@@ -172,18 +159,26 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
 
     return (
         <>
+        <div ref={containerRef} className='relative'>
+
             <button
                 className="flex w-auto items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400"
-                onClick={handleButtonClick}
+                onClick={()=>handleButtonClick(id)}
             >
                 <span className="text">Enviar A</span>
             </button>
 
             {showUserList && (
-                <div className="flex flex-col items-start bg-gray-300 rounded-xl border-4 border-double border-black p-5  mb-10 absolute z-4">
-                    {/* Resto de tu código */}
+                
+                <div className="flex absolute top-[0] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex-col items-start bg-gray-300 rounded-xl border-4 border-double border-black p-5  z-4">
+                    <input
+                        type="text"
+                        placeholder="Buscar por nombre"
+                        className="border rounded-lg border-gray-300 p-1 mb-2 w-full"
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
                     {sortedUsers.map((user) => (
-                        <div key={user.id} className="flex items-center space-x-2">
+                        <div key={user.id} className="flex items-center  space-x-2 border  border-white">
                             <input
                                 className='cursor-pointer px-4 py-2 my-2 transition hover:-translate-y-1 ease-in-out delay-120 hover:scale-110 duration-500'
                                 type="checkbox"
@@ -191,8 +186,7 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
                                 onChange={() => handleCheckboxChange(user.email)}
                                 checked={
                                     selectedUsers.includes(user.email) ||
-                                    Evaluator.includes(user.name) ||
-                                    evaluators.includes(user.id)  
+                                    Evaluator.includes(user.id)
                                 }
                             />
 
@@ -215,9 +209,14 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
 
                     </div>
                 </div>
+                
+                
             )}
+        </div>
+
         </>
     );
 }
+
 
 export default ButtonSentToEvaluator;

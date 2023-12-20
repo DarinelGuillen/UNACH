@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import ButtonSentToEvaluator from '../atoms/ButtonSentToEvaluator';
 // import CircularProgressBar from './ProgressBar';
-const CardDireccion = ({ id, start_date, end_date, title_project, status, student_name, created_at, }) => {
+const CardDireccion = ({ id, start_date, end_date, title_project, status, student_name, created_at, professor_ids}) => {
     const { isUser, setIsUser } = useContext(UserContext)
 
     const navigate = useNavigate();
@@ -35,8 +35,8 @@ const CardDireccion = ({ id, start_date, end_date, title_project, status, studen
                 </div>
 
                     <>
-                    <div className=" flex justify-end grow gap-2 items-center">
-                    <ButtonSentToEvaluator id={id} Evaluator={["Darinel"]}/>
+                    <div className=" flex justify-center grow gap-2 items-center">
+                    <ButtonSentToEvaluator id={id} Evaluator={professor_ids||[]}/>
                 </div>
                     </>
                     
