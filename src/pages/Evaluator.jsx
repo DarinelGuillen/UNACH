@@ -3,6 +3,7 @@ function Evaluator() {
     return ( 
         <>
         <RegistroProyectosEvaluator/>
+
         </>
      );
 }
