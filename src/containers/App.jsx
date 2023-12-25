@@ -7,6 +7,7 @@ import Evaluator from "../pages/Evaluator.jsx";
 import Sections from "../pages/Sections.jsx";
 import PreviewPDF from "../pages/PreviewPDF.jsx";
 import Review from "../pages/Review.jsx";
+import Grade from "../pages/Grade.jsx";
 import ProtectRoute from "./ProtectRoute.jsx";
 // import { getItem, setItem } from "../utils/storage.js"
 //Contexts 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Sections" element={<Sections/>}/>
             <Route path="/PreviewPDF" element={<PreviewPDF />} />
             <Route path="/Review" element={<Review />} />
+            <Route path="/Grade" element={<Grade />} />
             {/* </Route> */}
       </Routes>
     </UserContext.Provider>

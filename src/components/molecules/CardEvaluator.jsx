@@ -22,7 +22,7 @@ const CardCommitte = ({ id,project_id, start_date, end_date, title_project, stat
 
                 <div className='flex items-center justify-between p-4 md:p-6 '>
                     <div className="flex flex-col w-full md:w-2/3">
-                        <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>ID: {id}</p>
+                        <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>ID: {project_id}</p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Empieza: {start_date}</p>
                         <p className='text-sm text-gray-600 md:text-lg lg:text-xl'>Termina: {end_date}</p>
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
@@ -37,7 +37,7 @@ const CardCommitte = ({ id,project_id, start_date, end_date, title_project, stat
 
                     <>
                     <div className=" flex justify-end grow gap-2 items-center">
-                    <ButtonGrade idR={id}/>
+                    <ButtonGrade GradeIdProject={project_id} project_assignment_id={id}/>
                 </div>
                     </>
                     
