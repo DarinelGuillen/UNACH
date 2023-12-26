@@ -37,7 +37,7 @@ const CardCommitte = ({ id, start_date, end_date, title_project, status, student
 
                     <>
                     <div className=" flex justify-end grow gap-2 items-center">
-                    <ButtonPDF idP={id}/>
+                    {/* <ButtonPDF idP={id}/> */}
                     <ButtonReview idR={id}/>
                 </div>
                     </>

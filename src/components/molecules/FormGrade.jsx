@@ -62,7 +62,10 @@ function FormGrade() {
   };
 
   const handleSubmit = (projectId) => {
-    console.log('Form Data:', criteriaState, grade, comments);
+    console.log("🚀 ~ file: FormGrade.jsx:65 ~ handleSubmit ~ projectId:", projectId)
+    console.log('Form Data:', criteriaState,
+    grade,
+    comments,);
 
     // Realizar la solicitud PUT aquí
     fetch(`http://127.0.0.1:8000/api/grades/${projectId}`, {

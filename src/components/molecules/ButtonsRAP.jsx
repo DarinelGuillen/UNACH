@@ -88,12 +88,12 @@ function BottonsRAP() {
                 >
                     Rechazar
                 </button>
-                <button
+                {/* <button
                     className="bg-blue-500 drop-shadow-lg shadow-current hover:bg-blue-700 text-white rounded-full px-4 py-2 my-2 transition hover:-translate-y-1 ease-in-out delay-120 hover:scale-110 duration-500"
                     onClick={handleGeneratePDF}
                 >
                     <img src={Printer} alt="PDF" className="w-6 h-6" />
-                </button>
+                </button> */}
             </div>
         </>
     );

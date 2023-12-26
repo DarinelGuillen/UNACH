@@ -24,7 +24,7 @@ function ButtonReview({idR}) {
     return (<>
 
         <button onClick={() => HandlerReview(idR)} className='flex w-auto items-center justify-center w-12 h-8 bg-gray-300 rounded-tl-[12px] rounded-br-[12px] hover:bg-gray-400'>
-            <span className="text">Calificar</span>
+            <span className="text">Rectificar</span>
         </button>
     </>);
 }
