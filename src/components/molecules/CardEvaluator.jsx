@@ -7,8 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import ButtonPDF from '../atoms/ButtonPDF';
 import ButtonGrade from '../atoms/ButtonGrade';
-// import CircularProgressBar from './ProgressBar';
-const CardCommitte = ({ id,project_id, start_date, end_date, title_project, status, student_name, created_at, }) => {
+const CardEvaluator = ({ id,project_id, start_date, end_date, title_project, status, student_name, created_at, }) => {
     const { isUser, setIsUser } = useContext(UserContext)
 
     const navigate = useNavigate();
@@ -28,7 +27,6 @@ const CardCommitte = ({ id,project_id, start_date, end_date, title_project, stat
                         <p className='text-xl font-bold md:text-2xl lg:text-3xl overflow-hidden whitespace-nowrap overflow-ellipsis hover:whitespace-normal hover:overflow-visible transition-colors' title={title_project}>
                         {truncatedTitle} 
                         </p>
-                    {/* <CircularProgressBar StatusBar={status} /> */}
                         <p className='text-blue-600 text-xs font-semibold mt-3 md:text-lg lg:text-xl'>{student_name}</p>
                     </div>
 
@@ -46,4 +44,4 @@ const CardCommitte = ({ id,project_id, start_date, end_date, title_project, stat
     );
 };
 
-export default CardCommitte;
+export default CardEvaluator;

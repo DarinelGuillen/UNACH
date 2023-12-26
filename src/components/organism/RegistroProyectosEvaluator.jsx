@@ -8,12 +8,12 @@ const RegistroProyectosEvaluator = () => {
     const [cardXlData, setCardXlData] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const storedData = getItem('userData');
-    const { idUnach } = storedData;
+    const { id } = storedData;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/ProjectAssignments/1`, {
+                const response = await fetch(`http://127.0.0.1:8000/api/ProjectAssignments/${id}`, {
                     method: 'GET',  
                     headers: {
                         'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const RegistroProyectosEvaluator = () => {
         };
 
         fetchData();
-    }, [idUnach]); // Agregamos idUnach como dependencia
+    }, [id]); 
 
     const handleNextClick = () => {
         setCurrentPage(currentPage + 1);

@@ -1,9 +1,8 @@
 import { setItem } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom';
-function ButtonReview({GradeIdProject , project_assignment_id}) {
-    
+function ButtonGrade({GradeIdProject , project_assignment_id}) {
     const navigate = useNavigate();
-    
+
     const HandlerGrade = async (GradeIdProject, project_assignment_id) => {
         console.log("🚀 ~ file: ButtonGrade.jsx:7 ~ HandlerGrade ~ GradeIdProject , project_assignment_id:", GradeIdProject, project_assignment_id);
     
@@ -24,6 +23,8 @@ function ButtonReview({GradeIdProject , project_assignment_id}) {
                 console.log("🚀 ~ file: ButtonGrade.jsx:24 ~ HandlerGrade ~ data:", data.data.data_project)
                 setItem('currentProyect', data.data.data_project);
                 setItem('currentProyectID', GradeIdProject);
+                setItem('project_assignment_id', project_assignment_id);
+                setItem('IdTeacher', GradeIdProject);
                 navigate('/Grade');
             } else {
                 console.error('Failed to fetch data');
@@ -42,4 +43,4 @@ function ButtonReview({GradeIdProject , project_assignment_id}) {
     </>);
 }
 
-export default ButtonReview;
+export default ButtonGrade;

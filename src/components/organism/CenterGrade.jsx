@@ -6,7 +6,6 @@ function CenterGrade() {
             <div className="w-full flex-col h-fit">
                 <TableGrade />
                 <FormGrade/>
-
             </div>
         </>
     );

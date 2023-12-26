@@ -3,6 +3,8 @@ import { getItem } from '../../utils/storage';
 
 function TableGrade() {
     const CP = getItem('currentProyect') || {};
+    const storedData = getItem('userData');
+    const { id } = storedData;
 
     return (
       <div className="flex overflow-y-auto w-full  h-fit">
@@ -26,9 +28,40 @@ function TableGrade() {
                                   {CP.title_project}
                               </td>
                           </tr>
+                            <tr>
+                                <th className="p-4 border rounded-lg border-gray-400">Clave de proyecto</th>
+                                <td className="p-4 border rounded-lg border-gray-400">
+                                    {CP.id}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th className="p-4 border rounded-lg border-gray-400">Área del conocimiento</th>
+                                <td className="p-4 border rounded-lg border-gray-400">
+                                    {CP.knowledge_area || "Null"}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th className="p-4 border rounded-lg border-gray-400">Fecha</th>
+                                <td className="p-4 border rounded-lg border-gray-400">
+                                    {CP.created_at}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th className="p-4 border rounded-lg border-gray-400">Clave de quien dictamina</th>
+                                <td className="p-4 border rounded-lg border-gray-400">
+                                    {id}
+                                </td>
+                            </tr>
                       </tbody>
                   </table>
-              </div>
+                </div>
+                <div className='flex justify-center items-center w-full mb-10'>
+                    <button
+                        className="bg-green-500 drop-shadow-lg shadow-current hover:bg-gray-700 text-white rounded-full px-4 py-2 my-2 transition hover:-translate-y-1 ease-in-out delay-120 hover:scale-110 duration-500"
+                    >
+                        Ver mas infomacion 
+                    </button>
+                </div>
           </div>
       </div>
   );
