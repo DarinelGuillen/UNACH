@@ -44,7 +44,7 @@ function Section1_5() {
             <Header />
             <div className="flex font-sans">
 
-                <div className="flex hidden lg:block lg:w-1/6 justify-center mt-20 mb-20">
+                <div className="flex hidden lg:block lg:w-1/6 lg:justify-center  bg-[#25313A]">
                     <VerticalText />
                 </div>
 

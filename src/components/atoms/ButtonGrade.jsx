@@ -1,4 +1,4 @@
-import { setItem } from '../../utils/storage';
+import { setItem, getItem } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom';
 function ButtonGrade({GradeIdProject , project_assignment_id}) {
     const navigate = useNavigate();
@@ -15,6 +15,7 @@ function ButtonGrade({GradeIdProject , project_assignment_id}) {
                 body: JSON.stringify({
                     project_assignment_id: project_assignment_id,
                     project_id: GradeIdProject,
+                    professor_id: 1
                 }),
             });
     
@@ -24,7 +25,6 @@ function ButtonGrade({GradeIdProject , project_assignment_id}) {
                 setItem('currentProyect', data.data.data_project);
                 setItem('currentProyectID', GradeIdProject);
                 setItem('project_assignment_id', project_assignment_id);
-                setItem('IdTeacher', GradeIdProject);
                 navigate('/Grade');
             } else {
                 console.error('Failed to fetch data');

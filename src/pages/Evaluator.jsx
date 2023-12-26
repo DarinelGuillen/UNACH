@@ -10,7 +10,7 @@ function Evaluator() {
         const idUnach = searchParams.get('id_unach')||"P";
     
         setItem('userData', { id, idUnach });
-        console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach, userType :", id, idUnach )
+        console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach :", id, idUnach )
       }, [location.search]);
     return ( 
         <>

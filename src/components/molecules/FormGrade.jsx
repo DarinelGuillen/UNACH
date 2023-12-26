@@ -43,12 +43,10 @@ function FormGrade() {
   ];
 
   useEffect(() => {
-    // Calculate the grade based on the criteriaState
     const adecuadoCount = Object.values(criteriaState).filter(value => value === 'Adecuado').length;
     const inadecuadoCount = Object.values(criteriaState).filter(value => value === 'Inadecuado').length;
     const calculatedGrade = 10 * adecuadoCount;
 
-    // Update the grade in a separate state update
     setGrade(calculatedGrade);
   }, [criteriaState]);
 
@@ -129,12 +127,12 @@ function FormGrade() {
               Argumente su dictamen detalladamente
             </th>
             <th className='p-4 border rounded-lg border-gray-400' colSpan="2">
-              <input
-                type="text"
+              <textarea
                 value={comments}
                 onChange={handleCommentChange}
                 className="w-full border rounded-lg border-gray-400 p-2"
               />
+
             </th>
           </tr>
 

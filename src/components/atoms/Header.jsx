@@ -5,7 +5,7 @@ import codiguitoQRcito from "../../assets/img/Icon/qr-Unach.svg";
 function Header() {
     return (
         <>
-            <div className="grid grid-cols-3 gap-4 my-2 font-sans">
+            <div className="grid grid-cols-3 gap-4 mb-0 font-sans bg-[#25313A]">
 
                 <div className="m-1 grid place-items-center ml-[20px]">
                     <img src={componentitoUnachLogo} className='hidden md:block md:ml-10' alt="Componentito UNACH Logo" />

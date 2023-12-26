@@ -18,7 +18,7 @@ function Section1_1() {
         <>
             <Header />
             <div className="flex font-sans">
-                <div className="flex hidden lg:block lg:w-1/6 lg:justify-center lg:mt-20 lg:mb-20">
+                <div className="flex hidden lg:block lg:w-1/6 lg:justify-center  bg-[#25313A]">
                     <VerticalText />
                 </div>
 

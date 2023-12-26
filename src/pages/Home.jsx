@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getItem, setItem } from '../utils/storage';
 import RegistroProyectosStudent from '../components/organism/RegistroProyectosStudent';
-import UserContext from '../contexts/UserContext';
 function Home() {
 
   const location = useLocation();
@@ -11,10 +10,9 @@ function Home() {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id')||1;
     const idUnach = searchParams.get('id_unach')||"A";
-    const userType = searchParams.get('userType')||2;
 
-    setItem('userData', { id, idUnach, userType });
-    console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach, userType :", id, idUnach, userType )
+    setItem('userData', { id, idUnach });
+    console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach :", id, idUnach )
   }, [location.search]);
 
   // useEffect(() => {

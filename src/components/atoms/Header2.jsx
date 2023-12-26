@@ -14,7 +14,7 @@ const Header2 = ({ ShowMore }) => {
 
     const { isUser, setIsUser } = useContext(UserContext);
     const storedData = getItem('userData');
-    const { idUnach } = storedData;
+    const idUnach = storedData ? storedData.idUnach : "A";
     const navigate = useNavigate();
 
     const handlerNewProject = async () => {

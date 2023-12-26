@@ -59,8 +59,8 @@ const RegistroProyectosEvaluator = () => {
                 {cardXlData && cardXlData.length === 0 ? (
                     <div className=" h-[70%]">
                         <div className='h-[50%] flex flex-col justify-center items-center w-full '>
-                            <h1 className="text-5xl  text-sky-400/100 text-center">
-                                No tienes ningún proyecto aún. ¡Crea uno para verlo aquí!
+                            <h1 className="text-5xl  text-sky-400/100 text-center mt-40">
+                                No tienes ningún proyecto aún. ¡Espera a que te adignen alguno!
                             </h1>
                         </div>
                     </div>

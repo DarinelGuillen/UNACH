@@ -9,7 +9,9 @@ const RegistroProyectosStudent = () => {
     const [cardXlData, setCardXlData] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const storedData = getItem('userData');
-    const { idUnach } = storedData;
+    const idUnach = storedData ? storedData.idUnach : "A";
+
+    console.log("🚀 ~ file: RegistroProyectosStudent.jsx:13 ~ RegistroProyectosStudent ~ idUnach:", idUnach)
 
     useEffect(() => {
         const fetchData = async () => {
