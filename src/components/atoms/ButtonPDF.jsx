@@ -5,6 +5,9 @@ function ButtonPDF({idP}) {
     const navigate = useNavigate();
     const handlerPDF = async (idP) => {
         try {
+            // !HOLA
+            // *HOOLA 
+            // TODO 
             const response = await fetch(`http://127.0.0.1:8000/api/projects/PDF/${idP}`);
 
             if (response.ok) {

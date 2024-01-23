@@ -6,7 +6,7 @@ import  { getItem, setItem } from '../utils/storage';
 function Evaluator() {
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
-        const id = searchParams.get('id')||1;
+        const id = searchParams.get('id')||10;
         const idUnach = searchParams.get('id_unach')||"P";
     
         setItem('userData', { id, idUnach });

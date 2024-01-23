@@ -26,10 +26,11 @@ export const updateCase1 = () => {
 
 // Function for Case 2
 export const updateCase2 = () => {
+    
     const CurrentProyectID                                = getItem('currentProyectID');
-  const Current                                           = getItem('currentProyect') || {};
-    console.log("🚀 ~ file: ButtonVars.jsx:26 ~ updateCase2 ~ Current.work_group:", Current.work_group)
-    console.log("🚀 ~ file: ButtonVars.jsx:27 ~ updateCase2 ~ Current:", Current)
+    const Current                                           = getItem('currentProyect') || {};
+    console.log("🚀 ~ updateCase2 ~ Current.id:", Current.id)
+  
     return {
         apiUrl                                            : `http://127.0.0.1:8000/api/DataProject/${CurrentProyectID}`,
         requestOptions: {

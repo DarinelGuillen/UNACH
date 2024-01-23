@@ -1,6 +1,7 @@
 // Importa los módulos necesarios
 import React, { useState, useEffect } from 'react';
 import Footer from '../atoms/Footer';
+import Footer2 from '../atoms/Footer2';
 import CardXl from '../atoms/cardXl';
 import Header2 from '../atoms/header2';
 import { getItem } from '../../utils/storage';
@@ -72,7 +73,7 @@ const RegistroProyectosStudent = () => {
                             </div>
                     </>
                 )}
-                <Footer />
+                <Footer2 />
             </div>
         </>
     );

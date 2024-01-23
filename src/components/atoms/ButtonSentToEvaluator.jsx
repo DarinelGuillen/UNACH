@@ -37,7 +37,7 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
         {
             id: 7,
             name: 'Darinel',
-            email: 'Darinel.white@example.com',
+            email: 'darinel.escobar@outlook.com',
         },
         {
             id: 8,
@@ -86,8 +86,13 @@ function ButtonSentToEvaluator({ id, Evaluator }) {
     const handleSendClick = (id) => {
         // Iterar sobre los correos electrónicos seleccionados
         selectedUsers.forEach((selectedUserEmail) => {
+            
             // Encontrar el usuario correspondiente al correo electrónico
             const selectedUser = users.find((user) => user.email === selectedUserEmail);
+            console.log("🚀 ~ selectedUsers.forEach ~ selectedUser:", selectedUser)
+            // !Here start email sending
+            
+            // !END Email SENDing
     
             // Verificar si se encontró el usuario
             if (selectedUser) {

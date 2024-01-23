@@ -8,8 +8,8 @@ function Home() {
   
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const id = searchParams.get('id')||1;
-    const idUnach = searchParams.get('id_unach')||"A";
+    const id = searchParams.get('id');
+    const idUnach = searchParams.get('id_unach');
 
     setItem('userData', { id, idUnach });
     console.log("🚀 ~ file: Home.jsx:17 ~ useEffect ~ id, idUnach :", id, idUnach )

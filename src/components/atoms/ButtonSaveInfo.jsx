@@ -24,6 +24,8 @@ function ButtonSaveInfo({ casefetch }) {
   }, [isUser]);
   const handleSend = async (param) => {
     console.log("🚀 ~ file: ButtonSaveInfo.jsx:46 ~ handleSend ~ param:", param);
+    console.log("🚀 ~ ButtonSaveInfo ~ CurrentProyectID:", CurrentProyectID)
+
     try {
       let apiUrl = '';
       let requestOptions = {};
@@ -47,9 +49,10 @@ function ButtonSaveInfo({ casefetch }) {
       if (response.ok) {
         const data = await response.json();
         console.log('Response Data:', data);
+        console.log("🚀 ~ handleSend ~ response.ok:", response.ok)
       } else {
         const errorMessage = await response.text(); // Get the error message from the response body
-        console.error("🚀 ~ file: ButtonSaveInfo.jsx:81 ~ handleSend ~ Error:", errorMessage);
+        console.error("🚀 ~ handleSend ~ errorMessage:", errorMessage)
         // Display the error message to the user using a suitable method (e.g., show an alert, update UI, etc.)
         // You can replace the following line with the desired UI feedback mechanism
         alert.error(`Failed to save data: ${errorMessage}`);
@@ -58,6 +61,7 @@ function ButtonSaveInfo({ casefetch }) {
       // Reiniciar el estado de isSaving después de la ejecución del fetch
       
     } catch (error) {
+      console.log("🚀 ~ handleSend ~ error:", error)
       console.error('Error:', error);
 
     }
